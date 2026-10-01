@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+div[data-nextjs-scroll-focus-boundary] {
+  height: 100%;
+} 
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr min(1440px, 75%) 1fr;
+  width: 100%;  
+  box-sizing: border-box; 
+}
+
+.container > * {
+  grid-column: 2;
+}
+
+.container > .fluid {
+  grid-column: 1 / -1;
+}
