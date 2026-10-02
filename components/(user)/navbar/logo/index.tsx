@@ -1,12 +1,18 @@
-import React from 'react'
 import Image from 'next/image';
-import logo from '@/images/logo-black.png'
 import Link from 'next/link';
+
+import logo from '@/images/logo-black2.png';
+import logoNumberOne from '@/images/numberone-logo.png';
 
 
 const LogoComponent = ( ) => {
   return (
-   <Link href="/" className="log cursor-pointer relative w-25 h-25 border-amber-600"><Image alt="Logo" src={logo} fill /></Link>
+  <div className="flex items-center justify-center gap-2">
+    <Link href="/" className="cursor-pointer relative w-27 h-9 border-amber-600"><Image alt="Logo" src={logo} fill/></Link>
+    <div className="relative h-7 w-10 border border-black rounded-sm overflow-hidden">
+      <Image alt="Logo" src={logoNumberOne} fill className="p-0.75" />
+    </div>
+  </div>
   )
 }
 

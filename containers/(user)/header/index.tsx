@@ -1,13 +1,19 @@
-import NavbarLinks from '@/sections/(user)/header/navbar_links'
-import NavbarTopBar from '@/sections/(user)/header/navbar_top_bar'
+import DesktopNavbar from '@/sections/(user)/header/desktop_nav'
+import MobileNavbar from '@/sections/(user)/header/mobile_nav'
 import React from 'react'
 
 const HeaderContainer = () => {
   return (
-    <nav>
-        <NavbarTopBar/>
-        <NavbarLinks/>
+   <header>
+     <nav>
+        <div className="max-[1000px]:hidden">
+            <DesktopNavbar/>
+        </div>
+        <div className="min-[1000px]:hidden">
+            <MobileNavbar/>
+        </div>
     </nav>
+    </header>
   )
 }
 
