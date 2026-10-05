@@ -7,7 +7,7 @@ import React from "react";
 export const LinksComponent = () => {
  
   return (
-    <ul className="min-[1000px]:flex min-[1000px]:justify-between min-[1000px]:h-11 gapt-2  ">
+    <ul className="min-[1000px]:flex min-[1000px]:justify-between min-[1000px]:pt-px min-[1000px]:mb-6 gapt-2  ">
       {links &&
         links.map(({ href, label }, index) => {
           return (
@@ -21,17 +21,17 @@ export const LinksComponent = () => {
               <Link
                 href={href}
                 className="
-                inline
                 text-black
                 text-[14px] 
+                hover:text-(--logo-color)
                 relative 
-                after:block 
+                min-[1000px]:after:block 
                 after:content-[''] 
                 after:w-full 
                 after:h-px 
                 after:bottom-0 
                 after:opacity-0 
-                after:bg-black 
+                after:bg-(--logo-color)
                 hover:after:opacity-100"
               >
                 {label}

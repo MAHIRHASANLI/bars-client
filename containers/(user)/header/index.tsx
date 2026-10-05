@@ -1,20 +1,20 @@
-import DesktopNavbar from '@/sections/(user)/header/desktop_nav'
-import MobileNavbar from '@/sections/(user)/header/mobile_nav'
-import React from 'react'
+import DesktopNavbar from "@/sections/(user)/header/desktop_nav";
+import MobileNavbar from "@/sections/(user)/header/mobile_nav";
+import React from "react";
 
 const HeaderContainer = () => {
   return (
-   <header>
-     <nav>
+    <header>
+      <nav>
         <div className="max-[1000px]:hidden">
-            <DesktopNavbar/>
+          <DesktopNavbar />
         </div>
         <div className="min-[1000px]:hidden">
-            <MobileNavbar/>
+          <MobileNavbar />
         </div>
-    </nav>
+      </nav>
     </header>
-  )
-}
+  );
+};
 
-export default HeaderContainer
+export default HeaderContainer;

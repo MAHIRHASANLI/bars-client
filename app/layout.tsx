@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import HeaderContainer from "@/containers/(user)/header";
 import BreadcrumbContainer from "@/containers/(user)/breadcrumb";
+import FooterContainer from "@/containers/(user)/footer";
 
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <HeaderContainer />
         <BreadcrumbContainer/>
         {children}
+        <FooterContainer/>
       </body>
     </html>
   );

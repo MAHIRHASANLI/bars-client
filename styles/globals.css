@@ -3,11 +3,10 @@
 
 :root  {
   --main-color:#f5f5f5;
+  --line-color:#d0d0d0;
   --secondary-color:#6B7280;
-   /* #f5f5f5; */
-   /* #000000; */
-   --logo-color:#227bc9;
-   --logo-color-hover:#1a5e99;
+   --logo-color:#0071e3 ;
+   --logo-color-hover:#2e59b7;
 }
 
 * {

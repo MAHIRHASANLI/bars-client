@@ -18,11 +18,11 @@ const BreadcrumbSection = () => {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="fluid border-y border-(--secondary-color)  p-2 mb-4"
+      className="fluid border-y border-(--line-color)  p-2 mb-4"
     >
       <div className="main-container">
         <ol className="flex items-center">
-          <li className="flex items-center text-sm font-bold text-(--logo-color) hover:text-(--logo-color-hover)">
+          <li className="flex items-center text-sm font-semibold text-(--logo-color) hover:text-(--logo-color-hover)">
             <House className="size-3 mr-1" />
             <Link href="/">Ana səhifə</Link>
             <ChevronRight className="size-4 mx-1 text-(--logo-color)" />
