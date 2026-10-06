@@ -1,9 +1,7 @@
-import HomePagesContainer from "@/containers/(user)/home";
+// import HomePagesContainer from "@/containers/(user)/home";
 
 const Homepage = () => {
-  return (
-  <HomePagesContainer/>
-  );
+  return <div>Hello Vorld</div>;
 };
 
 export default Homepage;

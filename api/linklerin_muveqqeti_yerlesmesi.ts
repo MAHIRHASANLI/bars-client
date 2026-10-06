@@ -38,6 +38,10 @@ export  const links : LinkType[] = [
       label: "Ustalar üçün",
     },
     {
+      href: "/isupport",
+      label: "Texniki Servis"
+    },
+    {
       href: "/brendler",
       label: "Brendlər",
     },

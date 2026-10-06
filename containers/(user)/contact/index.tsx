@@ -3,9 +3,9 @@ import React from 'react'
 
 const ContactContainer = () => {
   return (
-    <div>
+    <main>
       <ContactForm />
-    </div>
+    </main>
   )
 }
 

@@ -9,3 +9,10 @@ export type FeedbackFormInputType = {
   placeholder: string;
   type: "input" | "textarea";
 };
+
+export type ServisPropsType ={
+  id? : number;
+  title: string;
+  description: string;
+  imgUrl: string;
+}
