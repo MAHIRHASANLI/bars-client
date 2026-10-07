@@ -5,7 +5,7 @@ type HeaderTypeProps = {
 
 const SubheadingComponent = ({ title, description }: HeaderTypeProps) => {
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
+    <div className="flex flex-col items-center justify-center gap-5 max-[1000px]:gap-4">
       <h2 className="font-semibold text-black text-[22px] max-[1000px]:text-xl">
         {title}
       </h2>

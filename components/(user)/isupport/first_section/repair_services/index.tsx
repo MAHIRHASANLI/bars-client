@@ -3,7 +3,7 @@ import image from "@/images/isupport-first-section1.webp";
 
 const RepairServicesComponent = () => {
   return (
-    <div className="relative w-full h-100 my-4">
+    <div className="relative w-full h-100 mt-6 max-[1000px]:h-60 max-[600px]:h-54">
       <Image
         src={image}
         alt="ENERJİ-N qaz sayğacı, korrektor və qaz avadanlıqlarının texniki servisi"

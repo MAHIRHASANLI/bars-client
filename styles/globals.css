@@ -9,6 +9,7 @@
    --logo-color-hover:#2e59b7;
 }
 
+
 * {
   box-sizing: border-box;
 }
@@ -35,8 +36,19 @@ div[data-nextjs-scroll-focus-boundary] {
   grid-column: 1 / -1;
 }
 
-@media (max-width: 768px) {
+ section.section{
+    padding-top:48px;
+    padding-bottom:48px;
+  }
+
+@media (max-width: 1000px) {
   .main-container {
     grid-template-columns: 1fr min(100%, 95%) 1fr;
   }
+  section.section{
+    padding-top:36px;
+    padding-bottom:36px;
+  }
 }
+
+

@@ -1,3 +1,4 @@
+import FifthSection from '@/sections/(user)/isupport/fifth_section'
 import FirstSection from '@/sections/(user)/isupport/first_section'
 import SecondSection from '@/sections/(user)/isupport/second_section'
 import ThirdSection from '@/sections/(user)/isupport/third_section'
@@ -9,6 +10,7 @@ const IsupportContainer = () => {
         <FirstSection/>
         <SecondSection/>   
         <ThirdSection/> 
+        <FifthSection/>
     </main>
   )
 }

@@ -1,5 +1,5 @@
 import ServicesComponent from "@/components/(user)/isupport/second_section/services_conteiner";
-import PageHeader from "@/utils/heading_component";
+import SubheadingComponent from "@/utils/subheading_component";
 import React from "react";
 
 const SecondSection = () => {
@@ -10,11 +10,11 @@ const SecondSection = () => {
       "Ətraflı məlumat almaq üçün cihazın və ya xidmətin üzərinə klikləyin.",
   };
   return (
-    <section className="py-12">
+    <section className="section">
       {/* SEHIFE BASLIGI */}
-      <PageHeader {...pageHeader} />
+      <SubheadingComponent {...pageHeader} />
       {/*  SERVISLERIN GOSTERILDIYI COMPPONENT (SERVIS ITEM CONTAINERI)*/}
-      <ServicesComponent />
+      {/* <ServicesComponent /> */}
     </section>
   );
 };
