@@ -12,7 +12,7 @@ const SecondSection = () => {
   return (
     <section className="section">
       {/* SEHIFE BASLIGI */}
-      <SubheadingComponent {...pageHeader} />
+      <div className="text-center"><SubheadingComponent {...pageHeader} /></div>
       {/*  SERVISLERIN GOSTERILDIYI COMPPONENT (SERVIS ITEM CONTAINERI)*/}
       {/* <ServicesComponent /> */}
     </section>

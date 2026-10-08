@@ -36,10 +36,12 @@ div[data-nextjs-scroll-focus-boundary] {
   grid-column: 1 / -1;
 }
 
- section.section{
+section.section{
     padding-top:48px;
     padding-bottom:48px;
-  }
+}
+
+
 
 @media (max-width: 1000px) {
   .main-container {

@@ -12,7 +12,7 @@ const FirstSection = () => {
 };
 
   return (
-    <section  className="mt-3 pb-12 max-[1000px]:pb-10">
+    <section  className="section">
         {/* SEHIFE BASLIGI */}
       <PageHeader {...pageHeader}/>
       <div className="flex justify-center gap-8 pt-3">

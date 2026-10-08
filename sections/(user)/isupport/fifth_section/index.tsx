@@ -10,7 +10,7 @@ const FifthSection = () => {
   };
   return (
     <section className="section">
-      <SubheadingComponent {...pageHeader} />
+     <div className="text-center"><SubheadingComponent {...pageHeader} /></div>
 
       <ServiceProcessComp/>
     </section>

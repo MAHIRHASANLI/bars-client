@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import ContactServiceLinkComp from "@/utils/contact_service_link_comp";
+
 
 const ServiceActionsComponent = () => {
   const serviceItems = [
@@ -20,9 +20,9 @@ const ServiceActionsComponent = () => {
           </li>
         ))}
       </ol>
-      <div className="text-xs font-semibold text-(--logo-color) flex gap-6">
-        <Link href="" className=" hover:underline">Servis mərkəzi ilə əlaqə saxlamaq</Link>
-        <Link href="" className=" hover:underline">Xəritədə mərkəzi tapın</Link>
+      <div className="flex gap-6">
+        <ContactServiceLinkComp content="Servis mərkəzi ilə əlaqə saxlamaq" />
+        <ContactServiceLinkComp content="Xəritədə mərkəzi tapın" />
       </div>
     </div>
   );
