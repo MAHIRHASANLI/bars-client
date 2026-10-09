@@ -1,7 +1,7 @@
-// import HomePagesContainer from "@/containers/(user)/home";
-
+import HomeContainer from "@/sections/(user)/home/main_section";
 const Homepage = () => {
-  return <div>Hello Vorld</div>;
+  return <HomeContainer />;
 };
 
 export default Homepage;
+

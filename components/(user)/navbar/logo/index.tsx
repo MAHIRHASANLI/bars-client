@@ -1,19 +1,38 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
-import logo from '@/images/logo-black2.png';
-import logoNumberOne from '@/images/numberone-logo.png';
+import logo from "@/images/logo-black2.png";
+import logoNumberOne from "@/images/numberone-logo.png";
 
-
-const LogoComponent = ( ) => {
+const LogoComponent = () => {
   return (
-  <div className="flex items-center justify-center gap-2">
-    <Link href="/" className="cursor-pointer relative w-27 h-9 border-amber-600"><Image  priority alt="ENERJİ-N MMC BARS tərəfindən təqdim olunan qaz avadanlıqları, qaz sayğacları, tənzimləyicilər və texniki servis xidmətləri" src={logo} fill  sizes="(max-width: 1000px) 100vw, 250px"/></Link>
-    <div className="relative h-7 w-10 border border-black rounded-sm overflow-hidden">
-      <Image alt="ENERJİ-N MMC BARS tərəfindən təqdim olunan qaz avadanlıqları, qaz sayğacları, tənzimləyicilər və texniki servis xidmətləri" src={logoNumberOne} fill  sizes="(max-width: 1000px) 100vw, 250px" className="p-0.75"/>
-    </div>
-  </div>
-  )
-}
+    <div className="flex items-center gap-2.5">
+      {/* Ana Logo (BARS / ENERJİ-N) */}
+      <Link
+        href="/"
+        className="relative h-9 w-32 cursor-pointer transition-opacity hover:opacity-90"
+      >
+        <Image
+          priority
+          alt="ENERJİ-N MMC BARS tərəfindən təqdim olunan qaz avadanlıqları, qaz sayğacları, tənzimləyicilər və texniki servis xidmətləri"
+          src={logo}
+          fill
+          sizes="128px"
+          className="object-contain object-left"
+        />
+      </Link>
 
-export default LogoComponent
+      <div className="relative h-8 w-14 shrink-0 overflow-hidden rounded border border-gray-300 bg-white shadow-xs">
+        <Image
+          alt="Enerji-N Nömrə Bir Qaz Avadanlıqları"
+          src={logoNumberOne}
+          fill
+          sizes="56px"
+          className="object-contain p-0.5"
+        />
+      </div>
+    </div>
+  );
+};
+
+export default LogoComponent;

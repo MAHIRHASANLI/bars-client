@@ -13,7 +13,7 @@ const BreadcrumbSection = () => {
   }
   //! Yeni sehifeye daxil olunduqda breadcrumbName-i tapmaq ucun linklerin_muveqqeti_yerlesmesi.ts-dan istifade olunur
   // ! ve pathname ile uygun olan linkin label-i tapilir.
-  const breadcrumbName =links.find((link:LinkType) => link.href === pathname)?.label;
+  const breadcrumbName = links.find((link:LinkType) => link.href === pathname)?.label;
    
   return (
     <nav

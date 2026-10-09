@@ -14,7 +14,7 @@ const SecondSection = () => {
       {/* SEHIFE BASLIGI */}
       <div className="text-center"><SubheadingComponent {...pageHeader} /></div>
       {/*  SERVISLERIN GOSTERILDIYI COMPPONENT (SERVIS ITEM CONTAINERI)*/}
-      {/* <ServicesComponent /> */}
+      <ServicesComponent />
     </section>
   );
 };

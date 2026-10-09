@@ -3,7 +3,7 @@ import React from 'react'
 
 const ServiceMapSection = () => {
   return (
-    <section className='section'>
+    <section className='py-8 max-[1000px]:my-1'>
     <ServiceMapComponent/>
     </section>
   )
