@@ -5,6 +5,44 @@ export type LinkType = {
   label: string;
 };
 
+// Main section SLIDERI 
+export type HeroSlide = {
+  id: number;
+  badge: string; // sağ tərəfdə şəklin üstündəki ad (iSpace-də "WATCH SERIES 12")
+  title: string;
+  subtitle: string;
+  image: StaticImageData;
+  imageAlt: string;
+  link: string;
+  cta: string;
+  payText: string;
+  secondaryCta?: { text: string; link: string };
+  bg?: string; // banner fonu
+  accent?: string; // başlıq rəngi
+  note?: string; // alt haşiyə mətni
+};
+
+// Ana səhifədə "Bütün məhsulları kəşf et"-sectionu üçün məlumat tipi
+export type ProductCategoryType = {
+  id: number;
+  name: string;
+  image: StaticImageData;
+  href: string;
+  price:number;
+};
+// Ana səhifədə "Yeni məhsullar"-sectionu üçün məlumat tipi
+export type NewProductType = {
+  id: number;
+  badge?: string;       // "YENİ", "ENDİRİM", "SERTİFİKATLI"
+  title: string;        // məhsulun adı
+  subtitle: string;     // qısa təsvir (1-2 sətir)
+  price: number;    // hazır mətn kimi, formatı bir yerdən idarə olunur
+  image: StaticImageData | string;
+  imageAlt: string;
+  href: string;
+};
+
+//! CONTACT Sehifesi 
 export type FeedbackFormInputType = {
   id: string;
   label: string;
@@ -12,7 +50,7 @@ export type FeedbackFormInputType = {
   type: "input" | "textarea";
 };
 
-//!Texniki Servis - 4ci section da istifade olunur
+//! Texniki Servis - 4ci section da istifade olunur
 // Servis kartında göstəriləcək məlumatların tipi
 export type ServisPropsType = {
   id: string;
@@ -60,3 +98,5 @@ export type ServiceLocationType = {
     website: IconType;
   };
 };
+
+

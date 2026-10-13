@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 
-:root  {
-  --main-color:#f5f5f5;
-  --line-color:#d0d0d0;
-  --secondary-color:#6B7280;
-   --logo-color:#0071e3 ;
-   --logo-color-hover:#2e59b7;
+:root {
+  --main-color: #f5f5f5;
+  --line-color: #d0d0d0;
+  --secondary-color: #6B7280;
+  --logo-color: #0071e3;
+  --logo-color-hover: #2e59b7;
 }
 
 
@@ -16,41 +16,116 @@
 
 body {
   margin: 0;
+  overflow-x: clip;
 }
+
 div[data-nextjs-scroll-focus-boundary] {
   height: 100%;
-} 
+}
 
 .main-container {
   display: grid;
   grid-template-columns: 1fr min(1440px, 80%) 1fr;
-  width: 100%;  
-  box-sizing: border-box; 
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.main-container > * {
+.main-container>* {
   grid-column: 2;
 }
 
-.main-container > .fluid {
+.main-container>.fluid {
   grid-column: 1 / -1;
 }
 
-section.section{
-    padding-top:48px;
-    padding-bottom:48px;
+section.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 
+
+.main-container>main {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.main-container>main>* {
+  grid-column: 2;
+}
+
+.main-container>main>.fluid {
+  grid-column: 1 / -1;
+}
+
+/* Section sütunun içindədir, xətt isə ekranın tam enini tutur */
+.full-bleed-line {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); /* sola, ekranın kənarına qədər çəkir */
+  height: 1px;
+  background: var(--line-color);
+}
+
+/* Swiper-in CSS dəyişənləri: Swiper oxları çəkəndə bu qiymətlərə baxır */
+.products-swiper {
+  --swiper-navigation-sides-offset: 2px;
+}
+
+.products-swiper {
+  margin: -20px -16px -20px -16px!important;
+  padding: 20px 16px !important;
+}
+
+/* Normal 
+
+vəziyyət: hər iki ox (prev = sol, next = sağ) */
+.products-swiper .swiper-navigation-icon {
+  color: var(--secondary-color);
+  width: 14px;
+  height: 14px;
+}
+
+
+.products-swiper .swiper-button-prev, .products-swiper .swiper-button-next {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  z-index: 999;
+  position: absolute;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.products-swiper .swiper-button-disabled {
+  display: none;
+}
+
+.products-swiper .swiper-button-prev::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  left: -2px;
+  height: 80px;
+  background: var(--secondary-color);
+}
+
+.products-swiper .swiper-button-next::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  right: -2px;
+  height: 80px;
+  background: var(--secondary-color);
+}
 
 
 @media (max-width: 1000px) {
   .main-container {
-    grid-template-columns: 1fr min(100%, 95%) 1fr;
+    grid-template-columns: 1fr 95% 1fr;
   }
-  section.section{
-    padding-top:36px;
-    padding-bottom:36px;
+
+  section.section {
+    padding-top: 36px;
+    padding-bottom: 36px;
   }
 }
-
-

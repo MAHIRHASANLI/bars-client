@@ -2,7 +2,7 @@ import React from "react";
 
 const FooterSection = () => {
   return (
-    <footer className="border-t border-(--line-color)">
+    <footer className="border-t border-(--line-color) mt-10">
       FooterSection Lorem ipsum dolor sit amet consectetur adipisicing elit.
       Fugit ab suscipit, corrupti blanditiis dolorum rem, facere ratione, labore
       harum cum dolor. Quas blanditiis et in laborum, delectus sapiente

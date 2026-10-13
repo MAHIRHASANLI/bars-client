@@ -1,10 +1,10 @@
-import SwiperSliders from '@/containers/(user)/home/home/main_section/swiper_sliders'
-import React from 'react'
+import SwiperSliders from "@/components/(user)/home/main_section/main_sliders";
+import React from "react";
 
 const HomeSections = () => {
-  return (
-   <SwiperSliders/>
-  )
-}
+  return <section className="fluid">
+    <SwiperSliders />
+  </section>;
+};
 
-export default HomeSections
+export default HomeSections;

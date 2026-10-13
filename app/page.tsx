@@ -1,4 +1,5 @@
-import HomeContainer from "@/sections/(user)/home/main_section";
+import HomeContainer from "@/containers/(user)/home";
+
 const Homepage = () => {
   return <HomeContainer />;
 };
