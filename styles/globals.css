@@ -6,7 +6,7 @@
   --line-color: #d0d0d0;
   --secondary-color: #6B7280;
   --logo-color: #0071e3;
-  --logo-color-hover: #2e59b7;
+  --logo-color-hover: #5698daee;
 }
 
 
@@ -70,11 +70,11 @@ section.section {
 .products-swiper {
   --swiper-navigation-sides-offset: 2px;
 }
-
+/* 
 .products-swiper {
   margin: -20px -16px -20px -16px!important;
   padding: 20px 16px !important;
-}
+} */
 
 /* Normal 
 

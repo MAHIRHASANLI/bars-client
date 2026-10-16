@@ -33,6 +33,14 @@ const carouselPresets = {
       1280: { slidesPerView: 4.1, spaceBetween: 25 },
     },
   },
+    // Ekranda yalnız 1 tam şəkil
+  single: {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      0: { slidesPerView: 1, spaceBetween: 20},
+    },
+  },
 } satisfies Record<string, SwiperOptions>;
 
 type CarouselPreset = keyof typeof carouselPresets;
