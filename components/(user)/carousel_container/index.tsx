@@ -30,7 +30,7 @@ const carouselPresets = {
       640: { slidesPerView: 1.2, spaceBetween: 20 },
       800: { slidesPerView: 2, spaceBetween: 20 },
       1024: { slidesPerView: 3, spaceBetween: 30 },
-      1280: { slidesPerView: 4.1, spaceBetween: 25 },
+      1280: { slidesPerView: 4, spaceBetween: 25 },
     },
   },
     // Ekranda yalnız 1 tam şəkil
@@ -43,12 +43,22 @@ const carouselPresets = {
   },
 } satisfies Record<string, SwiperOptions>;
 
-type CarouselPreset = keyof typeof carouselPresets;
 
 type Props = {
   children: ReactNode[];
   preset?: CarouselPreset;
   className?: string;
+};
+
+type CarouselPreset = keyof typeof carouselPresets;
+
+// Tailwind class-ları tam yazılmalıdır
+const presetClasses: Record<CarouselPreset, string> = {
+  compact:
+    "overflow-hidden! py-10! -my-10! lg:overflow-visible! lg:py-0! lg:my-0! lg:[clip-path:inset(-40px_-100vw_-40px_-24px)]",
+  wide:
+    "overflow-hidden! py-10! -my-10! lg:overflow-visible! lg:py-0! lg:my-0! lg:[clip-path:inset(-40px_-100vw_-40px_-24px)]",
+  single: "overflow-hidden!",
 };
 
 const CarouselComponent = ({
@@ -61,12 +71,13 @@ const CarouselComponent = ({
     autoplay={{ delay: 8000, disableOnInteraction: false }}
     navigation
     modules={[Navigation, Autoplay]}
-    className={`products-swiper ${className}`}
+    className={`products-swiper ${presetClasses[preset]} ${className}`}
   >
     {Children.toArray(children).map((child, i) => (
-      <SwiperSlide key={i}>{child}</SwiperSlide>
+      <SwiperSlide key={i} className={preset === "single" ? "" : "h-auto!"}>
+        {child}
+      </SwiperSlide>
     ))}
   </Swiper>
 );
-
 export default CarouselComponent;

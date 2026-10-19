@@ -7,7 +7,7 @@ import React from 'react'
 
 const   NavbarTopBar = () => {
   return (
-  <div className="flex items-center justify-between box-border w-full h-20 max-[1000px]:none max-[1000px]:hidden">
+  <div className="flex items-center justify-between box-border w-full h-22 max-[1000px]:none max-[1000px]:hidden">
       <LogoComponent />
       <SearchInputComponent  />
       <TopActions />
