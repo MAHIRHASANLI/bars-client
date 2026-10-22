@@ -17,7 +17,7 @@ const ContentComponent = ({
         href={href}
         className="mt-8 px-8 py-4 rounded-4xl text-sm font-semibold leading-4 text-(--logo-color) border border-(--logo-color) hover:text-(--logo-color-hover ) hover:border-(--logo-color-hover)"
       >
-        Keçid
+        Hamısına bax
       </Link>
     </div>
   );

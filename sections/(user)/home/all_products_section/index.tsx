@@ -1,9 +1,9 @@
-import CarouselComponent from "@/components/(user)/carousel_container";
 import SubheadingComponent from "@/utils/subheading_component";
 import React from "react";
 import img from "@/images/saygac-temiri-img.png";
 import { ProductCategoryType } from "@/types/links";
 import AllProductSliderItem from "@/components/(user)/home/all_products_section_card_slider";
+import GeneralCarouselComponent from "@/shared/carousels/content_carousel/content_carousel_component";
 const defaultItems: ProductCategoryType[] = [
   {
     id: 1,
@@ -81,11 +81,11 @@ const AllProductsSection = () => {
   return (
     <section className="pb-3">
       <SubheadingComponent title="Bütün məhsulları kəşf et" description="" />
-      <CarouselComponent preset="compact" className="">
+      <GeneralCarouselComponent preset="compact" className="">
         {defaultItems.map((item) => (
           <AllProductSliderItem key={item.id} item={item} />
         ))}
-      </CarouselComponent>
+      </GeneralCarouselComponent>
     
     </section>
   );

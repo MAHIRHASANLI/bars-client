@@ -8,7 +8,14 @@
   --logo-color: #0071e3;
   --logo-color-hover: #5698daee;
   --bars-color-green:   #008900;
+
+    --color-tone-neutral: #6e6e73;
+  --color-tone-blue: #0066cc;
+  --color-tone-green: #008009;
+  --color-tone-orange: #b64400;
+
 }
+
 
 
 * {

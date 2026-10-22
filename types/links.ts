@@ -31,15 +31,36 @@ export type ProductCategoryType = {
   price:number;
 };
 // Ana səhifədə "Yeni məhsullar"-sectionu üçün məlumat tipi
-export type NewProductType = {
+// Məhsulun məlumatlarını müəyyən edən tip
+export type ProductType = {
   id: number;
-  badge?: string;       // "YENİ", "ENDİRİM", "SERTİFİKATLI"
-  title: string;        // məhsulun adı
-  subtitle: string;     // qısa təsvir (1-2 sətir)
-  price: number;    // hazır mətn kimi, formatı bir yerdən idarə olunur
-  image: StaticImageData | string;
-  imageAlt: string;
-  href: string;
+  badge?: string;
+  title: string;
+  subtitle: string;
+  price: number; // Cari satış qiyməti
+  oldPrice?: number; // Əvvəlki qiymət (endirim olduqda)
+  imgUrl: StaticImageData;
+  slug: string;
+};
+
+
+//! Xəbərlər və bloq yazıları üçün məlumat strukturunu müəyyən edir.
+export type NewsPostType = {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  date: string;
+  slug: string;
+  imgUrl: StaticImageData;
+};
+
+//! Tərəfdaş kartının məlumat tipini müəyyən edir
+export type PartnerType = {
+  id: number;
+  name: string;
+  imgUrl: StaticImageData;
+  description: string;
 };
 
 //! CONTACT Sehifesi 

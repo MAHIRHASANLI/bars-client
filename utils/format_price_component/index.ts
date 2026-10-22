@@ -1,1 +1,1 @@
-export const formatPrice = (n: number) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+export const formatPrice = (n: number|undefined) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");

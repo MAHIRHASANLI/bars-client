@@ -1,4 +1,4 @@
-import CarouselComponent from "@/components/(user)/carousel_container";
+import GeneralCarouselComponent from "@/shared/carousels/content_carousel/content_carousel_component";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 
@@ -9,11 +9,11 @@ const ImageCaruselComponent = ({
 }) => {
   return (
     <div className="relative w-full h-90">
-      <CarouselComponent className="h-full w-full" preset="single">
+      <GeneralCarouselComponent className="h-full w-full" preset="single">
         {imgUrls?.map((img, index) => (
           <Image alt="" key={index} src={img} fill className="object-cover" />
         ))}
-      </CarouselComponent>
+      </GeneralCarouselComponent>
     </div>
   );
 };
