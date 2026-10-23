@@ -38,7 +38,7 @@ const CarouselItemComponent = ({ item }: { item: NewsPostType }) => {
       </p>
 
       {/* Qiymət */}
-      <p className="mt-6 text-sm leading-[1.2] text-(--secondary-color) max-[800px]:text-xs w-full overflow-hidden line-clamp-3">
+      <p className="mt-2 text-sm leading-[1.2] text-(--secondary-color) max-[800px]:text-xs w-full overflow-hidden line-clamp-3">
        {item.description}
       </p>
     </Link>
