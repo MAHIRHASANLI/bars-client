@@ -63,6 +63,16 @@ export type PartnerType = {
   description: string;
 };
 
+//! EHTIYAT HISSELERI
+export type SparePartType = {
+  id: number;
+  title: string;
+  description: string;
+  category: string;
+  imgUrl: StaticImageData | string;
+  slug: string;
+};
+
 //! CONTACT Sehifesi 
 export type FeedbackFormInputType = {
   id: string;

@@ -1,8 +1,8 @@
 import GeneralCarouselComponent from "@/shared/carousels/content_carousel/content_carousel_component";
 import SubheadingComponent from "@/utils/subheading_component";
 import img from "@/images/saygac-temiri-img.png"
-import PartnershipsCardItem from "@/components/(user)/home/partnerships_section_partner_card";
 import { PartnerType } from "@/types/links";
+import PartnershipsCardItem from "@/components/(user)/home/partnerships_section_partner_card";
 const PartnershipsSection = () => {
   // Tərəfdaş şirkətlərin məlumatları.
   const partners:PartnerType[] = [

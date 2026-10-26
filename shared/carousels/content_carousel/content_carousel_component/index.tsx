@@ -87,7 +87,7 @@ const GeneralCarouselComponent = ({
   })`;
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full pt-10 max-[1000px]:pt-6">
       <Swiper
         {...carouselPresets[preset]}
         

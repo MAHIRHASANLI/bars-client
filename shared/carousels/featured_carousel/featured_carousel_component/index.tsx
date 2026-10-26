@@ -28,7 +28,7 @@ const FeaturedCarouselComponent = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative pt-6 pb-8 max-[1000px]:pt-3 max-[1000px]:pb-5">
       <Swiper
         {...carouselPresets}
         modules={[Autoplay]}

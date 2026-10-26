@@ -1,48 +1,70 @@
-// NewProductCard.tsx  (server komponent, "use client" yoxdur)
-import Image from "next/image";
-import Link from "next/link";
-import { NewsPostType } from "@/types/links";
+// CarouselItemComponent.tsx (server komponent, "use client" yoxdur)
+import Image from 'next/image'
+import Link from 'next/link'
+import { NewsPostType } from '@/types/links'
 
 const CarouselItemComponent = ({ item }: { item: NewsPostType }) => {
-
   return (
     <Link
       href={item.slug}
-      className="flex h-full min-h-98  max-[800px]:h-80 flex-col rounded-3xl bg-white p-4  max-[800px]:py-0 shadow-[0_2px_12px_rgba(0,0,0,0.05)] transition-shadow duration-300 hover:shadow-[0_6px_24px_rgba(0,0,0,0.07)]"
+      className="group flex h-full flex-col rounded-3xl bg-white p-2 shadow-[0_2px_12px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.04] transition-shadow duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1d1d1f] motion-reduce:transition-none"
     >
-      <div className="relative mx-auto mt-4 h-43 w-64  max-[800px]:h-42">
-        <Image
-          src={item.imgUrl}
-          alt={item.title}
-          fill
-          sizes="(max-width: 768px) 50vw, 25vw"
-          className="object-contain"
-        />
+      {/* Şəkil paneli: iç radius = 24px - 8px padding = 16px (rounded-2xl).
+          Hündürlük 288px (h-72), mobildə 208px (h-52) */}
+      <div className="relative h-62 rounded-2xl bg-[#f5f5f7] max-[800px]:h-52">
+        {item.category && (
+          <span className="absolute left-2 top-2 z-10 rounded-full bg-white px-3 py-1 text-xs font-medium text-(--color-tone-orange) shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
+            {item.category}
+          </span>
+        )}
+
+        <div className="absolute inset-4 hover:z-999 transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+          <Image
+            src={item.imgUrl}
+            alt={item.title}
+            fill
+            sizes="(max-width: 800px) 80vw, 33vw"
+            // Ağ fonlu şəkillər boz panelin üzərində qutu kimi görünməsin deyə
+            className="object-contain mix-blend-multiply"
+          />
+        </div>
       </div>
 
-      {/* Badge */}
-      {item.date && (
-        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-[#b64400]">
-          {item.category}
+      {/* Mətn */}
+      <div className="flex flex-1 flex-col px-3 pb-4 pt-5 max-[800px]:px-2 max-[800px]:pt-4">
+        {item.date && (
+          <p className="mb-2 text-xs font-medium text-(--secondary-color)">
+            {item.date}
+          </p>
+        )}
+
+        <h3 className="line-clamp-2 text-xl font-semibold leading-tight tracking-tight text-[#1d1d1f] max-[800px]:text-lg">
+          {item.title}
+        </h3>
+
+        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-(--secondary-color) max-[800px]:text-xs">
+          {item.description}
+        </p>
+
+        {/* Ətraflı: mt-auto sayəsində bütün kartlarda eyni xəttdə dayanır */}
+        <span className="mt-auto flex items-center gap-1 pt-4 text-sm font-medium text-(--color-tone-orange)">
+          Ətraflı
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-2 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"
+          >
+            <path d="M6 3l5 5-5 5" />
+          </svg>
         </span>
-      )}
-
-      {/* Başlıq */}
-      <h3 className="mb-1 text-2xl font-semibold leading-tight w-full overflow-hidden line-clamp-2 text-[#1d1d1f] max-[800px]:text-xl">
-        {item.title}
-      </h3>
-
-      {/* Alt başlıq: min-h 2 sətirlikdir ki, qiymət bütün kartlarda eyni xəttdə dursun */}
-      <p className="mb-2 min-h-[2.4em] text-sm font-semibold leading-[1.2] text-[#1d1d1f] max-[800px]:text-xs">
-        {item.date}
-      </p>
-
-      {/* Qiymət */}
-      <p className="mt-2 text-sm leading-[1.2] text-(--secondary-color) max-[800px]:text-xs w-full overflow-hidden line-clamp-3">
-       {item.description}
-      </p>
+      </div>
     </Link>
-  );
-};
+  )
+}
 
-export default CarouselItemComponent;
+export default CarouselItemComponent

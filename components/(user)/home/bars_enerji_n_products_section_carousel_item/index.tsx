@@ -23,7 +23,7 @@ const BarsEnerjiNCarouselItemComponent = ({ item }: { item: ProductType }) => {
       )}
 
       {/* Başlıq */}
-      <h3 className="mb-1 text-2xl font-semibold leading-tight text-[#1d1d1f] max-[1000px]:text-xl">
+      <h3 className="hover:underline mb-1 text-2xl font-semibold leading-tight text-[#1d1d1f] max-[1000px]:text-xl">
         {item.title}
       </h3>
 
