@@ -5,13 +5,11 @@ import Button from "../btn_submit";
 
 const FormFeedbackComponent = () => {
   return (
-    <form className="flex flex-col justify-center gap-4">
-      <Inputs />
-
-      <Select />
-
-      <Button/>
-    </form>
+  <form className="flex w-full min-w-0 flex-col justify-center pt-8 gap-4">
+    <Inputs />
+    <Select />
+    <Button />
+  </form>
   );
 };
 

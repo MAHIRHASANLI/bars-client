@@ -1,12 +1,10 @@
-import React from "react";
-
-import LikeButton from "@/shared/buttons/like_button";
-import PrimaryButton from "@/shared/buttons/primary_button";
+import LikeButton from "@/components/(user)/shared/buttons/like_button";
+import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
 import { ProductType } from "@/types/links";
 import { formatPrice } from "@/utils/format_price_component";
 import Image from "next/image";
 
-const QuickOrderSectionCarouselItem = ({ item }: { item: ProductType }) => {
+const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
   return (
     <div className="relative flex items-center justify-center h-full min-h-98  max-[800px]:h-105 flex-col  bg-white p-4  max-[800px]:py-0  duration-300">
       <div className="relative  p-6">
@@ -25,7 +23,7 @@ const QuickOrderSectionCarouselItem = ({ item }: { item: ProductType }) => {
       )}
 
       {/* Başlıq */}
-      <h3 className="hover:underline mb-1 text-2xl font-semibold leading-tight text-[#1d1d1f] max-[1000px]:text-xl">
+      <h3 className="hover:underline cursor-pointer  text-center mb-1 text-2xl font-semibold leading-tight text-[#1d1d1f] max-[1000px]:text-xl">
         {item.title}
       </h3>
 
@@ -57,7 +55,7 @@ const QuickOrderSectionCarouselItem = ({ item }: { item: ProductType }) => {
 
         {/* Almaq düyməsi */}
         <div className="mt-7 w-full text-center">
-          <PrimaryButton href="">Səbətə</PrimaryButton>
+          <PrimaryButton href="/">Almaq</PrimaryButton>
         </div>
       </div>
 
@@ -66,4 +64,24 @@ const QuickOrderSectionCarouselItem = ({ item }: { item: ProductType }) => {
   );
 };
 
-export default QuickOrderSectionCarouselItem;
+export default FeaturedCardComponent;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+   Alt başlıq: min-h 2 sətirlikdir ki, qiymət bütün kartlarda eyni xəttdə dursun 
+      <p className="text-center px-4 max-[1000px]:px-2 mb-4 max-[1000px]:mb-2 min-h-[2.4em] text-sm font-semibold leading-[1.2] text-[#1d1d1f] max-[1000px]:text-xs">
+        {item.subtitle}
+      </p>
+*/

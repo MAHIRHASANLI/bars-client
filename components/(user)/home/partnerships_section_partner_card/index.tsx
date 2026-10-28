@@ -9,7 +9,6 @@ const PartnershipsCardItem = ({ item }: { item: PartnerType }) => {
         <span className="absolute left-2 top-2 rounded-full bg-white px-3 py-1 text-xs font-medium text-[#b64400] shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
           Diler
         </span>
-
         <div className="relative h-full w-full max-w-56 transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100">
           <Image
             src={item.imgUrl}

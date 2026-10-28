@@ -1,6 +1,6 @@
 import ServicesMoreCarouselItem from "@/components/(user)/home/services_and_more_section/services_more_carousel_item";
-import GeneralCarouselComponent from "@/shared/carousels/content_carousel/content_carousel_component";
-import SubheadingComponent from "@/utils/subheading_component";
+import GeneralCarouselComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
 type Tone = "neutral" | "blue" | "green" | "orange";
 
 type TitlePart = { text: string; accent?: boolean };
@@ -85,13 +85,13 @@ const ServicesAndMoreSection = () => {
     },
   ];
   return (
-    <section className="py-8 max-[1270px]:mb-8">
+    <section className="py-8 pb-3 max-[1000px]:py-5">
       <SubheadingComponent
         title="Xidmətləri və daha çoxunu kəşf edin"
         description=""
       />
 
-        <GeneralCarouselComponent preset="wide">
+        <GeneralCarouselComponent preset="wide" className="min-[1000px]:pt-10">
           {services.map((s) => (
             <ServicesMoreCarouselItem key={s.id} service={s} />
           ))}

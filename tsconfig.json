@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "containers/(user)/category_container"  ],
   "exclude": ["node_modules"]
 }

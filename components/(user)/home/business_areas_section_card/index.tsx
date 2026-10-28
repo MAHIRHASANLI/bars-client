@@ -1,7 +1,7 @@
 
 import Image, { StaticImageData } from "next/image";
-import PrimaryButton from "@/shared/buttons/primary_button";
-import SubheadingComponent from "@/utils/subheading_component";
+import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
 
 // Kartın məlumatlarını və görünüş variantını müəyyən edir.
 type BusinessAreaCardProps = {

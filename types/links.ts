@@ -1,8 +1,9 @@
 import { StaticImageData } from "next/image";
 
 export type LinkType = {
-  href: string;
-  label: string;
+  href?: string;
+  title: string;
+  children?: LinkType[]
 };
 
 // Main section SLIDERI 
@@ -25,7 +26,7 @@ export type HeroSlide = {
 // Ana səhifədə "Bütün məhsulları kəşf et"-sectionu üçün məlumat tipi
 export type ProductCategoryType = {
   id: number;
-  name: string;
+  title: string;
   image: StaticImageData;
   href: string;
   price:number;

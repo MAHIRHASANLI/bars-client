@@ -4,7 +4,7 @@
 
   const MobileNavbarContent = () => {
     return (
-      <div>
+      <div className="absolute top-20 left-0 px-5 w-full bg-white z-99">
         <div className="pt-4 pb-4">
           <SearchInputComponent />
         </div>

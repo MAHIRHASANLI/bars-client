@@ -1,24 +1,32 @@
+
 "use client";
-import { links } from "@/api/linklerin_muveqqeti_yerlesmesi";
-import { LinkType } from "@/types/links";
+
+import { getCategoryByHref } from "@/utils/get_category_by_href";
 import { House, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const BreadcrumbSection = () => {
   const pathname = usePathname();
+
   if (pathname === "/") {
-    //!sehife render olunmadiqda naviqation paneli gosterilmir
-    return null; // Don't render the breadcrumb on the home page.
+    return null;
   }
-  //! Yeni sehifeye daxil olunduqda breadcrumbName-i tapmaq ucun linklerin_muveqqeti_yerlesmesi.ts-dan istifade olunur
-  // ! ve pathname ile uygun olan linkin label-i tapilir.
-  const breadcrumbName = links.find((link:LinkType) => link.href === pathname)?.label;
-   
+
+  const paths = pathname.split("/").filter(Boolean);
+
+  const breadcrumbItems = paths
+    .map((_, index) => {
+      const href = "/" + paths.slice(0, index + 1).join("/");
+
+      return getCategoryByHref(href);
+    })
+    .filter((link) => link !== undefined);
+
   return (
     <nav
       aria-label="Breadcrumb"
-      className="fluid border-y border-(--line-color)  p-2 mb-4"
+      className="fluid border-y border-(--line-color) p-2 mb-4"
     >
       <div className="main-container">
         <ol className="flex items-center">
@@ -27,9 +35,31 @@ const BreadcrumbSection = () => {
             <Link href="/">Ana səhifə</Link>
             <ChevronRight className="size-4 mx-1 text-(--logo-color)" />
           </li>
-          <li className="flex items-center">
-            <span className="mx-1 text-sm text-(--secondary-color)">{breadcrumbName}</span>
-          </li>
+
+          {breadcrumbItems.map(({ title, href="" }, index) => {
+            const isLast = index === breadcrumbItems.length - 1;
+
+            return (
+              <li key={href} className="flex items-center">
+                {isLast ? (
+                  <span className="mx-1 text-sm text-(--secondary-color)">
+                    {title}
+                  </span>
+                ) : (
+                  <Link
+                    href={href}
+                    className="mx-1 text-sm font-semibold text-(--logo-color) hover:text-(--logo-color-hover)"
+                  >
+                    {title}
+                  </Link>
+                )}
+
+                {!isLast && (
+                  <ChevronRight className="size-4 mx-1 text-(--logo-color)" />
+                )}
+              </li>
+            );
+          })}
         </ol>
       </div>
     </nav>

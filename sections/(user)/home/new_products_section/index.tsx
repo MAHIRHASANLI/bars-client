@@ -1,8 +1,8 @@
-import SubheadingComponent from '@/utils/subheading_component'
+import SectionHeading from '@/components/(user)/shared/section_heading_component'
 // data/new-products.ts  ("use client" yoxdur, server komponentdən oxunur)
 import img from "@/images/260911100016384144.webp"
 import type { ProductType } from "@/types/links";
-import GeneralCarouselComponent from '@/shared/carousels/content_carousel/content_carousel_component';
+import GeneralCarouselComponent from '@/components/(user)/shared/carousels/content_carousel/content_carousel_component';
 import CarouselItemComponent from '@/components/(user)/home/new_products_section_carousel_item';
 
 export const newProducts: ProductType[] = [
@@ -76,10 +76,10 @@ export const newProducts: ProductType[] = [
 
 const NewProductsSection = () => {
   return (
-    <section className="py-8 pb-13">
-        <SubheadingComponent title="Yeni məhsullara göz atın" description=''/>
+    <section className="py-8 pb-3 max-[1000px]:py-5">
+        <SectionHeading title="Yeni məhsullara göz atın" description=''/>
 
-        <GeneralCarouselComponent preset='wide'>
+        <GeneralCarouselComponent preset='wide' className="min-[1000px]:pt-10">
          {newProducts.map((item)=> <CarouselItemComponent key={item.id} item={item}/>)}
         </GeneralCarouselComponent>
     </section>

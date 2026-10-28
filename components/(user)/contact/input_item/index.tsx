@@ -6,7 +6,7 @@ type InputPropsType = {
 
 const Input = ({ item }: InputPropsType) => {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex w-full min-w-0 flex-col gap-1">
       <label
         htmlFor={item.id}
         className="text-sm font-normal text-gray-600 max-[1000px]:text-xs"
@@ -19,7 +19,7 @@ const Input = ({ item }: InputPropsType) => {
           id={item.id}
           name={item.id}
           placeholder={item.placeholder}
-          className="min-h-32 resize-none rounded-sm border border-(--line-color) p-3 max-[1000px]:2 text-sm outline-none focus:ring-1 focus:ring-(--logo-color) max-[1000px]:text-xs"
+          className="box-border min-h-32 w-full min-w-0 resize-none rounded-sm border border-(--line-color) p-3 text-sm outline-none focus:ring-1 focus:ring-(--logo-color) max-[1000px]:p-2 max-[1000px]:text-xs"
         />
       ) : (
         <input
@@ -27,7 +27,7 @@ const Input = ({ item }: InputPropsType) => {
           name={item.id}
           type="text"
           placeholder={item.placeholder}
-          className="rounded-sm border border-(--line-color) p-3 max-[1000px]:p-2 text-sm outline-none focus:ring-1 focus:ring-(--logo-color) max-[1000px]:text-xs"
+          className="box-border w-full min-w-0 rounded-sm border border-(--line-color) p-3 text-sm outline-none focus:ring-1 focus:ring-(--logo-color) max-[1000px]:p-2 max-[1000px]:text-xs"
         />
       )}
     </div>

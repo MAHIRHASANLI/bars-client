@@ -1,5 +1,5 @@
 import ServiceProcessComp from "@/components/(user)/isupport/fifth_section/service_process";
-import SubheadingComponent from "@/utils/subheading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
 import React from "react";
 
 const FifthSection = () => {

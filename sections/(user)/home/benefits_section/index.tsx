@@ -1,5 +1,5 @@
 import ContactServiceLinkComp from "@/utils/contact_service_link_comp";
-import SubheadingComponent from "@/utils/subheading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
 import { Package, Headset, Truck } from "lucide-react";
 
 export const serviceCards = [

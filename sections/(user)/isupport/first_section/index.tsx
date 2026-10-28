@@ -1,4 +1,4 @@
-import PageHeader from "@/utils/heading_component";
+import PageHeader from "@/components/(user)/shared/page_heading_component";
 
 import RepairServicesComponent from "@/components/(user)/isupport/first_section/repair_services";
 import ContactServiceLinkComp from "@/utils/contact_service_link_comp";

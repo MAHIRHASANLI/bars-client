@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import HeaderContainer from "@/containers/(user)/header";
 import BreadcrumbContainer from "@/containers/(user)/breadcrumb";
-import FooterContainer from "@/containers/(user)/footer";
 import { Inter } from "next/font/google";
+import FooterSection from "@/sections/(user)/footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <HeaderContainer />
         <BreadcrumbContainer />
         {children}
-        <FooterContainer />
+        <FooterSection />
       </body>
     </html>
   );

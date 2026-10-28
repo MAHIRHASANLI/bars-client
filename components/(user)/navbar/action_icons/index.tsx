@@ -12,10 +12,8 @@ const ActionIcons = () => {
       <button>
         <Phone className="size-4 cursor-pointer" />
       </button>
-      <div>
         <BtnIconUserComponent />
       </div>
-    </div>
   );
 };
 

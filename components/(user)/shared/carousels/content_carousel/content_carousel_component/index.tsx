@@ -23,6 +23,7 @@ const carouselPresets = {
     },
     autoplay:{ delay: 7000, disableOnInteraction: false }
   },
+  
   // 5 karta qədər, iri kartlar
   wide: {
     slidesPerView: 1.4,
@@ -87,7 +88,7 @@ const GeneralCarouselComponent = ({
   })`;
 
   return (
-    <div className="w-full h-full pt-10 max-[1000px]:pt-6">
+    <div className={`w-full h-full ${className}`}>
       <Swiper
         {...carouselPresets[preset]}
         

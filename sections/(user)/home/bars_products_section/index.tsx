@@ -1,8 +1,8 @@
-import FeaturedCarouselComponent from "@/shared/carousels/featured_carousel/featured_carousel_component";
+import FeaturedCarouselComponent from "@/components/(user)/shared/carousels/featured_carousel/feature_carousel_component";
 import { ProductType } from "@/types/links";
-import SubheadingComponent from "@/utils/subheading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
 import img from "@/images/tenzimleyicilerin-temiri-img.png";
-import BarsEnerjiNCarouselItemComponent from "@/components/(user)/home/bars_enerji_n_products_section_carousel_item";
+import ProductCardComponent from "@/components/(user)/shared/carousels/featured_carousel/feature_card_component";
 const BarsProductsSection = () => {
   const products: ProductType[] = [
     {
@@ -67,7 +67,7 @@ const BarsProductsSection = () => {
 
       <FeaturedCarouselComponent>
         {products?.map((item) => (
-          <BarsEnerjiNCarouselItemComponent key={item.id} item={item} />
+          <ProductCardComponent key={item.id} item={item} />
         ))}
       </FeaturedCarouselComponent>
     </section>

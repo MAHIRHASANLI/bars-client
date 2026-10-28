@@ -1,4 +1,4 @@
-import GeneralCarouselComponent from "@/shared/carousels/content_carousel/content_carousel_component";
+import GeneralCarouselComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_component";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 

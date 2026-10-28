@@ -1,56 +1,132 @@
-import { LinkType } from "@/types/links";
-
-export  const links : LinkType[] = [
-    {
-      href: "/yapishdirici",
-      label: "Yapışdırıcı",
-    },
-    {
-      href: "/qaz-detektoru",
-      label: "Qaz Detektoru",
-    },
-    {
-      href: "/saygaclar",
-      label: "Sayğaclar",
-    },
-    {
-      href: "/qaz-tenzimleyici",
-      label: "Qaz Tənzimləyici",
-    },
-    {
-      href: "/qaz-filteri",
-      label: "Qaz Filteri",
-    },
-    {
-      href: "/siyirtmeler",
-      label: "Siyirtmələr",
-    },
-    {
-      href: "/istilik-mehsullari",
-      label: "İstilik Məhsulları",
-    },
-    {
-      href: "/qaz-aksesuarlar",
-      label: "Qaz Aksessuarlar",
-    },
-    {
-      href: "/ustalar-ucun",
-      label: "Ustalar üçün",
-    },
-    {
-      href: "/isupport",
-      label: "Texniki Servis"
-    },
-    {
-      href: "/brendler",
-      label: "Brendlər",
-    },
-    {
-      href: "/about",
-      label: "Haqqında",
-    },
-    {
-      href: "/contact",
-      label: "Əlaqə",
-    },
-  ];
+import { ProductCategoryType, ProductType } from "@/types/links";
+import img from "@/images/saygac-temiri-img.png";
+export const products: ProductType[] = [
+  {
+    id: 1,
+    badge: "POPULYAR",
+    title: "Qaz təzyiq tənzimləyicisi",
+    subtitle: "Qaz təzyiqinin tələb olunan səviyyədə tənzimlənməsi üçün.",
+    price: 2900,
+    oldPrice: 3000,
+    imgUrl: img,
+    slug: "qaz-tezyiq-tenzimleyicisi",
+  },
+  {
+    id: 2,
+    badge: "POPULYAR",
+    title: "Qaz filtri",
+    subtitle: "Qaz xəttini mexaniki çirklərdən və hissəciklərdən qorumaq üçün.",
+    price: 0,
+    imgUrl: img,
+    slug: "qaz-filtri",
+  },
+  {
+    id: 3,
+    badge: "YENİ",
+    title: "Qaz sayğacı",
+    subtitle: "Qaz sərfiyyatının dəqiq ölçülməsi üçün nəzərdə tutulmuş avadanlıq.",
+    price: 0,
+    imgUrl: img,
+    slug: "qaz-saygaci",
+  },
+  {
+    id: 4,
+    badge: "POPULYAR",
+    title: "Elektromaqnit klapan",
+    subtitle: "Qaz axınının avtomatik idarə olunması və bağlanması üçün.",
+    price: 0,
+    imgUrl: img,
+    slug: "elektromaqnit-klapan",
+  },
+  {
+    id: 5,
+    badge: "POPULYAR",
+    title: "Qaz korrektorı",
+    subtitle: "Qaz sərfiyyatının ölçülməsi üçün düzəlişlərin aparılmasına kömək edir.",
+    price: 0,
+    imgUrl: img,
+    slug: "qaz-korrektoru",
+  },
+  {
+    id: 6,
+    badge: "YENİ",
+    title: "Qaz tənzimləyici şkaf",
+    subtitle: "Qaz təzyiqinin tənzimlənməsi üçün kompakt texniki həll.",
+    price: 0,
+    imgUrl: img,
+    slug: "qaz-tenzimleyici-skaf",
+  },
+];
+//! ANa sehifede butun mehsullar ve category sehifesinde ilk section datalari
+export const defaultItems: ProductCategoryType[] = [
+  {
+    id: 1,
+    title: "Yapışdırıcılar",
+    image: img,
+    href: "/category/adhesives",
+    price: 100,
+  },
+  {
+    id: 2,
+    title: "Sayğacları",
+    image: img,
+    href: "/category/gas-meters",
+    price: 100,
+  },
+  {
+    id: 3,
+    title: "Korrektorları",
+    image: img,
+    href: "/category/gas-correctors",
+    price: 100,
+  },
+  {
+    id: 4,
+    title: "Tənzimləyiciləri",
+    image: img,
+    href: "/category/gas-regulators",
+    price: 100,
+  },
+  {
+    id: 5,
+    title: "Filtrləri",
+    image: img,
+    href: "/category/gas-filters",
+    price: 100,
+  },
+  {
+    id: 6,
+    title: "Detektorları",
+    image: img,
+    href: "/category/gas-detectors",
+    price: 100,
+  },
+  {
+    id: 7,
+    title: "Siyirtmələr",
+    image: img,
+    href: "/category/valves",
+    price: 100,
+  },
+  {
+    id: 8,
+    title: "ŞQTM",
+    image: img,
+    href: "/category/gas-regulator-cabinets",
+    price: 100,
+  },
+  {
+    id: 9,
+    title: "Qaz aksessuarları",
+    image: img,
+    href: "/category/gas-accessories",
+    price: 100,
+  },
+  {
+    id: 10,
+    title: "İstilik məhsulları",
+    image: img,
+    href: "/category/heating-products",
+    price: 100,
+  },
+];

@@ -1,12 +1,7 @@
-import ContactForm from '@/sections/(user)/contact/contact_form'
-import React from 'react'
+import ContactForm from "@/sections/(user)/contact/contact_form";
 
 const ContactContainer = () => {
-  return (
-    <main>
-      <ContactForm />
-    </main>
-  )
-}
+  return <ContactForm />;
+};
 
-export default ContactContainer
+export default ContactContainer;

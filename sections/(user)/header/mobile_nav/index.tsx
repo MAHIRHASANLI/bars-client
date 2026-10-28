@@ -3,11 +3,11 @@ import ActionIcons from "@/components/(user)/navbar/action_icons";
 import LogoComponent from "@/components/(user)/navbar/logo";
 import MobileMenuButton from "@/components/(user)/navbar/mobile_menu_button";
 import MobileNavbarContent from "@/components/(user)/navbar/mobile_navbar_content";
+import { useState } from "react";
 
-import React from "react";
 
 const MobileNavbar = () => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>

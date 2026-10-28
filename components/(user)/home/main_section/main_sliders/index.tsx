@@ -112,19 +112,17 @@ const SwiperSliders = () => {
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         loop={true}
         modules={[Pagination, Autoplay]}
-        className="mySwiper w-full "
+      className="mySwiper h-[450px] w-full max-[767px]:h-[380px]"
       >
         {heroSlides.map((slide, i) => (
-          <SwiperSlide key={slide.id} >
+          <SwiperSlide key={slide.id} className="!h-full">
             <SwiperItem slide={slide} priority={i === 0} />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Nöqtələr Swiper-dən kənardadır ki, bannerin altına sallana bilsin */}
       <div className={dotsClass} />
     </div>
   );
 };
-
 export default SwiperSliders;
