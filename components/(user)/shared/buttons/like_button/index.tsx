@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoMdHeart } from "react-icons/io";
 
-const LikeButton = () => {
+const LikeButtonComponent = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,12 +27,12 @@ const LikeButton = () => {
       aria-label={isLiked ? "Bəyənməni geri götür" : "Bəyən"}
     >
       {isLiked ? (
-        <IoMdHeart className="size-7 max-[1000px]:size-6 text-(--logo-color) cursor-pointer transition-colors duration-200" />
+        <IoMdHeart className="size- max-[1000px]:size-6 text-(--logo-color) cursor-pointer transition-colors duration-200" />
       ) : (
-        <CiHeart className="size-7 max-[1000px]:size-6 text-(--secondary-color) hover:text-(--logo-color) cursor-pointer transition-colors duration-200" />
+        <CiHeart className="size- max-[1000px]:size-6 text-(--secondary-color) hover:text-(--logo-color) cursor-pointer transition-colors duration-200" />
       )}
     </button>
   );
 };
 
-export default LikeButton;
+export default LikeButtonComponent;
