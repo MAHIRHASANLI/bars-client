@@ -1,5 +1,7 @@
 import { LinkType } from "@/types/links";
 export const links: LinkType[] = [
+
+  
   {
     title: "Yapışdırıcı",
     href: "/category/adhesives",

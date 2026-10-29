@@ -2,16 +2,9 @@
 import Image, { StaticImageData } from "next/image";
 import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
 import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
+import { BusinessAreaCardProps } from "@/types/links";
 
-// Kartın məlumatlarını və görünüş variantını müəyyən edir.
-type BusinessAreaCardProps = {
-  badge: string;
-  title: string;
-  description: string;
-  image: StaticImageData;
-  variant: "large" | "small";
-  href:string
-};
+
 
 const BusinessAreaCard = ({
   badge,

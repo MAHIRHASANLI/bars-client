@@ -3,7 +3,67 @@ import CategorySidebarComponent from "@/components/(user)/catecory/category_side
 import PageHeading from "@/components/(user)/shared/page_heading_component";
 import { getCategoryByHref } from "@/utils/get_category_by_href";
 import { notFound } from "next/navigation";
-import { products } from "@/api/linklerin_muveqqeti_yerlesmesi";
+import img from "@/images/tenzimleyicilerin-temiri-img.png";
+import { ProductType } from "@/types/links";
+
+export const products: ProductType[] = [
+    {
+      id: 13,
+      badge: "ENDİRİM",
+      title: "Montaj yapışdırıcısı",
+      subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
+      price: 6.5,
+      newPrice: 8.5,
+      imgUrl: img,
+      slug: "montaj-yapisdiricisi",
+    },
+    {
+      id: 1,
+      badge: "POPULYAR",
+      title: "Montaj yapışdırıcısı",
+      subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
+      price: 8.5,
+      imgUrl: img,
+      slug: "montaj-yapisdiricisi",
+    },
+    {
+      id: 12,
+      badge: "endirim",
+      title: "Montaj yapışdırıcısı",
+      subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
+      price: 8.5,
+      newPrice:4.5,
+      imgUrl: img,
+      slug: "montaj-yapisdiricisi",
+    },
+    {
+      id: 13,
+      badge: "POPULYAR",
+      title: "Montaj yapışdırıcısı",
+      subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
+      price: 8.5,
+      imgUrl: img,
+      slug: "montaj-yapisdiricisi",
+    },
+    {
+      id: 2,
+      badge: "POPULYAR",
+      title: "Silikon yapışdırıcı",
+      subtitle: "Təmir və quraşdırma işləri üçün praktik həll.",
+      price: 6.5,
+      imgUrl: img,
+      slug: "silikon-yapisdirici",
+    },
+    {
+      id: 3,
+      badge: "YENİ",
+      title: "Universal yapışdırıcı",
+      subtitle: "Müxtəlif məişət və təmir işlərində istifadə üçün.",
+      price: 10,
+      imgUrl: img,
+      slug: "universal-yapisdirici",
+    },
+];
 
 const ContentCategorySection = ({ pathname }: { pathname: string }) => {
   const category = getCategoryByHref(pathname);

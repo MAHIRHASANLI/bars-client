@@ -1,11 +1,13 @@
 import { Heart } from "lucide-react";
-import React from "react";
+import Link from "next/link";
 
 const BtnIconFolloverComponent = () => {
   return (
-    <button>
+    <div>
+      <Link href="/follover">
       <Heart className="size-4 cursor-pointer max-[1000px]:size-5" />
-    </button>
+    </Link>
+    </div>
   );
 };
 

@@ -1,36 +1,13 @@
 import ContactServiceLinkComp from "@/utils/contact_service_link_comp";
 import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
-import { Package, Headset, Truck } from "lucide-react";
+import { benefitsSectionDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
 
-export const serviceCards = [
-  {
-    title: "Geniş məhsul çeşidi",
-    description:
-      "Tikinti materialları, yapışdırıcılar və qaz avadanlıqları ilə ehtiyaclarınıza uyğun həllər.",
-    icon: Package,
-    href: "/products",
-  },
-  {
-    title: "Peşəkar məsləhət",
-    description:
-      "Layihənizə və texniki tələblərinizə uyğun məhsulların seçilməsi üçün sizə dəstək oluruq.",
-    icon: Headset,
-    href: "/contact",
-  },
-  {
-    title: "Topdan satış imkanları",
-    description:
-      "Biznesinizin ehtiyaclarına uyğun məhsul təchizatı və əməkdaşlıq imkanları.",
-    icon: Truck,
-    href: "/contact",
-  },
-];
-
+{/*11 Şirkətin üstünlükləri */}
 const BenefitsSection = () => {
   return (
     <section className="py-8">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-        {serviceCards.map(({ title, description, icon: Icon, href }) => (
+        {benefitsSectionDatas.map(({ title, description, icon: Icon, href }) => (
           <div
             key={title}
             className="flex flex-col items-center justify-center gap-8 rounded-2xl border border-gray-200 p-6 transition-shadow duration-300 hover:shadow-md"

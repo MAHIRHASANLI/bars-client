@@ -1,8 +1,8 @@
 import FeaturedCarouselComponent from "@/components/(user)/shared/carousels/featured_carousel/feature_carousel_component";
-
 import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
-import ProductCardComponent from "@/components/(user)/shared/carousels/featured_carousel/feature_card_component";
-import { products } from "@/api/linklerin_muveqqeti_yerlesmesi";
+import ProductCardComponent from "@/components/(user)/shared/carousels/featured_carousel/feature_carousel_card_component";
+import { enerjiNProductsDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
+
 const EnerjiNProductsSection = () => {
 
   return (
@@ -10,7 +10,7 @@ const EnerjiNProductsSection = () => {
       <SubheadingComponent title="Peşəkar qaz həlləri — ENERJİ-N" description="" />
 
       <FeaturedCarouselComponent>
-        {products?.map((item) => (
+        {enerjiNProductsDatas?.map((item) => (
           <ProductCardComponent key={item.id} item={item} />
         ))}
       </FeaturedCarouselComponent>

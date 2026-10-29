@@ -4,12 +4,17 @@ import Link from 'next/link'
 import { formatPrice } from '@/utils/format_price_component'
 import { ProductType } from '@/types/links'
 
-const CarouselItemComponent = ({ item }: { item: ProductType }) => {
-  // Endirim: köhnə qiymət (oldPrice) cari qiymətdən böyükdürsə göstərilir.
-  // Əgər ProductType-da sahənin adı fərqlidirsə (məs. discountPrice), yalnız bu iki sətri dəyiş.
-  const hasDiscount = !!item.oldPrice && item.oldPrice > item.price
+const ContentCarouselCardComponent = ({ item }: { item: ProductType }) => {
+  // price    = normal / əvvəlki qiymət (həmişə var)
+  // newPrice = endirimdən sonrakı qiymət (yalnız endirimli məhsullarda var)
+  const hasDiscount =
+    typeof item.newPrice === 'number' && item.newPrice < item.price
+
+  // Satış qiyməti: endirim varsa newPrice, yoxsa price
+  const currentPrice = hasDiscount ? item.newPrice! : item.price
+
   const discountPercent = hasDiscount
-    ? Math.round((1 - item.price / item.oldPrice!) * 100)
+    ? Math.round((1 - item.newPrice! / item.price) * 100)
     : 0
 
   return (
@@ -17,8 +22,6 @@ const CarouselItemComponent = ({ item }: { item: ProductType }) => {
       href={item.slug}
       className="group flex h-full flex-col rounded-3xl bg-white p-2 shadow-[0_2px_12px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.04] transition-shadow duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1d1d1f] motion-reduce:transition-none"
     >
-      {/* Şəkil paneli: iç radius = 24px - 8px padding = 16px (rounded-2xl).
-          Hündürlük 288px (h-72), mobildə 208px (h-52) */}
       <div className="relative h-64 rounded-2xl bg-[#f5f5f7] max-[800px]:h-52">
         {item.badge && (
           <span className="absolute uppercase left-2 top-2 z-10 rounded-full bg-white px-3 py-1 text-xs font-medium text-[#b64400] shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
@@ -38,13 +41,11 @@ const CarouselItemComponent = ({ item }: { item: ProductType }) => {
             alt={item.title}
             fill
             sizes="(max-width: 800px) 80vw, 33vw"
-            // Ağ fonlu şəkillər boz panelin üzərində qutu kimi görünməsin deyə
             className="object-contain mix-blend-multiply"
           />
         </div>
       </div>
 
-      {/* Mətn */}
       <div className="flex flex-1 flex-col px-3 pb-4 pt-5 max-[800px]:px-2 max-[800px]:pt-4">
         <h3 className="line-clamp-2 text-xl font-semibold leading-tight tracking-tight text-[#1d1d1f] max-[800px]:text-lg">
           {item.title}
@@ -56,18 +57,19 @@ const CarouselItemComponent = ({ item }: { item: ProductType }) => {
           </p>
         )}
 
-        {/* Qiymət və Ətraflı: mt-auto sayəsində bütün kartlarda eyni xəttdə dayanır */}
         <div className="mt-auto flex flex-wrap items-end justify-between gap-x-3 gap-y-2 pt-4">
           <div>
             {hasDiscount && (
               <p className="text-xs text-(--secondary-color)">
-                <span className="sr-only">Köhnə qiymət: 333333</span>
-                <s>{formatPrice(item.oldPrice!)} ₼</s>
+                <span className="sr-only">
+                  Köhnə qiymət: {formatPrice(item.price)} ₼
+                </span>
+                <s aria-hidden="true">{formatPrice(item.price)} ₼</s>
               </p>
             )}
             <p className="text-[#1d1d1f]">
               <span className="text-lg font-semibold max-[800px]:text-base">
-                {formatPrice(item.price)} ₼
+                {formatPrice(currentPrice)} ₼
               </span>
               <span className="ml-1 text-xs text-(--secondary-color)">-dən</span>
             </p>
@@ -94,4 +96,4 @@ const CarouselItemComponent = ({ item }: { item: ProductType }) => {
   )
 }
 
-export default CarouselItemComponent
+export default ContentCarouselCardComponent

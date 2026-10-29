@@ -1,5 +1,5 @@
 "use client";
-import ActionIcons from "@/components/(user)/navbar/action_icons";
+import ActionIcons from "@/components/(user)/navbar/btns_icons_action";
 import LogoComponent from "@/components/(user)/navbar/logo";
 import MobileMenuButton from "@/components/(user)/navbar/mobile_menu_button";
 import MobileNavbarContent from "@/components/(user)/navbar/mobile_navbar_content";

@@ -38,12 +38,21 @@ export type ProductType = {
   badge?: string;
   title: string;
   subtitle: string;
-  price: number; // Cari satış qiyməti
-  oldPrice?: number; // Əvvəlki qiymət (endirim olduqda)
+  newPrice?: number; // ENDIRIMLI satış qiyməti(endirim olduqda)
+  price: number; // Cari  qiymet ve ya Əvvəlki qiymət 
   imgUrl: StaticImageData;
   slug: string;
 };
 
+// Kartın məlumatlarını və görünüş variantını müəyyən edir.
+export type BusinessAreaCardProps = {
+  badge: string;
+  title: string;
+  description: string;
+  image: StaticImageData;
+  variant: "large" | "small";
+  href:string
+};
 
 //! Xəbərlər və bloq yazıları üçün məlumat strukturunu müəyyən edir.
 export type NewsPostType = {
@@ -65,14 +74,14 @@ export type PartnerType = {
 };
 
 //! EHTIYAT HISSELERI
-export type SparePartType = {
-  id: number;
-  title: string;
-  description: string;
-  category: string;
-  imgUrl: StaticImageData | string;
-  slug: string;
-};
+        // export type SparePartType = {
+        //   id: number;
+        //   title: string;
+        //   description: string;
+        //   category: string;
+        //   imgUrl: StaticImageData | string;
+        //   slug: string;
+        // };
 
 //! CONTACT Sehifesi 
 export type FeedbackFormInputType = {

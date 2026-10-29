@@ -5,6 +5,17 @@ import { formatPrice } from "@/utils/format_price_component";
 import Image from "next/image";
 
 const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
+  // price    = normal / əvvəlki qiymət (həmişə var)
+  // newPrice = endirimdən sonrakı qiymət (yalnız endirimli məhsullarda var)
+  const hasDiscount =
+    typeof item.newPrice === "number" && item.newPrice < item.price;
+
+  // Satış qiyməti: endirim varsa newPrice, yoxsa price
+  const currentPrice = hasDiscount ? item.newPrice! : item.price;
+
+  // Qənaət olunan məbləğ
+  const savedAmount = hasDiscount ? item.price - item.newPrice! : 0;
+
   return (
     <div className="relative flex items-center justify-center h-full min-h-98  max-[800px]:h-105 flex-col  bg-white p-4  max-[800px]:py-0  duration-300">
       <div className="relative  p-6">
@@ -35,27 +46,34 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
       <div className="text-center">
         {/* Köhnə qiymət üçün həmişə eyni hündürlük */}
         <div className="h-6 text-lg leading-[1.2] text-(--secondary-color) max-[800px]:h-4 max-[800px]:text-xs">
-          {item.oldPrice ? (
-            <span className="line-through">{formatPrice(item.oldPrice)} ₼</span>
+          {hasDiscount ? (
+            <>
+              <span className="sr-only">
+                Köhnə qiymət: {formatPrice(item.price)} ₼
+              </span>
+              <span className="line-through" aria-hidden="true">
+                {formatPrice(item.price)} ₼
+              </span>
+            </>
           ) : null}
         </div>
 
         {/* Cari qiymət */}
         <div className="text-base leading-[1.2] max-[800px]:text-xs font-bold">
           <span className="text-(--logo-color)">
-            {formatPrice(item.price)} ₼
+            {formatPrice(currentPrice)} ₼
           </span>
 
-          {item.oldPrice != null && item.oldPrice > item.price && (
+          {hasDiscount && (
             <span className="ml-1 text-xs text-(--color-tone-orange)">
-              -{formatPrice(item.oldPrice - item.price)} ₼
+              -{formatPrice(savedAmount)} ₼
             </span>
           )}
         </div>
 
         {/* Almaq düyməsi */}
         <div className="mt-7 w-full text-center">
-          <PrimaryButton href="/">Almaq</PrimaryButton>
+          <PrimaryButton href={item.slug}>Almaq</PrimaryButton>
         </div>
       </div>
 
@@ -65,23 +83,3 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
 };
 
 export default FeaturedCardComponent;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-   Alt başlıq: min-h 2 sətirlikdir ki, qiymət bütün kartlarda eyni xəttdə dursun 
-      <p className="text-center px-4 max-[1000px]:px-2 mb-4 max-[1000px]:mb-2 min-h-[2.4em] text-sm font-semibold leading-[1.2] text-[#1d1d1f] max-[1000px]:text-xs">
-        {item.subtitle}
-      </p>
-*/

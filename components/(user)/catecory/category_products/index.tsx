@@ -1,5 +1,5 @@
 import { ProductType } from "@/types/links";
-import ProductCardComponent from "../../shared/carousels/featured_carousel/feature_card_component";
+import ProductCardComponent from "../../shared/carousels/featured_carousel/feature_carousel_card_component";
 
 const CategoryProductsComponent = ({ products }: { products: ProductType[] }) => {
   return (
@@ -20,8 +20,8 @@ const CategoryProductsComponent = ({ products }: { products: ProductType[] }) =>
 
       {/* Kartlar */}
       <div className="mt-6 grid grid-cols-3 gap-x-6 gap-y-10 max-[1100px]:grid-cols-2 max-[700px]:grid-cols-1">
-        {products.map((item) => (
-          <ProductCardComponent key={item.id} item={item} />
+        {products.map((item,i) => (
+          <ProductCardComponent key={i} item={item} />
         ))}
       </div>
     </div>

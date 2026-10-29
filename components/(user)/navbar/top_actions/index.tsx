@@ -1,5 +1,5 @@
 import { ChevronDown } from 'lucide-react'
-import ActionIcons from '../action_icons'
+import ActionIcons from '../btns_icons_action'
 
 const TopActions = () => {
   return (

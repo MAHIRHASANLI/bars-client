@@ -1,53 +1,9 @@
 import GeneralCarouselComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_component";
-import { SparePartType } from "@/types/links";
 import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
-import spare_part from "@/images/saygac-temiri-img.png"
-import SparePartsSectionCarouselItem from "@/components/(user)/home/spare_parts_section_carousel_item";
+import ContentCarouselCardComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_card_component";
+import { sparePartsSectionDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
 
-export const spare_parts :  SparePartType[] = [
-  {
-    id: 1,
-    title: "Qaz sayğacı ehtiyat hissələri",
-    description:
-      "Qaz sayğaclarının təmiri və texniki xidməti üçün ehtiyat hissələri.",
-    category: "Qaz sayğacları",
-    imgUrl: spare_part,
-    slug: "qaz-saygaci-ehtiyat-hisseleri",
-  },
-  {
-    id: 2,
-    title: "Qaz tənzimləyici hissələri",
-    description: "Qaz təzyiq tənzimləyiciləri üçün uyğun ehtiyat hissələri.",
-    category: "Qaz tənzimləyiciləri",
-    imgUrl: spare_part,
-    slug: "qaz-tenzimleyici-ehtiyat-hisseleri",
-  },
-  {
-    id: 3,
-    title: "Qaz filtri hissələri",
-    description: "Qaz filtrlərinin texniki xidməti üçün ehtiyat detallar.",
-    category: "Qaz filtrləri",
-    imgUrl: spare_part,
-    slug: "qaz-filtri-ehtiyat-hisseleri",
-  },
-  {
-    id: 4,
-    title: "Klapan ehtiyat hissələri",
-    description: "Qaz klapanlarının təmiri və xidməti üçün ehtiyat hissələri.",
-    category: "Klapanlar",
-    imgUrl: spare_part,
-    slug: "klapan-ehtiyat-hisseleri",
-  },
-  {
-    id: 5,
-    title: "Sayğac aksesuarları",
-    description:
-      "Qaz sayğaclarının quraşdırılması və istifadəsi üçün uyğun aksesuarlar.",
-    category: "Aksesuarlar",
-    imgUrl: spare_part,
-    slug: "saygac-aksesuarları",
-  },
-];
+
 const SparePartsSection = () => {
   return (
     <section className="py-8 pb-3 max-[1000px]:py-5">
@@ -57,7 +13,7 @@ const SparePartsSection = () => {
       />
 
       <GeneralCarouselComponent preset="wide" className="pt-10 max-[1000px]:pt-6">
-        {spare_parts.map((item)=><SparePartsSectionCarouselItem key={item.id} item={item}/>)}
+        {sparePartsSectionDatas.map((item)=><ContentCarouselCardComponent key={item.id} item={item}/>)}
       </GeneralCarouselComponent>
     </section>
   );

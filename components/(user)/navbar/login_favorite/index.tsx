@@ -1,6 +1,6 @@
 import React from "react";
 import BtnIconFolloverComponent from "../btn_icon_follover";
-import BtnIconUserComponent from "../btn_icon_user";
+import BtnIconUserComponent from "../btn_icon_user/icon";
 
 const LoginAndFavoriteComponent = () => {
   return (

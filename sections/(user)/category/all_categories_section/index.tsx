@@ -1,12 +1,12 @@
 import GeneralCarouselComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_component";
 import AllProductSliderItem from "@/components/(user)/home/all_products_section_card_slider";
-import { defaultItems } from "@/api/linklerin_muveqqeti_yerlesmesi";
+import { allProductsCatecorySectionDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
 
 const AllCategoriesCarouselSection = () => {
   return (
     <section className="pb-3">
       <GeneralCarouselComponent preset="wide" className="">
-        {defaultItems.map((item) => (
+        {allProductsCatecorySectionDatas.map((item) => (
           <AllProductSliderItem
             key={item.id}
             item={item}

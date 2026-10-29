@@ -1,5 +1,5 @@
 import AboutSection from "@/sections/(user)/home/about";
-import AllProductsSection from "@/sections/(user)/home/all_products_section";
+import AllProductsCatecorySection from "@/sections/(user)/home/all_products_section";
 import BarsProductsSection from "@/sections/(user)/home/bars_products_section";
 import BenefitsSection from "@/sections/(user)/home/benefits_section";
 import BusinessAreasSection from "@/sections/(user)/home/business_areas_section";
@@ -16,71 +16,71 @@ import SparePartsSection from "@/sections/(user)/home/spare_parts_section";
 const HomeContainer = () => {
   return (
     <main>
-      {/* Əsas banner və təqdimat bölməsi */}
+      {/*1 Əsas banner və təqdimat bölməsi */}
       <MainSections />
 
-      {/* Bütün məhsul kateqoriyalarının siyahısı */}
-      <AllProductsSection />
+      {/*2 Bütün məhsul kateqoriyalarının siyahısı */}
+      <AllProductsCatecorySection />
 
       {/* Bölmələri vizual olaraq ayıran tam enli xətt */}
       <div className="full-bleed-line" />
 
-      {/* Yeni məhsullar */}
+      {/*3 Yeni məhsullar a goz atin*/}
       <NewProductsSection />
 
       <div className="full-bleed-line" />
 
-      {/* Xəbərlər və əməkdaşlıq bölməsi */}
+      {/*4 Xəbərlər və əməkdaşlıq bölməsi */}
       <NewsPartnershipsSection />
 
       <div className="full-bleed-line" />
 
-      {/* Xidmətlər, çatdırılma və digər imkanlar */}
+      {/*5 Xidmətlər, çatdırılma və digər imkanlar */}
       <ServicesAndMoreSection />
 
       <div className="full-bleed-line" />
 
-      {/* Şirkətlərin fəaliyyət istiqamətləri */}
+      {/*6 Şirkətlərin fəaliyyət istiqamətləri */}
       <BusinessAreasSection />
 
       <div className="full-bleed-line" />
 
-      {/* BARS məhsullarının təqdimatı */}
+      {/*7 BARS məhsullarının təqdimatı */}
       <BarsProductsSection />
 
       <div className="full-bleed-line" />
 
-      {/* Xəbərlər və faydalı məlumatlar */}
+      {/*8 Xəbərlər və faydalı məlumatlar */}
       <NewsSection />
 
       <div className="full-bleed-line" />
 
-      {/* ENERJİ-N qaz və sənaye avadanlıqları */}
+      {/*9 ENERJİ-N qaz və sənaye avadanlıqları */}
       <EnerjiNProductsSection />
 
       <div className="full-bleed-line" />
 
-      {/* Tərəfdaş brendlər */}
+      {/*10 Tərəfdaş brendlər */}
       <PartnershipsSection />
 
       <div className="full-bleed-line" />
 
-      {/* Şirkətin üstünlükləri */}
+      {/*11 Şirkətin üstünlükləri */}
       <BenefitsSection />
 
       <div className="full-bleed-line" />
 
-      {/* Sürətli sifariş bölməsi */}
+      {/*12 Sürətli sifariş bölməsi "Sifarişinizi tez bir zamanda rəsmiləşdirin*/}
       <QuickOrderSection />
 
       <div className="full-bleed-line" />
 
-      {/* Ehtiyat hissələrinin təqdimatı */}
+      {/*13 Ehtiyat hissələrinin təqdimatı */}
       <SparePartsSection />
 
       <div className="full-bleed-line" />
 
-      {/* Şirkət haqqında məlumat */}
+      {/*14 Şirkət haqqında məlumat */}
       <AboutSection />
     </main>
   );
