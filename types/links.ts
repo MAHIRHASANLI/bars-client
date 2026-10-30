@@ -74,14 +74,14 @@ export type PartnerType = {
 };
 
 //! EHTIYAT HISSELERI
-        // export type SparePartType = {
-        //   id: number;
-        //   title: string;
-        //   description: string;
-        //   category: string;
-        //   imgUrl: StaticImageData | string;
-        //   slug: string;
-        // };
+        export type SparePartType = {
+          id: number;
+          title: string;
+          description: string;
+          category: string;
+          imgUrl: StaticImageData | string;
+          slug: string;
+        };
 
 //! CONTACT Sehifesi 
 export type FeedbackFormInputType = {
