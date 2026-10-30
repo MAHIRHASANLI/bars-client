@@ -1,14 +1,16 @@
 "use client";
+
 import ActionIcons from "@/components/(user)/navbar/btns_icons_action";
 import LogoComponent from "@/components/(user)/navbar/logo";
 import MobileMenuButton from "@/components/(user)/navbar/mobile_menu_button";
 import MobileNavbarContent from "@/components/(user)/navbar/mobile_navbar_content";
 import { useState } from "react";
 
-
 const MobileNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+function handleCloseMenu(){
+  setIsOpen(false)
+}
   return (
     <div>
       <div className="flex items-center justify-between w-full h-20 bg-white sticky top-0 z-50 min-[1000px]:none min-[1000px]:hidden">
@@ -16,8 +18,11 @@ const MobileNavbar = () => {
         <LogoComponent />
         <ActionIcons />
       </div>
+
       <div>
-        {isOpen && <MobileNavbarContent />}
+        {isOpen && (
+          <MobileNavbarContent  handleCloseMenu={handleCloseMenu} />
+        )}
       </div>
     </div>
   );

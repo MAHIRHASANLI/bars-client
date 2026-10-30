@@ -1,7 +1,5 @@
 import { LinkType } from "@/types/links";
 export const links: LinkType[] = [
-
-  
   {
     title: "Yapışdırıcı",
     href: "/category/adhesives",
@@ -141,7 +139,17 @@ export const links: LinkType[] = [
 ];
 import Link from "next/link";
 
-export const LinksComponent = () => {
+export const LinksComponent = ({
+  handleCloseMenu,
+}: {
+  handleCloseMenu?: () => void;
+}) => {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.blur();
+    setTimeout(() => {
+      handleCloseMenu?.();
+    }, 300);
+  };
   const classLink =
     "text-black text-[14px] hover:text-(--logo-color) relative  min-[1000px]:after:block  after:absolute after:content-['']  after:w-full  min-[1000px]:after:h-px  after:bottom-0  after:opacity-0  after:bg-(--logo-color) hover:after:opacity-100";
   return (
@@ -164,30 +172,28 @@ export const LinksComponent = () => {
               }
             `}
           >
-            <Link href={href} className={classLink}  onClick={(e) => e.currentTarget.blur()}>
+            <Link href={href} className={classLink} onClick={handleLinkClick}>
               {title}
             </Link>
 
             {hasChildren && (
               <ul
                 className="
-                  /* Desktop: hover olanda açılan menyu */
-                 min-[1000px]:p-5 min-[1000px]:absolute min-[1000px]:left-0 min-[1000px]:top-6
-                  min-[1000px]:z-50 min-[1000px]:min-w-62
-                  min-[1000px]:bg-white min-[1000px]:py-2
-                  min-[1000px]:shadow-[0px_2px_8px_rgba(99,99,99,0.2)]
-                  min-[1000px]:invisible min-[1000px]:opacity-0 min-[1000px]:translate-y-1
-                  min-[1000px]:transition min-[1000px]:duration-200
-                  min-[1000px]:group-hover:visible min-[1000px]:group-hover:opacity-100 min-[1000px]:group-hover:translate-y-0
-                  min-[1000px]:group-focus-within:visible min-[1000px]:group-focus-within:opacity-100 min-[1000px]:group-focus-within:translate-y-0
-                  /* Mobil: link altında içəridən sıralanır */
-                  max-[1000px]:pl-4 max-[1000px]:pt-2
-                "
+                          absolute left-0 top-6 z-50 min-w-62
+                          bg-white p-5 py-2 shadow-[0px_2px_8px_rgba(99,99,99,0.2)]
+                          invisible translate-y-1 opacity-0
+                          transition duration-200
+                          group-hover:visible group-hover:translate-y-0 group-hover:opacity-100
+                          group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100
+                          max-[999px]:static max-[999px]:visible max-[999px]:translate-y-0
+                          max-[999px]:pl-4 max-[999px]:pt-2 max-[999px]:opacity-100
+                          max-[999px]:shadow-none
+                        "
               >
                 {children!.map(({ href = "", title }, index) => (
                   <li key={index}>
                     <Link
-                      onClick={(e) => e.currentTarget.blur()}
+                      onClick={handleLinkClick}
                       href={href}
                       className={`inline-block pt-2 ${classLink} `}
                     >

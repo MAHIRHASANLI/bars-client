@@ -1,5 +1,5 @@
 "use client";
-import React, { Children, CSSProperties, ReactNode } from "react";
+import React, { Children,  ReactNode } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";

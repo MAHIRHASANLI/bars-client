@@ -18,11 +18,11 @@ export type ServiceType = {
 const ServicesAndMoreSection = () => {
 
   return (
-    <section className="py-8 pb-3 max-[1000px]:py-5">
+    <section className="py-8 pb-16 max-[1000px]:py-5 max-[1000px]:pb-10">
       <SubheadingComponent
         title="Xidmətləri və daha çoxunu kəşf edin"
       />
-        <GeneralCarouselComponent preset="wide" className="min-[1000px]:pt-10">
+        <GeneralCarouselComponent preset="wide" showNavigation={false} className="min-[1000px]:pt-10">
           {servicesAndMoreSectionDatas.map((s) => (
             <ServicesMoreCarouselItem key={s.id} service={s} />
           ))}

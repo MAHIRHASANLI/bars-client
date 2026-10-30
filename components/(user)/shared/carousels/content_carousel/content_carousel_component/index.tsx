@@ -21,26 +21,26 @@ const carouselPresets = {
       1024: { slidesPerView: 6.5, spaceBetween: 50 },
       1280: { slidesPerView: 7.5, spaceBetween: 30 },
     },
-    autoplay:{ delay: 7000, disableOnInteraction: false }
+    autoplay: { delay: 7000, disableOnInteraction: false },
   },
-  
+
   // 5 karta qədər, iri kartlar
   wide: {
     slidesPerView: 1.4,
     breakpoints: {
-      0: { slidesPerView: 1, spaceBetween: 20 },
+      0: { slidesPerView: 1.2, spaceBetween: 10 },
       640: { slidesPerView: 1.2, spaceBetween: 20 },
       800: { slidesPerView: 2, spaceBetween: 20 },
       1024: { slidesPerView: 3, spaceBetween: 30 },
       1280: { slidesPerView: 4, spaceBetween: 25 },
     },
-    autoplay:{ delay: 8000, disableOnInteraction: false }
+    autoplay: { delay: 8000, disableOnInteraction: false },
   },
   // Ekranda yalnız 1 tam şəkil
   single: {
     slidesPerView: 1,
     spaceBetween: 20,
-    autoplay:{ delay: 9000, disableOnInteraction: false }
+    autoplay: { delay: 9000, disableOnInteraction: false },
   },
 } satisfies Record<string, SwiperOptions>;
 
@@ -50,6 +50,7 @@ type Props = {
   children: ReactNode[];
   preset?: CarouselPreset;
   className?: string;
+  showNavigation?: boolean;
 };
 
 // Tailwind class-ları tam yazılmalıdır
@@ -65,10 +66,11 @@ const presetClasses: Record<CarouselPreset, string> = {
 const arrowClasses =
   "size-9 rounded-full bg-black/5 hover:bg-black/10 disabled:invisible";
 
-const GeneralCarouselComponent = ({
+const ContentCarouselComponent = ({
   children,
   preset = "compact",
   className = "",
+  showNavigation = true,
 }: Props) => {
   const swiperRef = useRef<SwiperType | null>(null);
   const [isBeginning, setIsBeginning] = useState(true);
@@ -91,7 +93,6 @@ const GeneralCarouselComponent = ({
     <div className={`w-full h-full ${className}`}>
       <Swiper
         {...carouselPresets[preset]}
-        
         modules={[Autoplay]}
         onSwiper={(s) => {
           swiperRef.current = s;
@@ -109,8 +110,8 @@ const GeneralCarouselComponent = ({
         ))}
       </Swiper>
 
-      {!isSingle && (
-        <div className="mt-6 flex justify-end gap-2">
+      {!isSingle && showNavigation && (
+        <div className="mt-6 flex justify-end gap-2 ">
           <button
             type="button"
             aria-label="Əvvəlki"
@@ -135,7 +136,7 @@ const GeneralCarouselComponent = ({
   );
 };
 
-export default GeneralCarouselComponent;
+export default ContentCarouselComponent;
 
 /*
 const GeneralCarouselComponent = ({

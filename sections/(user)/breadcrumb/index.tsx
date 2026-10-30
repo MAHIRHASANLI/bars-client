@@ -24,10 +24,10 @@ const BreadcrumbSection = () => {
     .filter((link) => link !== undefined);
 
   return (
-    <nav
-      aria-label="Breadcrumb"
-      className="fluid border-y border-(--line-color) p-2 mb-4"
-    >
+<nav
+  aria-label="Breadcrumb"
+  className="fluid relative z-10 border-y border-(--line-color) p-2 mb-4"
+>
       <div className="main-container">
         <ol className="flex items-center">
           <li className="flex items-center text-sm font-semibold text-(--logo-color) hover:text-(--logo-color-hover)">

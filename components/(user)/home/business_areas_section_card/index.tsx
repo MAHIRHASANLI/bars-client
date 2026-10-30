@@ -1,5 +1,5 @@
 
-import Image, { StaticImageData } from "next/image";
+import Image  from "next/image";
 import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
 import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
 import { BusinessAreaCardProps } from "@/types/links";
@@ -39,11 +39,11 @@ const BusinessAreaCard = ({
       </div>
 
       <div className="text-center min-[1000px]:w-[65%]">
-        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-(--color-tone-orange)">
+        <span className="mb-2 text-xs font-semibold uppercase tracking-widest text-(--color-tone-orange)">
           {badge}
         </span>
 
-        <SubheadingComponent title={title} description={description}/>
+        <SubheadingComponent title={title} description={description} className="center"/>
 
         <div className="mt-6"><PrimaryButton href={href}>Daha Ətraflı</PrimaryButton></div>
       </div>

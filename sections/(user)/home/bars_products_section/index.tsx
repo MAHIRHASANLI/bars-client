@@ -6,7 +6,7 @@ const BarsProductsSection = () => {
 
   return (
     <section className="py-8">
-      <SubheadingComponent title="Keyfiyyət BARS ilə başlayır" description="" />
+      <SubheadingComponent title="Keyfiyyət BARS ilə başlayır" />
 
       <FeaturedCarouselComponent>
         {barsProductsDatas?.map((item) => (

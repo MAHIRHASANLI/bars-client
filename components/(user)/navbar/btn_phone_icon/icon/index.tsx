@@ -1,6 +1,6 @@
-import { Phone } from "lucide-react";
 import PhoneModalComponent from "../phone_modal";
 import { useState } from "react";
+import { LiaPhoneSolid } from "react-icons/lia";
 
 const PhoneIconComponent = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -8,7 +8,7 @@ const PhoneIconComponent = () => {
   return (
     <div className="relative">
       <button onClick={handleOpenModal}>
-        <Phone className="size-4 cursor-pointer" />
+        <LiaPhoneSolid   className="size-5 cursor-pointer" />
       </button>
       {isOpenModal && <PhoneModalComponent setIsOpenModal={setIsOpenModal}/>}
     </div>

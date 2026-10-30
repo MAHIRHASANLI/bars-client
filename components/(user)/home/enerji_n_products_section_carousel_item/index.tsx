@@ -1,4 +1,4 @@
-import LikeButton from "@/components/(user)/shared/buttons/like_button";
+import LikeButton from "@/components/(user)/shared/buttons/btn_like";
 import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
 import { ProductType } from "@/types/links";
 import { formatPrice } from "@/utils/format_price_component";

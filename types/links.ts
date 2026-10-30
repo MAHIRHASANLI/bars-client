@@ -38,8 +38,8 @@ export type ProductType = {
   badge?: string;
   title: string;
   subtitle: string;
-  newPrice?: number; // ENDIRIMLI satış qiyməti(endirim olduqda)
-  price: number; // Cari  qiymet ve ya Əvvəlki qiymət 
+  price: number; // Cari satış qiyməti
+  oldPrice?: number; // Endirimdən əvvəlki qiymət
   imgUrl: StaticImageData;
   slug: string;
 };

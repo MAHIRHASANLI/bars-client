@@ -1,21 +1,22 @@
-// NewProductCard.tsx (server komponent, "use client" yoxdur)
-import Image from 'next/image'
-import Link from 'next/link'
-import { formatPrice } from '@/utils/format_price_component'
-import { ProductType } from '@/types/links'
 
-const ContentCarouselCardComponent = ({ item }: { item: ProductType }) => {
-  // price    = normal / əvvəlki qiymət (həmişə var)
-  // newPrice = endirimdən sonrakı qiymət (yalnız endirimli məhsullarda var)
+import Image from "next/image";
+import Link from "next/link";
+import { formatPrice } from "@/utils/format_price_component";
+import { ProductType } from "@/types/links";
+
+const ContentCarouselCardComponent = ({
+  item,
+}: {
+  item: ProductType;
+}) => {
+  // Endirimin olub-olmadığını yoxlayırıq.
   const hasDiscount =
-    typeof item.newPrice === 'number' && item.newPrice < item.price
+    typeof item.oldPrice === "number" && item.oldPrice > item.price;
 
-  // Satış qiyməti: endirim varsa newPrice, yoxsa price
-  const currentPrice = hasDiscount ? item.newPrice! : item.price
-
+  // Endirim faizini hesablayırıq.
   const discountPercent = hasDiscount
-    ? Math.round((1 - item.newPrice! / item.price) * 100)
-    : 0
+    ? Math.round((1 - item.price / item.oldPrice!) * 100)
+    : 0;
 
   return (
     <Link
@@ -24,7 +25,7 @@ const ContentCarouselCardComponent = ({ item }: { item: ProductType }) => {
     >
       <div className="relative h-64 rounded-2xl bg-[#f5f5f7] max-[800px]:h-52">
         {item.badge && (
-          <span className="absolute uppercase left-2 top-2 z-10 rounded-full bg-white px-3 py-1 text-xs font-medium text-[#b64400] shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
+          <span className="absolute left-2 top-2 z-10 rounded-full bg-white px-3 py-1 text-xs font-medium uppercase text-[#b64400] shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
             {item.badge}
           </span>
         )}
@@ -62,16 +63,21 @@ const ContentCarouselCardComponent = ({ item }: { item: ProductType }) => {
             {hasDiscount && (
               <p className="text-xs text-(--secondary-color)">
                 <span className="sr-only">
-                  Köhnə qiymət: {formatPrice(item.price)} ₼
+                  Köhnə qiymət: {formatPrice(item.oldPrice!)} ₼
                 </span>
-                <s aria-hidden="true">{formatPrice(item.price)} ₼</s>
+                <s aria-hidden="true">
+                  {formatPrice(item.oldPrice!)} ₼
+                </s>
               </p>
             )}
+
             <p className="text-[#1d1d1f]">
               <span className="text-lg font-semibold max-[800px]:text-base">
-                {formatPrice(currentPrice)} ₼
+                {formatPrice(item.price)} ₼
               </span>
-              <span className="ml-1 text-xs text-(--secondary-color)">-dən</span>
+              <span className="ml-1 text-xs text-(--secondary-color)">
+                -dən
+              </span>
             </p>
           </div>
 
@@ -93,7 +99,7 @@ const ContentCarouselCardComponent = ({ item }: { item: ProductType }) => {
         </div>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default ContentCarouselCardComponent
+export default ContentCarouselCardComponent;

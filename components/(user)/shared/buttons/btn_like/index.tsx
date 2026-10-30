@@ -22,14 +22,13 @@ const LikeButtonComponent = () => {
     <button
       type="button"
       disabled={isLoading}
-      className="absolute right-2 top-2 disabled:opacity-30"
-      onClick={handleLike}
+      onClick={handleLike}  
       aria-label={isLiked ? "Bəyənməni geri götür" : "Bəyən"}
     >
       {isLiked ? (
-        <IoMdHeart className="size- max-[1000px]:size-6 text-(--logo-color) cursor-pointer transition-colors duration-200" />
+        <IoMdHeart className="size-6 max-[1000px]:size-4 text-(--logo-color) cursor-pointer transition-colors duration-200" />
       ) : (
-        <CiHeart className="size- max-[1000px]:size-6 text-(--secondary-color) hover:text-(--logo-color) cursor-pointer transition-colors duration-200" />
+        <CiHeart className="size-6 max-[1000px]:size-4 text-(--secondary-color) hover:text-(--logo-color) cursor-pointer transition-colors duration-200" />
       )}
     </button>
   );

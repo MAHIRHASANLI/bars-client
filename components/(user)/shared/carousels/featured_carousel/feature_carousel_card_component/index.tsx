@@ -1,28 +1,26 @@
-import LikeButtonComponent from "@/components/(user)/shared/buttons/like_button";
+
+import LikeButtonComponent from "@/components/(user)/shared/buttons/btn_like";
 import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
 import { ProductType } from "@/types/links";
 import { formatPrice } from "@/utils/format_price_component";
 import Image from "next/image";
+import BtnBasketIconComponent from "../../../buttons/btn_basket";
 
 const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
-  // price    = normal / əvvəlki qiymət (həmişə var)
-  // newPrice = endirimdən sonrakı qiymət (yalnız endirimli məhsullarda var)
+  // Endirimin olub-olmadığını yoxlayırıq.
   const hasDiscount =
-    typeof item.newPrice === "number" && item.newPrice < item.price;
+    typeof item.oldPrice === "number" && item.oldPrice > item.price;
 
-  // Satış qiyməti: endirim varsa newPrice, yoxsa price
-  const currentPrice = hasDiscount ? item.newPrice! : item.price;
-
-  // Qənaət olunan məbləğ
-  const savedAmount = hasDiscount ? item.price - item.newPrice! : 0;
+  // Qənaət olunan məbləğ.
+  const savedAmount = hasDiscount ? item.oldPrice! - item.price : 0;
 
   return (
-    <div className="relative flex items-center justify-center h-full min-h-98  max-[800px]:h-105 flex-col  bg-white p-4  max-[800px]:py-0  duration-300">
-      <div className="relative  p-6">
+    <div className="relative flex h-full min-h-98 flex-col items-center justify-center bg-white p-4 duration-300 max-[800px]:h-105 max-[800px]:py-0">
+      <div className="relative p-6">
         <Image
           src={item.imgUrl}
           alt={item.title}
-          className="object-contain mx-auto h-60 w-64 max-[800px]:h-42 max-[800px]:w-45 transition-transform duration-300 hover:scale-104"
+          className="mx-auto h-60 w-64 object-contain transition-transform duration-300 hover:scale-104 max-[800px]:h-42 max-[800px]:w-45"
         />
       </div>
 
@@ -34,12 +32,12 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
       )}
 
       {/* Başlıq */}
-      <h3 className="hover:underline cursor-pointer  text-center mb-1 text-2xl font-semibold leading-tight text-[#1d1d1f] max-[1000px]:text-xl">
+      <h3 className="mb-1 cursor-pointer text-center text-2xl font-semibold leading-tight text-[#1d1d1f] hover:underline max-[1000px]:text-xl">
         {item.title}
       </h3>
 
-      {/* Alt başlıq: min-h 2 sətirlikdir ki, qiymət bütün kartlarda eyni xəttdə dursun */}
-      <p className="text-center px-4 max-[1000px]:px-2 mb-2 max-[1000px]:mb-2 min-h-[2.4em] text-sm leading-[1.2] text-(--secondary-color) max-[1000px]:text-xs">
+      {/* Alt başlıq */}
+      <p className="mb-2 min-h-[2.4em] px-4 text-center text-sm leading-[1.2] text-(--secondary-color) max-[1000px]:mb-2 max-[1000px]:px-2 max-[1000px]:text-xs">
         {item.subtitle}
       </p>
 
@@ -49,19 +47,19 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
           {hasDiscount ? (
             <>
               <span className="sr-only">
-                Köhnə qiymət: {formatPrice(item.price)} ₼
+                Köhnə qiymət: {formatPrice(item.oldPrice!)} ₼
               </span>
               <span className="line-through" aria-hidden="true">
-                {formatPrice(item.price)} ₼
+                {formatPrice(item.oldPrice!)} ₼
               </span>
             </>
           ) : null}
         </div>
 
         {/* Cari qiymət */}
-        <div className="text-base leading-[1.2] max-[800px]:text-xs font-bold">
+        <div className="text-base font-bold leading-[1.2] max-[800px]:text-xs">
           <span className="text-(--logo-color)">
-            {formatPrice(currentPrice)} ₼
+            {formatPrice(item.price)} ₼
           </span>
 
           {hasDiscount && (
@@ -77,7 +75,10 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
         </div>
       </div>
 
-      <LikeButtonComponent />
+      <div className="absolute right-2 top-2 flex items-start gap-3 disabled:opacity-30">
+        <LikeButtonComponent />
+        <BtnBasketIconComponent product={item} />
+      </div>
     </div>
   );
 };

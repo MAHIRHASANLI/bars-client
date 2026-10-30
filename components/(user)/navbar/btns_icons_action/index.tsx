@@ -1,18 +1,17 @@
-import React from "react";
 import BtnFolloverComponent from "../btn_icon_follover";
 import BtnIconUserComponent from "../btn_icon_user/icon";
 import PhoneIconComponent from "../btn_phone_icon/icon";
-import BasketIconComponent from "../btn_basket_icon/icon";
+import BasketIconComponent from "../btn_basket/icon";
 
+//* NAVBAR-DAKI ƏMƏLİYYAT İKONLARI
+// Telefon, istifadəçi hesabı, izləmə siyahısı və səbət ikonlarını bir araya gətirir.
 const ActionIcons = () => {
   return (
-    <div className="flex items-center gap-5">
-      <div className="max-[1000px]:hidden">
-        <BtnFolloverComponent />
-      </div>
+    <div className="flex items-start gap-5 max-[1000px]:gap-4">
       <PhoneIconComponent />
       <BtnIconUserComponent />
-      <BasketIconComponent/>
+      <BtnFolloverComponent />
+      <BasketIconComponent />
     </div>
   );
 };

@@ -7,8 +7,8 @@ import { allProductsCatecorySectionDatas } from "@/api/linklerin_muveqqeti_yerle
 const AllProductsCatecorySection = () => {
   return (
     <section className="pb-3">
-      <SubheadingComponent title="Bütün məhsulları kəşf et" description="" />
-      <GeneralCarouselComponent preset="compact" className="min-[1000px]:pt-10">
+      <SubheadingComponent title="Bütün məhsulları kəşf et" />
+      <GeneralCarouselComponent preset="compact"  showNavigation={false} className="min-[1000px]:py-5">
         {allProductsCatecorySectionDatas.map((item) => (
           <AllProductSliderItem key={item.id} item={item} />
         ))}

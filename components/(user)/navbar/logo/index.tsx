@@ -22,7 +22,7 @@ const LogoComponent = () => {
         />
       </Link>
 
-      <div className="relative h-8 w-14 shrink-0 overflow-hidden rounded border border-gray-300 bg-white shadow-xs">
+      <div className="relative h-8 w-14 shrink-0 overflow-hidden rounded border border-gray-300 bg-white shadow-xs max-[1000px]:hidden">
         <Image
           alt="Enerji-N Nömrə Bir Qaz Avadanlıqları"
           src={logoNumberOne}
