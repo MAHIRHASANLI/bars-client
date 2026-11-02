@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChevronDown } from "lucide-react";
+import { FiChevronDown } from 'react-icons/fi';
 
 const Select = () => {
     const helpOptions = [
@@ -40,7 +40,7 @@ const Select = () => {
           <span
             className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
           >
-            <ChevronDown className="size-4" />
+           <FiChevronDown className="size-4" />
           </span>
         </button>
 

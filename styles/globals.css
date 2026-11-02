@@ -7,16 +7,46 @@
   --secondary-color: #6B7280;
   --logo-color: #0071e3;
   --logo-color-hover: #5698daee;
-  --bars-color-green:   #008900;
-
-    --color-tone-neutral: #6e6e73;
+  --bars-color-green: #008900;
+  --img-bg-color: #f5f5f7;
+  --color-tone-neutral: #6e6e73;
   --color-tone-blue: #0066cc;
   --color-tone-green: #008009;
   --color-tone-orange: #b64400;
 
 }
 
+/* //? (nazik scroll, oxsuz)/ */
+@layer utilities {
+  .thin-scroll::-webkit-scrollbar {
+    width: 4px;
 
+  }
+
+  .thin-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .thin-scroll::-webkit-scrollbar-thumb {
+    background: #6b6b6b;
+    border-radius: 6px;
+  }
+
+  .thin-scroll::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    .thin-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: #6b6b6b transparent;
+    }
+  }
+}
+
+/* //?/ */
 
 * {
   box-sizing: border-box;
@@ -79,6 +109,7 @@ section.section {
 .products-swiper {
   --swiper-navigation-sides-offset: 2px;
 }
+
 /* 
 .products-swiper {
   margin: -20px -16px -20px -16px!important;

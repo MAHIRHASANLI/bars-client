@@ -1,4 +1,4 @@
-import CategoryContainer from "@/containers/(user)/category_container";
+import CategoryContainer from "@/containers/(user)/category";
 import { getCategoryByHref } from "@/utils/get_category_by_href";
 import { notFound } from "next/navigation";
 

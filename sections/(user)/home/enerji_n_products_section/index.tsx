@@ -7,7 +7,7 @@ const EnerjiNProductsSection = () => {
 
   return (
     <section className="py-8">
-      <SubheadingComponent title="Peşəkar qaz həlləri — ENERJİ-N" description="" />
+      <SubheadingComponent title="Peşəkar qaz həlləri — ENERJİ-N"/>
 
       <FeaturedCarouselComponent>
         {enerjiNProductsDatas?.map((item) => (

@@ -1,7 +1,7 @@
 import { ServisPropsType } from "@/types/links";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { FiArrowUpRight } from "react-icons/fi";
 
 // Hər bir servis kartını göstərir
 const ServiceItemComponent = ({
@@ -32,16 +32,13 @@ const ServiceItemComponent = ({
           {title}
         </h3>
 
-        <p className="text-sm leading-6 text-gray-600">
-          {description}
-        </p>
+        <p className="text-sm leading-6 text-gray-600">{description}</p>
 
         {/* Ətraflı məlumat */}
         <div className="mt-auto flex items-center justify-between pt-5 text-sm font-medium text-(--logo-color)">
           <span>Ətraflı məlumat</span>
-          <ArrowUpRight
-            size={20}
-            className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+          <FiArrowUpRight
+            className="size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
           />
         </div>
       </div>

@@ -4,7 +4,7 @@ type InputPropsType = {
   item: FeedbackFormInputType;
 };
 
-const Input = ({ item }: InputPropsType) => {
+const InputComponent = ({ item }: InputPropsType) => {
   return (
     <div className="flex w-full min-w-0 flex-col gap-1">
       <label
@@ -34,4 +34,4 @@ const Input = ({ item }: InputPropsType) => {
   );
 };
 
-export default Input;
+export default InputComponent;

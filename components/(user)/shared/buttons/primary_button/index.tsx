@@ -1,25 +1,57 @@
 import Link from "next/link";
 
+type PrimaryButtonProps = {
+  href?: string;
+  children: React.ReactNode;
+  onClick?: () => void;
+  type?: "button" | "submit" | "reset";
+};
+
 const PrimaryButton = ({
   href,
   children,
-}: {
-  href: string;
-  children: string;
-}) => {
+  onClick,
+  type = "button",
+}: PrimaryButtonProps) => {
+  const className =
+    "inline-block cursor-pointer rounded-4xl border border-(--logo-color) bg-(--logo-color) px-8 py-4 text-center text-sm font-semibold leading-4 text-white duration-300 hover:border-(--logo-color-hover) hover:bg-(--logo-color-hover) hover:text-(--logo-color-hover) max-[800px]:px-5 max-[800px]:py-3 max-[800px]:text-xs max-[400px]:px-6";
+
+  if (href) {
+    return (
+      <Link href={href} className={className}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      type="button"
-      className="px-8 py-4 rounded-4xl text-sm font-semibold leading-4 cursor-pointer duration-300 text-white bg-(--logo-color) border border-(--logo-color) hover:text-(--logo-color-hover ) hover:bg-(--logo-color-hover) hover:border-(--logo-color-hover)  max-[800px]:px-5
-        max-[800px]:py-3
-        max-[800px]:text-xs
-        max-[400px]:px-6
-        "
-    >
+    <button type={type} onClick={onClick} className={className}>
       {children}
-    </Link>
+    </button>
   );
 };
 
 export default PrimaryButton;
+
+//? 1. Link kimi:
+// <PrimaryButton href="/contact">
+//   Əlaqə
+// </PrimaryButton>
+
+
+//? 2. Adi button kimi:
+// <PrimaryButton onClick={handleClick}>
+//   Müraciət et
+// </PrimaryButton>
+
+
+//? 3. Form daxilində submit button kimi:
+// <PrimaryButton type="submit">
+//   Göndər
+// </PrimaryButton>
+
+
+//? 4. Formu sıfırlamaq üçün:
+// <PrimaryButton type="reset">
+//   Təmizlə
+// </PrimaryButton>

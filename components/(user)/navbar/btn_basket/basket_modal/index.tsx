@@ -10,6 +10,8 @@ import { useModalBehavior } from "@/hooks/use_modal_behavior";
 import LikeButtonComponent from "@/components/(user)/shared/buttons/btn_like";
 import { MdDeleteOutline } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
+import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
+import SecondaryButton from "@/components/(user)/shared/buttons/secondary_btn";
 
 //!Məhsul kiçik təsviri SEKIL VE BASKETDE SAYI
 const ProductThumb = ({
@@ -180,7 +182,7 @@ const BasketModalComponent = ({
   // };
   return createPortal(
     <div
-      className="fixed inset-0 z-9999 flex justify-end bg-black/50 opacity-100 transition-opacity duration-1000 starting:opacity-0"
+      className="fixed inset-0 z-9999 flex justify-end bg-black/50 opacity-100 transition-opacity duration-400 starting:opacity-0"
       onClick={() => handleCloseModal()}
     >
       <aside
@@ -206,7 +208,7 @@ const BasketModalComponent = ({
         </div>
 
         {/* Scroll olunan hissə */}
-        <div className="flex-1 overflow-y-auto px-6 max-[500px]:px-4">
+        <div className="thin-scroll flex-1 overflow-y-auto px-6 max-[500px]:px-4">
           {basketDatas.length === 0 ? (
             <p className="py-20 pb-8 text-center text-sm text-(--secondary-color)">
               Səbətiniz boşdur
@@ -317,13 +319,6 @@ const BasketModalComponent = ({
 
         {/* Sabit alt hissə: scroll olanda da görünür */}
         <div className="flex flex-col gap-3 border-t border-(--line-color) bg-white px-6 py-4 shadow-[0_-6px_16px_rgba(0,0,0,0.05)] max-[500px]:px-4">
-          {/* <Link
-            href="/cart"
-            onClick={handleCloseModal}
-            className="rounded-4xl border border-(--logo-color) px-8 py-4 text-center text-sm font-semibold leading-4 text-(--logo-color) duration-300 hover:bg-(--logo-color) hover:text-white max-[800px]:py-3 max-[800px]:text-xs"
-          >
-            Səbətimə baxın ({basketDatas.length})
-          </Link> */}
           {/* ▼▼▼ YENİ BLOK 2: ÜMUMİ SİFARİŞ ▼▼▼ */}
           <div className="rounded-xl bg-neutral-100 py-5 max-[500px]:py-3">
             <div className="mx-auto flex max-w-[1640px] flex-wrap items-end justify-between gap-5 px-5 max-[500px]:flex-col max-[500px]:items-start max-[500px]:gap-3 max-[500px]:px-3">
@@ -380,20 +375,12 @@ const BasketModalComponent = ({
             </div>
           </div>
           {/* ▲▲▲ YENİ BLOK 2 SONU ▲▲▲ */}
-          <Link
-            href="/checkout"
-            onClick={handleCloseModal}
-            className="rounded-4xl border border-(--logo-color) bg-(--logo-color) px-8 py-4 text-center text-sm font-semibold leading-4 text-white duration-300 hover:border-(--logo-color-hover) hover:bg-(--logo-color-hover) max-[800px]:py-3 max-[800px]:text-xs"
-          >
+          <PrimaryButton href="/checkout" onClick={handleCloseModal}>
             Sifarişi rəsmiləşdirmək
-          </Link>
-          <button
-            type="button"
-            onClick={handleCloseModal}
-            className="cursor-pointer py-2 text-sm font-semibold text-(--logo-color) duration-300 hover:text-(--logo-color-hover)"
-          >
+          </PrimaryButton>
+          <SecondaryButton type="button" onClick={handleCloseModal}>
             Alış-verişə davam edin
-          </button>
+          </SecondaryButton>
         </div>
       </aside>
     </div>,

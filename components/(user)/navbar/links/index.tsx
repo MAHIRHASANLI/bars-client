@@ -124,6 +124,10 @@ export const links: LinkType[] = [
     href: "/ustalar-ucun",
     title: "Ustalar üçün",
   },
+    {
+    href: "/branches",
+    title: "Filiallar",
+  },
   {
     href: "/isupport",
     title: "Texniki servis",

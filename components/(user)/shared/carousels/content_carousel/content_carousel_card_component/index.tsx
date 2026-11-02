@@ -23,7 +23,7 @@ const ContentCarouselCardComponent = ({
       href={item.slug}
       className="group flex h-full flex-col rounded-3xl bg-white p-2 shadow-[0_2px_12px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.04] transition-shadow duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1d1d1f] motion-reduce:transition-none"
     >
-      <div className="relative h-64 rounded-2xl bg-[#f5f5f7] max-[800px]:h-52">
+      <div className="relative h-64 rounded-2xl bg-(--img-bg-color) max-[800px]:h-52">
         {item.badge && (
           <span className="absolute left-2 top-2 z-10 rounded-full bg-white px-3 py-1 text-xs font-medium uppercase text-[#b64400] shadow-[0_1px_4px_rgba(0,0,0,0.06)]">
             {item.badge}

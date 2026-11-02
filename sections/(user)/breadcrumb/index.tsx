@@ -1,8 +1,7 @@
-
 "use client";
 
 import { getCategoryByHref } from "@/utils/get_category_by_href";
-import { House, ChevronRight } from "lucide-react";
+import { FiHome, FiChevronRight } from "react-icons/fi";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -24,19 +23,19 @@ const BreadcrumbSection = () => {
     .filter((link) => link !== undefined);
 
   return (
-<nav
-  aria-label="Breadcrumb"
-  className="fluid relative z-10 border-y border-(--line-color) p-2 mb-4"
->
+    <nav
+      aria-label="Breadcrumb"
+      className="fluid relative z-10 mb-4 border-y border-(--line-color) p-2"
+    >
       <div className="main-container">
         <ol className="flex items-center">
           <li className="flex items-center text-sm font-semibold text-(--logo-color) hover:text-(--logo-color-hover)">
-            <House className="size-3 mr-1" />
+            <FiHome className="mr-1 size-3" />
             <Link href="/">Ana səhifə</Link>
-            <ChevronRight className="size-4 mx-1 text-(--logo-color)" />
+            <FiChevronRight className="mx-1 size-4 text-(--logo-color)" />
           </li>
 
-          {breadcrumbItems.map(({ title, href="" }, index) => {
+          {breadcrumbItems.map(({ title, href = "" }, index) => {
             const isLast = index === breadcrumbItems.length - 1;
 
             return (
@@ -55,7 +54,7 @@ const BreadcrumbSection = () => {
                 )}
 
                 {!isLast && (
-                  <ChevronRight className="size-4 mx-1 text-(--logo-color)" />
+                  <FiChevronRight className="mx-1 size-4 text-(--logo-color)" />
                 )}
               </li>
             );

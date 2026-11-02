@@ -1,7 +1,8 @@
-import { BusinessAreaCardProps, NewsPostType, PartnerType, ProductCategoryType, ProductType } from "@/types/links";
+import { BusinessAreaCardProps, NewsPostType, PartnerType, ProductCategoryType, ProductType, StoreType } from "@/types/links";
 import img from "@/images/saygac-temiri-img.png";
 import { ServiceType } from "@/sections/(user)/home/services_and_more_section";
 
+//? --------------------------------------ANA SEHIFE--------------------------------------------------------------------------
 //! ANA SEHIFEDE-2-cu section | butun mehsullar ve category sehifesinde ilk section datalari
 export const allProductsCatecorySectionDatas: ProductCategoryType[] = [
   {
@@ -469,32 +470,32 @@ export const partnershipsSectionDatas:PartnerType[] = [
     },
 ];
 
-//! ANA SEHIFEDE-11ci section |
-import { Package, Headset, Truck } from "lucide-react";
+import { FiPackage, FiHeadphones, FiTruck } from "react-icons/fi";
+
+//! ANA SƏHİFƏDƏ - 11-ci section
 export const benefitsSectionDatas = [
   {
     title: "Geniş məhsul çeşidi",
     description:
       "Tikinti materialları, yapışdırıcılar və qaz avadanlıqları ilə ehtiyaclarınıza uyğun həllər.",
-    icon: Package,
+    icon: FiPackage,
     href: "/products",
   },
   {
     title: "Peşəkar məsləhət",
     description:
       "Layihənizə və texniki tələblərinizə uyğun məhsulların seçilməsi üçün sizə dəstək oluruq.",
-    icon: Headset,
+    icon: FiHeadphones,
     href: "/contact",
   },
   {
     title: "Topdan satış imkanları",
     description:
       "Biznesinizin ehtiyaclarına uyğun məhsul təchizatı və əməkdaşlıq imkanları.",
-    icon: Truck,
+    icon: FiTruck,
     href: "/contact",
   },
 ];
-
 //! ANA SEHIFEDE-12ci section | Quick Order section. Sürətli sifariş bölməsi "Sifarişinizi tez bir zamanda rəsmiləşdirin
 export const quickOrderSectionDatas: ProductType[] = [
   {
@@ -613,3 +614,66 @@ export const sparePartsSectionDatas: ProductType[] = [
     slug: "saygac-aksesuarları",
   },
 ];
+
+ 
+//? --------------------------------------ANA SEHIFE BITDI--------------------------------------------------------------------------
+
+//? --------------------------------------BRANCHES(FİLİALLAR) SEHIFE--------------------------------------------------------------------------
+
+export const branchesSectionDatas: StoreType[] = [
+  {
+    id: 2,
+    name: "ENERJİ-N MMC",
+    address: "Bakı şəhəri, Nizami rayonu, Oqtay Vəliyev küç. 72",
+    hours: "Bazar ertəsi – şənbə: 09:00–18:00",
+    phones: "+994 50 280 10 50",
+    imgUrl: img,
+    district: "Nizami rayonu",  
+   url:"https://enerj-n.com",  
+mapUrl: "https://maps.app.goo.gl/78eKRiRHRgGpo1mh8?g_st=ac",
+mapQuery: "Enerji-N MMC, Bakı",
+    services: [
+      "Qaz xətlərinin çəkilişi",
+      "Qaz sızmalarının tapılması və təmiri",
+      "Qaz avadanlıqlarının quraşdırılması və tənzimlənməsi",
+      "Layihə və texniki şərtlərin yoxlanması",
+    ],
+  },
+  {
+    id: 3,
+    name: "BARS",
+    address: "EuroHome, Dərnəgül, 12 Ələsgər Qayıbov",
+    hours: "Bazar ertəsi – cümə: 09:00–18:00, Şənbə: 10:00–18:00",
+    phones: "+994 99 795 10 50",
+    imgUrl: img,
+   url:"https://bars.com.az", 
+   mapUrl: "https://maps.app.goo.gl/1KS14n8FiiPQd8H88?g_st=ac",
+mapQuery: "Bars İnshaat, 12 Alaskar Gayibov St, Baku",
+   district: "EuroHome, Dərnəgül",
+    services: [
+      "Sertifikatlı qaz avadanlıqlarının satışı",
+      "Tikinti materialları və yapışdırıcıların satışı",
+      "Məhsul seçimində peşəkar məsləhət",
+      "15 gün ərzində geri qaytarma",
+    ],
+  },
+  {
+    id: 4,
+    name: "EnergyServis",
+    address: "Bakı şəhəri, Nizami rayonu, Oqtay Vəliyev küç. 72",
+    hours: "Bazar ertəsi – şənbə: 09:00–18:00",
+    phones: "+994 70 280 10 50",
+    imgUrl: img,
+   url:"https://energyservis.com",
+mapUrl: "https://maps.app.goo.gl/78eKRiRHRgGpo1mh8?g_st=ac",
+   mapQuery: "EnergyServis, Bakı",
+   district: "Nizami rayonu",
+    services: [
+      "Qaz tənzimləyici məntəqələrin (ŞQTM) istehsalı",
+      "Yüksək təzyiqli qaz tənzimləyici və filtr istehsalı",
+      "Satış sonrası montaj və kalibrləmə",
+      "Qazanxana sistemlərinin layihələndirilməsi və quraşdırılması",
+    ],
+  },
+];
+//? --------------------------------------BRANCHES(FİLİALLAR) SEHIFE BITDI--------------------------------------------------------------------------

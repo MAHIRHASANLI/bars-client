@@ -141,3 +141,16 @@ export type ServiceLocationType = {
 };
 
 
+export type StoreType = {
+  id: string | number;
+  name: string;
+  address: string;
+  phones: string ;          // bir neçə telefon ola bilər
+  hours: string ;           // hər sətir ayrıca: "Bazar: istirahət günü"
+  imgUrl?: string | StaticImageData;
+    mapUrl?: string;    // qısa Google Maps linki (keçid üçün)
+  mapQuery?: string;
+  services?: string[];
+    district: string;
+  url?: string; // filialın öz səhifəsinə keçid
+};
