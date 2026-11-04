@@ -1,4 +1,4 @@
-import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
 import React from "react";
 import ServiceContactItems from "../service_contact_items";
 

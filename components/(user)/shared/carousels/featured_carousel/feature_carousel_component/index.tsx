@@ -1,5 +1,5 @@
 "use client";
-import React, { Children,  ReactNode } from "react";
+import React, { Children, ReactNode } from "react";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";
@@ -14,8 +14,10 @@ const carouselPresets = {
     1280: { slidesPerView: 3, spaceBetween: 40 },
   },
   autoplay: { delay: 15000, disableOnInteraction: false },
-  loop: true
 } satisfies SwiperOptions;
+
+const arrowClass =
+  "absolute top-1/2 z-99 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-(--logo-color) text-4xl font-extralight text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-40 max-[1000px]:h-8 max-[1000px]:w-8 max-[1000px]:text-xl";
 
 const FeaturedCarouselComponent = ({ children }: { children: ReactNode }) => {
   const swiperRef = React.useRef<SwiperType | null>(null);
@@ -44,26 +46,24 @@ const FeaturedCarouselComponent = ({ children }: { children: ReactNode }) => {
         ))}
       </Swiper>
 
-      <div>
-        <button
-          type="button"
-          aria-label="Əvvəlki"
-          disabled={isBeginning}
-          onClick={() => swiperRef.current?.slidePrev()}
-          className="absolute top-[50%] left-0 min:[1000px]-left-10 z-99 max-[1000px]:w-8 max-[1000px]:h-8 w-12 h-12 bg-(--logo-color) rounded-[50%] font-extralight text-4xl max-[1000px]:text-xl text-white"
-        >
-          ‹
-        </button>
-        <button
-          type="button"
-          aria-label="Növbəti"
-          disabled={isEnd}
-          onClick={() => swiperRef.current?.slideNext()}
-          className="absolute top-[50%] right-0 min:[1000px]-right-10 z-99 max-[1000px]:w-8 max-[1000px]:h-8 w-12 h-12 bg-(--logo-color) rounded-[50%] font-extralight text-4xl max-[1000px]:text-xl text-white"
-        >
-          ›
-        </button>
-      </div>
+      <button
+        type="button"
+        aria-label="Əvvəlki"
+        disabled={isBeginning}
+        onClick={() => swiperRef.current?.slidePrev()}
+        className={`${arrowClass} left-0 min-[1000px]:-left-10`}
+      >
+        ‹
+      </button>
+      <button
+        type="button"
+        aria-label="Növbəti"
+        disabled={isEnd}
+        onClick={() => swiperRef.current?.slideNext()}
+        className={`${arrowClass} right-0 min-[1000px]:-right-10`}
+      >
+        ›
+      </button>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import ServicesComponent from "@/components/(user)/isupport/second_section/services_conteiner";
-import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
 import React from "react";
 
 const SecondSection = () => {

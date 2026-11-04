@@ -14,7 +14,7 @@ const PrimaryButton = ({
   type = "button",
 }: PrimaryButtonProps) => {
   const className =
-    "inline-block cursor-pointer rounded-4xl border border-(--logo-color) bg-(--logo-color) px-8 py-4 text-center text-sm font-semibold leading-4 text-white duration-300 hover:border-(--logo-color-hover) hover:bg-(--logo-color-hover) hover:text-(--logo-color-hover) max-[800px]:px-5 max-[800px]:py-3 max-[800px]:text-xs max-[400px]:px-6";
+    "inline-block cursor-pointer rounded-4xl border border-(--logo-color) bg-(--logo-color) px-8 py-4 text-center text-sm font-semibold leading-4 text-white duration-300 hover:border-(--logo-color-hover) hover:bg-(--logo-color-hover) max-[800px]:px-5 max-[800px]:py-3 max-[800px]:text-xs max-[400px]:px-6";
 
   if (href) {
     return (

@@ -1,6 +1,6 @@
 import CategoryProductsComponent from "@/components/(user)/catecory/category_products";
 import CategorySidebarComponent from "@/components/(user)/catecory/category_sidebar";
-import PageHeading from "@/components/(user)/shared/page_heading_component";
+import PageHeading from "@/components/(user)/shared/page_heading_component_h1";
 import { getCategoryByHref } from "@/utils/get_category_by_href";
 import { notFound } from "next/navigation";
 import img from "@/images/tenzimleyicilerin-temiri-img.png";
@@ -74,7 +74,7 @@ const ContentCategorySection = ({ pathname }: { pathname: string }) => {
   return (
     <section className="py-8 max-[1000px]:pt-6">
       {/* SEHIFE BASLIQI H1 TEQI */}
-      <PageHeading title={category.title} />
+      <PageHeading title={category.title} className="pb-6 max-[1000px]:pb-3" />
       {/* CATEGORIYA SEHIFENIN CONTENTI, SIDEBAR VE MEHSULLAR OLAN HISSE */}
       <div className="grid grid-cols-[290px_minmax(0,1fr)] gap-8 mt-2 py-8 border-t border-(--line-color) max-[1000px]:grid-cols-1 max-[1000px]:gap-4 max-[1000px]:py-4">
         {/* Sol tərəf: Filterlər */}

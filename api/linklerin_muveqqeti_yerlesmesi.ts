@@ -10,70 +10,66 @@ export const allProductsCatecorySectionDatas: ProductCategoryType[] = [
     title: "Yapışdırıcılar",
     image: img,
     href: "/category/adhesives",
-    price: 100,
+    badge: "YENİ",
   },
   {
     id: 2,
     title: "Sayğacları",
     image: img,
     href: "/category/gas-meters",
-    price: 100,
+    badge: "populyar",
   },
   {
     id: 3,
     title: "Korrektorları",
     image: img,
     href: "/category/gas-correctors",
-    price: 100,
+    badge: "YENİ",
   },
   {
     id: 4,
     title: "Tənzimləyiciləri",
     image: img,
     href: "/category/gas-regulators",
-    price: 100,
+    badge: "YENİ",
   },
   {
     id: 5,
     title: "Filtrləri",
     image: img,
     href: "/category/gas-filters",
-    price: 100,
+    badge: "populyar",
   },
   {
     id: 6,
     title: "Detektorları",
     image: img,
     href: "/category/gas-detectors",
-    price: 100,
+    badge: "YENİ",
   },
   {
     id: 7,
     title: "Siyirtmələr",
     image: img,
     href: "/category/valves",
-    price: 100,
   },
   {
     id: 8,
     title: "ŞQTM",
     image: img,
     href: "/category/gas-regulator-cabinets",
-    price: 100,
   },
   {
     id: 9,
     title: "Qaz aksessuarları",
     image: img,
     href: "/category/gas-accessories",
-    price: 100,
   },
   {
     id: 10,
     title: "İstilik məhsulları",
     image: img,
     href: "/category/heating-products",
-    price: 100,
   },
 ];
 
@@ -430,42 +426,43 @@ export const enerjiNProductsDatas: ProductType[] = [
 ];
 
 //! ANA SEHIFEDE-10-cu section | Tərəfdaş şirkətlərin məlumatları. Tərəfdaş brendlər 
+import imgPartner from "@/images/third_section-img.webp";
 export const partnershipsSectionDatas:PartnerType[] = [
     {
       id:157,name: "MADAS",
-      imgUrl: img,
+      imgUrl: imgPartner,
       description:
         "Qaz təzyiq tənzimləyiciləri və qaz avadanlıqları istehsalçısı.",
     },
     {
       id:71,name: "ELSTER",
-      imgUrl: img,
+      imgUrl: imgPartner,
       description: "Qazın ölçülməsi və ölçmə sistemləri sahəsində brend.",
     },
     {
       id:15,name: "STATÜGAS",
-      imgUrl: img,
+      imgUrl: imgPartner,
       description: "Qaz avadanlıqları sahəsində tərəfdaş brend.",
     },
     {
       id:17,name: "EUROMET",
-      imgUrl: img,
+      imgUrl: imgPartner,
       description: "Qaz sənayesi üçün avadanlıqlar sahəsində tərəfdaş.",
     },
     {
       id:133,name: "TORK",
-      imgUrl: img,
+      imgUrl: imgPartner,
       description: "Qaz detektorları və sənaye avadanlıqları brendi.",
     },
     {
       id:13,name: "ELGAS",
-      imgUrl: img,
+      imgUrl: imgPartner,
       description:
         "Qaz həcminin ölçülməsi və korrektorlar sahəsində ixtisaslaşmış brend.",
     },
     {
       id:21,name: "BROEN",
-      imgUrl: img,
+      imgUrl: imgPartner,
       description: "Sənaye və boru sistemləri üçün armatur həlləri.",
     },
 ];

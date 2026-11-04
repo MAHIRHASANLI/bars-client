@@ -1,4 +1,4 @@
-import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
 
 const brands = [
   "NUMBER ONE",

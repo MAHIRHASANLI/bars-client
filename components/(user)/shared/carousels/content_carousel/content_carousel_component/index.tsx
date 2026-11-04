@@ -111,7 +111,7 @@ const ContentCarouselComponent = ({
       </Swiper>
 
       {!isSingle && showNavigation && (
-        <div className="mt-6 flex justify-end gap-2 ">
+        <div className="mt-6 flex justify-end gap-2 max-[800px]:hidden">
           <button
             type="button"
             aria-label="Əvvəlki"

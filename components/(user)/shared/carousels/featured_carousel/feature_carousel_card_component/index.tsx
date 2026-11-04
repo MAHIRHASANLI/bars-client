@@ -1,10 +1,10 @@
-
 import LikeButtonComponent from "@/components/(user)/shared/buttons/btn_like";
 import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
 import { ProductType } from "@/types/links";
 import { formatPrice } from "@/utils/format_price_component";
 import Image from "next/image";
 import BtnBasketIconComponent from "../../../buttons/btn_basket";
+import { truncateLines } from "@/utils/truncate_lines";
 
 const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
   // Endirimin olub-olmadığını yoxlayırıq.
@@ -15,35 +15,36 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
   const savedAmount = hasDiscount ? item.oldPrice! - item.price : 0;
 
   return (
-    <div className="relative flex h-full min-h-98 flex-col items-center justify-center bg-white p-4 duration-300 max-[800px]:h-105 max-[800px]:py-0">
-      <div className="relative p-6">
+    <div className="relative flex h-full min-h-98 flex-col items-center bg-white px-0 py-4 duration-300 max-[800px]:min-h-0">
+      <div className="relative py-6 max-[800px]:py-4">
         <Image
           src={item.imgUrl}
           alt={item.title}
-          className="mx-auto h-60 w-64 object-contain transition-transform duration-300 hover:scale-104 max-[800px]:h-42 max-[800px]:w-45"
+          className="mx-auto h-60 w-64 object-contain transition-transform duration-300 hover:scale-104 max-[800px]:h-40 max-[800px]:w-44"
         />
       </div>
 
       {/* Badge */}
       {item.badge && (
-        <span className="mb-2 text-xs font-semibold uppercase tracking-[0.1em] text-(--logo-color)">
+        <span className="mb-2 text-xs font-semibold uppercase tracking-widest text-(--logo-color)">
           {item.badge}
         </span>
       )}
 
       {/* Başlıq */}
-      <h3 className="mb-1 cursor-pointer text-center text-2xl font-semibold leading-tight text-[#1d1d1f] hover:underline max-[1000px]:text-xl">
-        {item.title}
+      <h3 className="mx-0 mb-1 w-full cursor-pointer px-0 text-center text-2xl font-semibold leading-tight text-[#1d1d1f] hover:underline max-[1000px]:text-xl">
+        {truncateLines(item.title, 1)}
       </h3>
 
-      {/* Alt başlıq */}
-      <p className="mb-2 min-h-[2.4em] px-4 text-center text-sm leading-[1.2] text-(--secondary-color) max-[1000px]:mb-2 max-[1000px]:px-2 max-[1000px]:text-xs">
-        {item.subtitle}
+      {/* Alt başlıq: kartın tam eni, maksimum 2 sətir */}
+      <p className="truncate-text mx-0 mb-0 min-h-[2.4em] w-full px-0 text-center text-sm leading-[1.2] text-(--secondary-color) line-clamp-2 max-[1000px]:text-xs">
+        {truncateLines(item.subtitle,2)}
       </p>
 
-      <div className="text-center">
+      {/* Qiymət + düymə: həmişə kartın dibində */}
+      <div className="mt-auto w-full px-0 pt-2 text-center">
         {/* Köhnə qiymət üçün həmişə eyni hündürlük */}
-        <div className="h-6 text-lg leading-[1.2] text-(--secondary-color) max-[800px]:h-4 max-[800px]:text-xs">
+        <div className="h-6 text-lg leading-[1.2] text-(--secondary-color) max-[800px]:h-4 max-[800px]:-mt-1 max-[800px]:text-xs">
           {hasDiscount ? (
             <>
               <span className="sr-only">
@@ -56,26 +57,26 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
           ) : null}
         </div>
 
-        {/* Cari qiymət */}
-        <div className="text-base font-bold leading-[1.2] max-[800px]:text-xs">
+        {/* Cari qiymət: sığmasa növbəti sətrə düşür */}
+        <div className="flex flex-wrap items-center justify-center gap-x-1 text-base font-bold leading-[1.2] max-[800px]:text-xs">
           <span className="text-(--logo-color)">
             {formatPrice(item.price)} ₼
           </span>
 
           {hasDiscount && (
-            <span className="ml-1 text-xs text-(--color-tone-orange)">
+            <span className="text-xs text-(--color-tone-orange)">
               -{formatPrice(savedAmount)} ₼
             </span>
           )}
         </div>
 
         {/* Almaq düyməsi */}
-        <div className="mt-7 w-full text-center">
+        <div className="mt-7 w-full text-center max-[800px]:mt-4">
           <PrimaryButton href={item.slug}>Almaq</PrimaryButton>
         </div>
       </div>
 
-      <div className="absolute right-2 top-2 flex items-start gap-3 disabled:opacity-30">
+      <div className="absolute right-2 top-2 z-10 flex items-start gap-3">
         <LikeButtonComponent />
         <BtnBasketIconComponent product={item} />
       </div>

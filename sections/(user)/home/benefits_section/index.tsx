@@ -1,5 +1,5 @@
 import ContactServiceLinkComp from "@/utils/contact_service_link_comp";
-import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
 import { benefitsSectionDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
 
 {/*11 Şirkətin üstünlükləri */}

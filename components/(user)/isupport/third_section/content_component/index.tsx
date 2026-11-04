@@ -1,5 +1,5 @@
 import ServiceActionsComponent from "../service_actions";
-import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
 
 const ContentComponent = () => {
   //Sehife basliqlarinin melumatlari bu objectde saxlanilir

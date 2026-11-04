@@ -1,14 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { links } from "@/components/(user)/navbar/links";
 import CategoryFilterPanelComponent from "../category_filter_panel";
 
 const CategorySidebar = () => {
   const pathname = usePathname();
-  const [isCategoryOpen, setIsCategoryOpen] = useState(true);
+  // const [isCategoryOpen, setIsCategoryOpen] = useState(true);
   const [isFilterOpen, setIsFilterOpen] = useState(false); // yalnız mobile üçün
 
   // Cari kateqoriyanı tapırıq
@@ -21,7 +20,7 @@ const CategorySidebar = () => {
   // Cari kateqoriyanın alt kateqoriyaları
   if (!currentCategory) return null;
 
-  const categoryItems = currentCategory?.children ?? [];
+  // const categoryItems = currentCategory?.children ?? [];
 
   return (
     <aside className="sticky top-4 self-start max-[1000px]:static max-[1000px]:self-stretch">

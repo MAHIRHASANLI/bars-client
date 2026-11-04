@@ -1,19 +1,27 @@
 type HeaderTypeProps = {
   title: string;
   description?: string;
-  className? :string
+  align?: "start" | "center" | "end";
+  className?: string;
 };
+
+const alignClasses = {
+  start: "text-start",
+  center: "text-center",
+  end: "text-end",
+} as const;
 
 const SectionHeading = ({
   title,
   description,
-  className="start"
+  align = "start",
+  className = "",
 }: HeaderTypeProps) => {
   const formattedTitle = title.split(/(BARS|ENERJİ-N)/g);
 
   return (
-    <div>
-      <h2 className={`text-${className} font-semibold mb-5 text-black text-3xl max-[1000px]:text-xl leading-7`}>
+    <div className={`${alignClasses[align]} ${className}`}>
+      <h2 className="mb-5 text-3xl font-semibold leading-7 text-black max-[1000px]:text-xl">
         {formattedTitle.map((text, index) => (
           <span
             key={index}
@@ -28,9 +36,11 @@ const SectionHeading = ({
         ))}
       </h2>
 
-      <p className="text-gray-600 -mt-2 text-sm max-[1000px]:mt-4 max-[1000px]:text-xs">
-        {description}
-      </p>
+      {description && (
+        <p className="-mt-2 text-sm text-gray-600 max-[1000px]:mt-4 max-[1000px]:text-xs">
+          {description}
+        </p>
+      )}
     </div>
   );
 };

@@ -32,7 +32,7 @@ export const links: LinkType[] = [
   },
   {
     href: "/category/meters",
-    title: "Sayğaclar",
+    title: "Qaz sayğacları",
     children: [
       { title: "Bütün sayğaclar", href: "/category/meters" },
       {
@@ -117,14 +117,44 @@ export const links: LinkType[] = [
   },
   {
     href: "/category/spare-parts",
-    title: "Ehtiyat hissələri",
+    title: "Digər",
+    children: [
+      {
+        title: "Bütün digər məhsullar",
+        href: "/category/spare-parts",
+      },
+      {
+        href: "/category/water-meters",
+        title: "Su sayğacları",
+      },
+      {
+        href: "/category/gas-regulator-stations",
+        title: "Şkaf tipli qaz tənzimləyici məntəqə (ŞQTM)",
+      },
+      {
+        href: "/category/ozone-generators",
+        title: "Ozon generatorları",
+      },
+      {
+        href: "/category/pressure-gauges",
+        title: "Manometrlər",
+      },
+      {
+        href: "/category/valves",
+        title: "Kranlar",
+      },
+      {
+        title: "Qaz sayğacı ehtiyat hissələri",
+        href: "/category/spare-parts/gas-meter-spare-parts",
+      },
+    ],
   },
 
   {
     href: "/ustalar-ucun",
     title: "Ustalar üçün",
   },
-    {
+  {
     href: "/branches",
     title: "Filiallar",
   },
@@ -133,7 +163,7 @@ export const links: LinkType[] = [
     title: "Texniki servis",
   },
   {
-    href: "/brendler",
+    href: "/brands",
     title: "Brendlər",
   },
   {
@@ -171,7 +201,7 @@ export const LinksComponent = ({
               max-[1000px]:pt-2 max-[1000px]:pb-2
               ${
                 isSeparated
-                  ? "after:content-[''] min-[1000px]:after:absolute after:-left-3 after:top-0 after:translate-y-1/2 after:h-4 after:w-0.5 after:bg-(--secondary-color)"
+                  ? "after:content-[''] min-[1000px]:after:absolute after:-left-6 h-3 after:-top-1 after:translate-y-1/2 after:h-4 after:w-px ml-6 after:bg-(--secondary-color)"
                   : ""
               }
             `}
@@ -199,7 +229,7 @@ export const LinksComponent = ({
                     <Link
                       onClick={handleLinkClick}
                       href={href}
-                      className={`inline-block pt-2 ${classLink} `}
+                      className={`pt-4 ${classLink} `}
                     >
                       {title}
                     </Link>

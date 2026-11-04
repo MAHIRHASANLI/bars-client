@@ -1,6 +1,6 @@
 import FeaturedCardComponent from '@/components/(user)/shared/carousels/featured_carousel/feature_carousel_card_component'
 import FeaturedCarouselComponent from '@/components/(user)/shared/carousels/featured_carousel/feature_carousel_component'
-import SectionHeading from '@/components/(user)/shared/section_heading_component'
+import SectionHeading from '@/components/(user)/shared/section_heading_component_h2'
 import { products } from '../../category/content_category_section'
 
 const QuickPurchaseSection = () => {

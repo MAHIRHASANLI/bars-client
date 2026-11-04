@@ -1,7 +1,7 @@
 
 import Image  from "next/image";
 import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
-import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
 import { BusinessAreaCardProps } from "@/types/links";
 
 

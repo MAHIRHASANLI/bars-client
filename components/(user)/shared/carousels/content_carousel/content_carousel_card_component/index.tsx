@@ -1,14 +1,9 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import { formatPrice } from "@/utils/format_price_component";
 import { ProductType } from "@/types/links";
 
-const ContentCarouselCardComponent = ({
-  item,
-}: {
-  item: ProductType;
-}) => {
+const ContentCarouselCardComponent = ({ item }: { item: ProductType }) => {
   // Endirimin olub-olmadığını yoxlayırıq.
   const hasDiscount =
     typeof item.oldPrice === "number" && item.oldPrice > item.price;
@@ -21,7 +16,7 @@ const ContentCarouselCardComponent = ({
   return (
     <Link
       href={item.slug}
-      className="group flex h-full flex-col rounded-3xl bg-white p-2 shadow-[0_2px_12px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.04] transition-shadow duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1d1d1f] motion-reduce:transition-none"
+      className="group flex h-full flex-col rounded-3xl bg-white p-2 shadow-[0_2px_12px_rgba(0,0,0,0.05)] ring-1 ring-black/4 transition-shadow duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1d1d1f] motion-reduce:transition-none"
     >
       <div className="relative h-64 rounded-2xl bg-(--img-bg-color) max-[800px]:h-52">
         {item.badge && (
@@ -37,6 +32,9 @@ const ContentCarouselCardComponent = ({
         )}
 
         <div className="absolute inset-4 transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+          {/* Aşağıdan yuxarı gradient: hoverda yox olur */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 rounded-b-2xl bg-linear-to-t from-(--img-bg-color) via-(--img-bg-color)/40 to-transparent transition-opacity duration-500 ease-out group-hover:opacity-0 motion-reduce:transition-none" />
+
           <Image
             src={item.imgUrl}
             alt={item.title}
@@ -44,9 +42,13 @@ const ContentCarouselCardComponent = ({
             sizes="(max-width: 800px) 80vw, 33vw"
             className="object-contain mix-blend-multiply"
           />
+          {/* Aşağıdan yuxarı blur: hoverda yox olur */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 rounded-b-2xl backdrop-blur-sm mask-[linear-gradient(to_top,black,transparent)] transition-opacity duration-500 ease-out group-hover:opacity-0 motion-reduce:transition-none" />
         </div>
-      </div>
 
+        {/* Aşağıdan yuxarı blur: hoverda yox olur */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 rounded-b-2xl backdrop-blur-sm mask-[linear-gradient(to_top,black,transparent)] transition-opacity duration-500 ease-out group-hover:opacity-0 motion-reduce:transition-none" />
+      </div>
       <div className="flex flex-1 flex-col px-3 pb-4 pt-5 max-[800px]:px-2 max-[800px]:pt-4">
         <h3 className="line-clamp-2 text-xl font-semibold leading-tight tracking-tight text-[#1d1d1f] max-[800px]:text-lg">
           {item.title}
@@ -65,9 +67,7 @@ const ContentCarouselCardComponent = ({
                 <span className="sr-only">
                   Köhnə qiymət: {formatPrice(item.oldPrice!)} ₼
                 </span>
-                <s aria-hidden="true">
-                  {formatPrice(item.oldPrice!)} ₼
-                </s>
+                <s aria-hidden="true">{formatPrice(item.oldPrice!)} ₼</s>
               </p>
             )}
 

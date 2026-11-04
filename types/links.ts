@@ -29,7 +29,7 @@ export type ProductCategoryType = {
   title: string;
   image: StaticImageData;
   href: string;
-  price:number;
+  badge?: string; // məsələn "YENİ"
 };
 // Ana səhifədə "Yeni məhsullar"-sectionu üçün məlumat tipi
 // Məhsulun məlumatlarını müəyyən edən tip

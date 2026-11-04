@@ -1,6 +1,10 @@
 @import "tailwindcss";
-
-
+html,
+body {
+  overflow-x: clip;
+}
+/* //? GLOBAL CSS DƏYİŞƏNLƏRİ */
+/* Layihə boyunca təkrar istifadə edilən rəng dəyişənləri */
 :root {
   --main-color: #f5f5f5;
   --line-color: #d0d0d0;
@@ -13,31 +17,48 @@
   --color-tone-blue: #0066cc;
   --color-tone-green: #008009;
   --color-tone-orange: #b64400;
+}
+/* //? GLOBAL CSS DƏYİŞƏNLƏRİ BİTDİ */
 
+/* //? MƏTNİN QISALDILMASI - Mətni müəyyən edilmiş sətir sayı ilə məhdudlaşdırır */
+.truncate-text {
+  display: -webkit-box; /* Çoxsətirli mətn konteyneri yaradır */
+  -webkit-box-orient: vertical; /* Mətnin şaquli istiqamətdə yerləşdirilməsini təmin edir */
+  -webkit-line-clamp: 2; 
+  /* Mətni maksimum 2 sətirlə məhdudlaşdırır */
+  overflow: hidden; /* Limitdən artıq olan məzmunu gizlədir */
+  text-overflow: ellipsis; /* Kəsilmiş mətnin sonunda üç nöqtə (...) göstərir */
 }
 
-/* //? (nazik scroll, oxsuz)/ */
+/* //? XÜSUSİ SCROLLBAR */
+
+/* //? CUSTOM SCROLLBAR */
+/* Scrollbar-ın enini, rəngini və görünüşünü fərdiləşdirir */
 @layer utilities {
+  /* Scrollbar-ın ümumi eni */
   .thin-scroll::-webkit-scrollbar {
     width: 4px;
-
   }
 
+  /* Scrollbar-ın arxa fonu */
   .thin-scroll::-webkit-scrollbar-track {
     background: transparent;
   }
 
+  /* Scrollbar-ın hərəkət edən hissəsi */
   .thin-scroll::-webkit-scrollbar-thumb {
     background: #6b6b6b;
     border-radius: 6px;
   }
 
+  /* Scrollbar üzərindəki yuxarı və aşağı oxları gizlədir */
   .thin-scroll::-webkit-scrollbar-button {
     display: none;
     width: 0;
     height: 0;
   }
 
+  /* WebKit dəstəyi olmayan brauzerlər üçün alternativ scrollbar dizaynı */
   @supports not selector(::-webkit-scrollbar) {
     .thin-scroll {
       scrollbar-width: thin;
@@ -45,58 +66,110 @@
     }
   }
 }
+/* //? CUSTOM SCROLLBAR BİTDİ */
 
-/* //?/ */
 
+/* //? BRANDS PAGE - MAIN SECTION CSS */
+/* Loqoların fasiləsiz hərəkəti üçün animasiyanın başlanğıc və son mövqelərini təyin edir */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Loqo lentinin normal istiqamətdə hərəkət animasiyası */
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Loqo lentinin əks istiqamətdə hərəkət animasiyası */
+.animate-marquee-reverse {
+  animation: marquee 48s linear infinite reverse;
+}
+/* //? BRANDS PAGE - MAIN SECTION CSS BİTDİ */
+
+
+/* //? GLOBAL RESET */
+/* Bütün HTML elementlərinin ölçülərinin hesablanma qaydasını eyniləşdirir */
 * {
   box-sizing: border-box;
 }
+/* //? GLOBAL RESET BİTDİ */
 
+
+/* //? BODY */
+/* Səhifənin standart kənar boşluğunu sıfırlayır və üfüqi daşmanı gizlədir */
 body {
   margin: 0;
   overflow-x: clip;
 }
+/* //? BODY BİTDİ */
 
+
+/* //? NEXT.JS SCROLL FOCUS */
+/* Next.js-in scroll focus konteynerinin hündürlüyünü tam ekran ölçüsündə saxlayır */
 div[data-nextjs-scroll-focus-boundary] {
   height: 100%;
 }
+/* //? NEXT.JS SCROLL FOCUS BİTDİ */
 
+
+/* //? MAIN CONTAINER */
+/* Səhifə məzmununu mərkəzləşdirir və maksimum enini 1440px ilə məhdudlaşdırır */
 .main-container {
   display: grid;
-  grid-template-columns: 1fr min(1440px, 85%) 1fr;
+  grid-template-columns: 1fr min(1440px, 80%) 1fr;
   width: 100%;
   box-sizing: border-box;
 }
 
-.main-container>* {
+/* Main container daxilindəki birbaşa elementləri orta sütunda yerləşdirir */
+.main-container > * {
   grid-column: 2;
 }
 
-.main-container>.fluid {
+/* Fluid sinifli elementlərin bütün ekran enini tutmasını təmin edir */
+.main-container > .fluid {
   grid-column: 1 / -1;
 }
+/* //? MAIN CONTAINER BİTDİ */
 
+
+/* //? SECTION SPACING */
+/* Section bölmələrinin yuxarı və aşağı daxili boşluqlarını müəyyən edir */
 section.section {
   padding-top: 48px;
   padding-bottom: 48px;
 }
+/* //? SECTION SPACING BİTDİ */
 
 
-.main-container>main {
+/* //? MAIN GRID LAYOUT */
+/* Main elementini ayrıca grid konteynerinə çevirir və əsas grid strukturunu davam etdirir */
+.main-container > main {
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: subgrid;
 }
 
-.main-container>main>* {
+/* Main daxilindəki elementləri orta sütunda yerləşdirir */
+.main-container > main > * {
   grid-column: 2;
 }
 
-.main-container>main>.fluid {
+/* Main daxilindəki fluid elementlərin tam ekran enini tutmasını təmin edir */
+.main-container > main > .fluid {
   grid-column: 1 / -1;
 }
+/* //? MAIN GRID LAYOUT BİTDİ */
 
-/* Section sütunun içindədir, xətt isə ekranın tam enini tutur */
+
+/* //? FULL WIDTH BORDER */
+/* Mərkəzləşdirilmiş konteynerdən kənara çıxaraq ekranın tam enində üfüqi xətt yaradır */
 .full-bleed-line {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -104,29 +177,25 @@ section.section {
   border-top: 1px solid var(--line-color);
   box-sizing: border-box;
 }
+/* //? FULL WIDTH BORDER BİTDİ */
 
-/* Swiper-in CSS dəyişənləri: Swiper oxları çəkəndə bu qiymətlərə baxır */
+
+/* //? PRODUCTS SWIPER */
+/* Swiper naviqasiya oxlarının kənarlardan yerləşmə məsafəsini təyin edir */
 .products-swiper {
   --swiper-navigation-sides-offset: 2px;
 }
 
-/* 
-.products-swiper {
-  margin: -20px -16px -20px -16px!important;
-  padding: 20px 16px !important;
-} */
-
-/* Normal 
-
-vəziyyət: hər iki ox (prev = sol, next = sağ) */
+/* Swiper naviqasiya oxlarının rəngini və ölçüsünü müəyyən edir */
 .products-swiper .swiper-navigation-icon {
   color: var(--secondary-color);
   width: 14px;
   height: 14px;
 }
 
-
-.products-swiper .swiper-button-prev, .products-swiper .swiper-button-next {
+/* Əvvəlki və növbəti slayd düymələrinin ümumi görünüşünü müəyyən edir */
+.products-swiper .swiper-button-prev,
+.products-swiper .swiper-button-next {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -136,10 +205,12 @@ vəziyyət: hər iki ox (prev = sol, next = sağ) */
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+/* Aktiv olmayan naviqasiya oxlarını gizlədir */
 .products-swiper .swiper-button-disabled {
   display: none;
 }
 
+/* Sol naviqasiya oxunun yanında şaquli dekorativ xətt yaradır */
 .products-swiper .swiper-button-prev::after {
   position: absolute;
   content: "";
@@ -149,6 +220,7 @@ vəziyyət: hər iki ox (prev = sol, next = sağ) */
   background: var(--secondary-color);
 }
 
+/* Sağ naviqasiya oxunun yanında şaquli dekorativ xətt yaradır */
 .products-swiper .swiper-button-next::after {
   position: absolute;
   content: "";
@@ -157,15 +229,21 @@ vəziyyət: hər iki ox (prev = sol, next = sağ) */
   height: 80px;
   background: var(--secondary-color);
 }
+/* //? PRODUCTS SWIPER BİTDİ */
 
 
+/* //? RESPONSIVE DESIGN */
+/* 1000px və daha kiçik ekranlar üçün uyğunlaşdırmalar */
 @media (max-width: 1000px) {
+  /* Əsas konteynerin orta sütununun enini 95%-ə çatdırır */
   .main-container {
     grid-template-columns: 1fr 95% 1fr;
   }
 
+  /* Section bölmələrinin daxili boşluqlarını azaldır */
   section.section {
     padding-top: 36px;
     padding-bottom: 36px;
   }
 }
+/* //? RESPONSIVE DESIGN BİTDİ */

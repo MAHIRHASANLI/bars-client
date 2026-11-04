@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { links } from "@/components/(user)/navbar/links";
 import { useState } from "react";
+import SecondaryButton from "../../shared/buttons/secondary_btn";
 
 type CategoryFilterPanelProps = {
   isFilterOpen: boolean;
@@ -18,7 +19,9 @@ const CategoryFilterPanelComponent = ({
   const [isCategoryOpen, setIsCategoryOpen] = useState(true);
 
   const categoryItems = currentCategory.children ?? [];
-
+function handleCloseFilter() {
+  setIsFilterOpen(false);
+}
   return (
     <div
       className={
@@ -125,15 +128,10 @@ const CategoryFilterPanelComponent = ({
       </div>
 
       {/* Mobile: Tətbiq et düyməsi */}
-      <div className="hidden px-5 py-4 max-[1000px]:block">
-        <button
-          type="button"
-          onClick={() => setIsFilterOpen(false)}
-          className="h-14 w-full cursor-pointer rounded-full border border-(--logo-color) bg-white text-base font-medium text-(--logo-color)"
-        >
-          Tətbiq et
-        </button>
-      </div>
+        <SecondaryButton onClick={handleCloseFilter} type="button">
+           Tətbiq et
+        </SecondaryButton>
+       
     </div>
   );
 };

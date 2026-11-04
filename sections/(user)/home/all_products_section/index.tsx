@@ -1,19 +1,18 @@
-import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
-import AllProductSliderItem from "@/components/(user)/home/all_products_section_card_slider";
-import GeneralCarouselComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_component";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
 import { allProductsCatecorySectionDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
-
+import AllProductCarouselComponent from "@/components/(user)/shared/carousels/scroll_carousel/scroll_carousel_cantainer";
+import AllProductItemComponent from "@/components/(user)/shared/carousels/scroll_carousel/scroll_carousel_card";
 
 const AllProductsCatecorySection = () => {
   return (
     <section className="pb-3">
       <SubheadingComponent title="Bütün məhsulları kəşf et" />
-      <GeneralCarouselComponent preset="compact"  showNavigation={false} className="min-[1000px]:py-5">
+      <AllProductCarouselComponent preset="extraWide" className="min-[1000px]:pt-6 pt-4">
         {allProductsCatecorySectionDatas.map((item) => (
-          <AllProductSliderItem key={item.id} item={item} />
+          
+          <AllProductItemComponent key={item.id} item={item} />
         ))}
-      </GeneralCarouselComponent>
-    
+      </AllProductCarouselComponent>
     </section>
   );
 };

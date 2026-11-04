@@ -1,7 +1,8 @@
 import { servicesAndMoreSectionDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
 import ServicesMoreCarouselItem from "@/components/(user)/home/services_and_more_section/services_more_carousel_item";
-import GeneralCarouselComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_component";
-import SubheadingComponent from "@/components/(user)/shared/section_heading_component";
+// import GeneralCarouselComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_component";
+import ScrollCarouselComponent from "@/components/(user)/shared/carousels/scroll_carousel/scroll_carousel_cantainer";
+import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
 type Tone = "neutral" | "blue" | "green" | "orange";
 
 type TitlePart = { text: string; accent?: boolean };
@@ -22,11 +23,16 @@ const ServicesAndMoreSection = () => {
       <SubheadingComponent
         title="Xidmətləri və daha çoxunu kəşf edin"
       />
-        <GeneralCarouselComponent preset="wide" showNavigation={false} className="min-[1000px]:pt-10">
+      <ScrollCarouselComponent preset="wide"className="min-[1000px]:pt-10 pt-4">
+           {servicesAndMoreSectionDatas.map((s) => (
+            <ServicesMoreCarouselItem key={s.id} service={s} />
+          ))}
+      </ScrollCarouselComponent>
+        {/* <GeneralCarouselComponent preset="wide" showNavigation={false} className="min-[1000px]:pt-10">
           {servicesAndMoreSectionDatas.map((s) => (
             <ServicesMoreCarouselItem key={s.id} service={s} />
           ))}
-        </GeneralCarouselComponent>
+        </GeneralCarouselComponent> */}
     </section>
   );
 };
