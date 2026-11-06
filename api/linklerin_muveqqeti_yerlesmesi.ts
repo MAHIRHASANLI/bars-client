@@ -83,7 +83,7 @@ export const newProductsCectionDatas: ProductType[] = [
     price: 3200,
     oldPrice: 3500,
     imgUrl: img,
-    slug: "/products/qaz_avadanliqlari/saygaclar",
+    category: "/products/qaz_avadanliqlari/saygaclar",
   },
   {
     id: 2,
@@ -93,7 +93,7 @@ export const newProductsCectionDatas: ProductType[] = [
     price: 1800,
     oldPrice: 3500,
     imgUrl: img,
-    slug: "/products/qaz_avadanliqlari/saygaclar",
+    category: "/products/qaz_avadanliqlari/saygaclar",
   },
   {
     id: 3,
@@ -102,7 +102,7 @@ export const newProductsCectionDatas: ProductType[] = [
     subtitle: "Həcmi təzyiq və temperatura görə standart şəraitə gətirir.",
     price: 400,
     imgUrl: img,
-    slug: "/products/qaz_avadanliqlari/korrektorlar",
+    category: "/products/qaz_avadanliqlari/korrektorlar",
   },
   {
     id: 4,
@@ -111,7 +111,7 @@ export const newProductsCectionDatas: ProductType[] = [
     subtitle: "Sabit çıxış təzyiqi, təhlükəsiz istismar.",
     price: 1000,
     imgUrl: img,
-    slug: "/products/qaz_avadanliqlari/tenzimleyiciler",
+    category: "/products/qaz_avadanliqlari/tenzimleyiciler",
   },
   {
     id: 5,
@@ -121,7 +121,7 @@ export const newProductsCectionDatas: ProductType[] = [
     price: 60,
     oldPrice: 500,
     imgUrl: img,
-    slug: "/category/gas-detectors",
+    category: "/category/gas-detectors",
   },
   {
     id: 6,
@@ -130,7 +130,7 @@ export const newProductsCectionDatas: ProductType[] = [
     subtitle: "Xətti çirkdən qoruyur, avadanlığın ömrünü uzadır.",
     price: 450,
     imgUrl: img,
-    slug: "/products/qaz_avadanliqlari/filtrler",
+    category: "/products/qaz_avadanliqlari/filtrler",
   },
   {
     id: 7,
@@ -139,7 +139,7 @@ export const newProductsCectionDatas: ProductType[] = [
     subtitle: "Dözümlü tikinti yapışdırıcısı, daxili və xarici işlər üçün.",
     price: 12,
     imgUrl: img,
-    slug: "/category/adhesives",
+    category: "/category/adhesives",
   },
 ];
 
@@ -256,7 +256,7 @@ export const barsProductsDatas: ProductType[] = [
     price: 6.5,
     oldPrice: 8.5,
     imgUrl: img,
-    slug: "montaj-yapisdiricisi",
+    category: "/category/adhesives/marble-adhesives",
   },
   {
     id: 1,
@@ -265,7 +265,7 @@ export const barsProductsDatas: ProductType[] = [
     subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
     price: 8.5,
     imgUrl: img,
-    slug: "montaj-yapisdiricisi",
+    category: "/category/adhesives/marble-adhesives",
   },
   {
     id: 12,
@@ -275,7 +275,7 @@ export const barsProductsDatas: ProductType[] = [
     price: 4.5,
     oldPrice: 8.5,
     imgUrl: img,
-    slug: "montaj-yapisdiricisi",
+    category: "/category/adhesives/marble-adhesives",
   },
   {
     id: 1321,
@@ -284,7 +284,7 @@ export const barsProductsDatas: ProductType[] = [
     subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
     price: 8.5,
     imgUrl: img,
-    slug: "montaj-yapisdiricisi",
+    category: "/category/adhesives/marble-adhesives",
   },
   {
     id: 2,
@@ -293,7 +293,7 @@ export const barsProductsDatas: ProductType[] = [
     subtitle: "Təmir və quraşdırma işləri üçün praktik həll.",
     price: 6.5,
     imgUrl: img,
-    slug: "silikon-yapisdirici",
+    category: "/category/adhesives/silicones",
   },
   {
     id: 3,
@@ -302,7 +302,7 @@ export const barsProductsDatas: ProductType[] = [
     subtitle: "Müxtəlif məişət və təmir işlərində istifadə üçün.",
     price: 10,
     imgUrl: img,
-    slug: "universal-yapisdirici",
+    category: "/category/adhesives/universal-adhesives",
   },
 ];
 
@@ -371,7 +371,7 @@ export const enerjiNProductsDatas: ProductType[] = [
     price: 2900,
     oldPrice: 3000,
     imgUrl: img,
-    slug: "qaz-tezyiq-tenzimleyicisi",
+    category: "qaz-tezyiq-tenzimleyicisi",
   },
   {
     id: 2,
@@ -381,7 +381,7 @@ export const enerjiNProductsDatas: ProductType[] = [
     price: 489,
     oldPrice: 1000,
     imgUrl: img,
-    slug: "qaz-filtri",
+    category: "qaz-filtri",
   },
   {
     id: 3,
@@ -391,7 +391,7 @@ export const enerjiNProductsDatas: ProductType[] = [
     price: 489,
     oldPrice: 1000,
     imgUrl: img,
-    slug: "qaz-saygaci",
+    category: "qaz-saygaci",
   },
   {
     id: 4,
@@ -401,7 +401,7 @@ export const enerjiNProductsDatas: ProductType[] = [
     price: 489,
     oldPrice: 1000,
     imgUrl: img,
-    slug: "elektromaqnit-klapan",
+    category: "elektromaqnit-klapan",
   },
   {
     id: 5,
@@ -411,17 +411,17 @@ export const enerjiNProductsDatas: ProductType[] = [
     price: 489,
     oldPrice: 1000,
     imgUrl: img,
-    slug: "qaz-korrektoru",
+    category: "qaz-korrektoru",
   },
   {
-    id: 6,
+    id: 12,
     badge: "YENİ",
     title: "Qaz tənzimləyici şkaf",
     subtitle: "Qaz təzyiqinin tənzimlənməsi üçün kompakt texniki həll.",
     price: 489,
     oldPrice: 1000,
     imgUrl: img,
-    slug: "qaz-tenzimleyici-skaf",
+    category: "qaz-tenzimleyici-skaf",
   },
 ];
 
@@ -503,7 +503,7 @@ export const quickOrderSectionDatas: ProductType[] = [
     price: 2900,
     oldPrice: 3000,
     imgUrl: img,
-    slug: "qaz-tezyiq-tenzimleyicisi",
+    category: "qaz-tezyiq-tenzimleyicisi",
   },
   {
     id: 2,
@@ -513,7 +513,7 @@ export const quickOrderSectionDatas: ProductType[] = [
     price: 850,
     oldPrice: 1240,
     imgUrl: img,
-    slug: "qaz-filtri",
+    category: "qaz-filtri",
   },
   {
     id: 3,
@@ -523,7 +523,7 @@ export const quickOrderSectionDatas: ProductType[] = [
     price: 850,
     oldPrice: 1240,
     imgUrl: img,
-    slug: "qaz-saygaci",
+    category: "qaz-saygaci",
   },
   {
     id: 4,
@@ -533,7 +533,7 @@ export const quickOrderSectionDatas: ProductType[] = [
     price: 850,
     oldPrice: 1240,
     imgUrl: img,
-    slug: "elektromaqnit-klapan",
+    category: "elektromaqnit-klapan",
   },
   {
     id: 5,
@@ -543,7 +543,7 @@ export const quickOrderSectionDatas: ProductType[] = [
     price: 850,
     oldPrice: 1240,
     imgUrl: img,
-    slug: "qaz-korrektoru",
+    category: "qaz-korrektoru",
   },
   {
     id: 6,
@@ -553,7 +553,7 @@ export const quickOrderSectionDatas: ProductType[] = [
     price: 850,
     oldPrice: 1240,
     imgUrl: img,
-    slug: "qaz-tenzimleyici-skaf",
+    category: "qaz-tenzimleyici-skaf",
   },
 ];
 
@@ -567,7 +567,7 @@ export const sparePartsSectionDatas: ProductType[] = [
       "Qaz sayğaclarının təmiri və texniki xidməti üçün ehtiyat hissələri.",
     price: 2200,
     imgUrl: img,
-    slug: "qaz-saygaci-ehtiyat-hisseleri",
+    category: "qaz-saygaci-ehtiyat-hisseleri",
   },
   {
     id: 2,
@@ -577,7 +577,7 @@ export const sparePartsSectionDatas: ProductType[] = [
       "Qaz təzyiq tənzimləyiciləri üçün uyğun ehtiyat hissələri.",
     price: 500,
     imgUrl: img,
-    slug: "qaz-tenzimleyici-ehtiyat-hisseleri",
+    category: "qaz-tenzimleyici-ehtiyat-hisseleri",
   },
   {
     id: 3,
@@ -587,7 +587,7 @@ export const sparePartsSectionDatas: ProductType[] = [
       "Qaz filtrlərinin texniki xidməti üçün ehtiyat detallar.",
     price: 1234,
     imgUrl: img,
-    slug: "qaz-filtri-ehtiyat-hisseleri",
+    category: "qaz-filtri-ehtiyat-hisseleri",
   },
   {
     id: 4,
@@ -598,7 +598,7 @@ export const sparePartsSectionDatas: ProductType[] = [
     price: 230,
     oldPrice: 400,
     imgUrl: img,
-    slug: "klapan-ehtiyat-hisseleri",
+    category: "klapan-ehtiyat-hisseleri",
   },
   {
     id: 5,
@@ -608,11 +608,99 @@ export const sparePartsSectionDatas: ProductType[] = [
     price: 100,
     oldPrice: 230,
     imgUrl: img,
-    slug: "saygac-aksesuarları",
+    category: "saygac-aksesuarları",
   },
 ];
 
- 
+ ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ export const productDatas: ProductType[] = [
+  // ───────── YAPIŞDIRICILAR ─────────
+  { id: 1, badge: "POPULYAR", title: "Mərmər yapışdırıcısı", subtitle: "Mərmər və təbii daş üçün yüksək möhkəmlikli yapışdırıcı.", price: 14.5, imgUrl: img, category: "/category/adhesives/marble-adhesives" },
+  { id: 2, badge: "YENİ", title: "Ağ mərmər yapışdırıcısı", subtitle: "Açıq rəngli daşlarda iz qoymayan xüsusi tərkib.", price: 18, oldPrice: 21, imgUrl: img, category: "/category/adhesives/marble-adhesives" },
+
+  { id: 3, badge: "POPULYAR", title: "Sanitar silikon", subtitle: "Rütubətə davamlı, göbələk əleyhinə silikon.", price: 6.5, imgUrl: img, category: "/category/adhesives/silicones" },
+  { id: 4, title: "Neytral silikon", subtitle: "Şüşə və metal səthlər üçün korroziya yaratmayan silikon.", price: 7.8, imgUrl: img, category: "/category/adhesives/silicones" },
+
+  { id: 5, badge: "ENDİRİM", title: "Montaj penası", subtitle: "Pəncərə və qapı boşluqlarının doldurulması üçün.", price: 9, oldPrice: 11, imgUrl: img, category: "/category/adhesives/construction-foams" },
+  { id: 6, title: "Peşəkar pena (tapançalı)", subtitle: "Tapança ilə istifadə üçün yüksək həcmli pena.", price: 12.5, imgUrl: img, category: "/category/adhesives/construction-foams" },
+
+  { id: 7, badge: "POPULYAR", title: "Universal yapışdırıcı", subtitle: "Müxtəlif məişət və təmir işlərində istifadə üçün.", price: 10, imgUrl: img, category: "/category/adhesives/universal-adhesives" },
+  { id: 8, badge: "YENİ", title: "Şəffaf universal yapışdırıcı", subtitle: "Quruduqdan sonra şəffaf qalan sürətli yapışdırıcı.", price: 8.5, imgUrl: img, category: "/category/adhesives/universal-adhesives" },
+
+  { id: 9, badge: "SERTİFİKATLI", title: "Sənaye montaj yapışdırıcısı", subtitle: "Ağır yüklər və sənaye istifadəsi üçün.", price: 24, imgUrl: img, category: "/category/adhesives/industrial-adhesives" },
+  { id: 10, title: "İki komponentli epoksi", subtitle: "Metal və beton səthlər üçün yüksək möhkəmlik.", price: 32, oldPrice: 38, imgUrl: img, category: "/category/adhesives/industrial-adhesives" },
+
+  // ───────── QAZ SAYĞACLARI ─────────
+  { id: 11, badge: "SERTİFİKATLI", title: "Turbin tipli qaz sayğacı G100", subtitle: "Yüksək sərfli xətlər üçün turbin sayğacı.", price: 4200, imgUrl: img, category: "/category/meters/turbine-gas-meters" },
+  { id: 12, title: "Turbin tipli qaz sayğacı G250", subtitle: "Sənaye obyektləri üçün geniş ölçmə diapazonu.", price: 6800, oldPrice: 7200, imgUrl: img, category: "/category/meters/turbine-gas-meters" },
+
+  { id: 13, badge: "POPULYAR", title: "Rotor tipli qaz sayğacı G65", subtitle: "Dəqiq ölçmə, davamlı iş üçün rotor sayğac.", price: 2600, imgUrl: img, category: "/category/meters/rotary-gas-meters" },
+  { id: 14, title: "Rotor tipli qaz sayğacı G160", subtitle: "Orta və böyük sərf üçün kompakt həll.", price: 3900, imgUrl: img, category: "/category/meters/rotary-gas-meters" },
+
+  { id: 15, badge: "YENİ", title: "Ultrasəs qaz sayğacı", subtitle: "Yüksək dəqiqlik, hərəkət edən hissə yoxdur.", price: 1800, oldPrice: 3500, imgUrl: img, category: "/category/meters/ultrasonic-gas-meters" },
+  { id: 16, title: "Ultrasəs sayğac DN50", subtitle: "Aşağı təzyiq itkisi ilə uzunmüddətli istismar.", price: 5400, imgUrl: img, category: "/category/meters/ultrasonic-gas-meters" },
+
+  { id: 17, badge: "YENİ", title: "Qaz korrektoru", subtitle: "Həcmi təzyiq və temperatura görə standart şəraitə gətirir.", price: 400, imgUrl: img, category: "/category/meters/correctors" },
+  { id: 18, title: "Elektron həcm korrektoru", subtitle: "Məlumat qeydiyyatı və ötürmə funksiyası ilə.", price: 780, imgUrl: img, category: "/category/meters/correctors" },
+
+  { id: 19, badge: "POPULYAR", title: "Mexaniki qaz sayğacı G4", subtitle: "Məişət istifadəsi üçün membranlı sayğac.", price: 120, imgUrl: img, category: "/category/meters/mechanical-gas-meters" },
+  { id: 20, title: "Mexaniki qaz sayğacı G6", subtitle: "Kiçik kommersiya obyektləri üçün.", price: 165, oldPrice: 190, imgUrl: img, category: "/category/meters/mechanical-gas-meters" },
+
+  { id: 21, badge: "ENDİRİMLİ", title: "Smart qaz sayğacı", subtitle: "NB-IoT modemli, məsafədən oxunan yeni nəsil sayğac.", price: 3200, oldPrice: 3500, imgUrl: img, category: "/category/meters/smart-gas-meters" },
+  { id: 22, badge: "YENİ", title: "Smart sayğac G4 (ön ödənişli)", subtitle: "Kart və ya tətbiq vasitəsilə balans idarəsi.", price: 340, imgUrl: img, category: "/category/meters/smart-gas-meters" },
+
+  // ───────── QAZ TƏNZİMLƏYİCİLƏRİ ─────────
+  { id: 23, badge: "SERTİFİKATLI", title: "Qaz tənzimləyicisi", subtitle: "Sabit çıxış təzyiqi, təhlükəsiz istismar.", price: 1000, imgUrl: img, category: "/category/gas-regulators" },
+  { id: 24, badge: "POPULYAR", title: "Qaz təzyiq tənzimləyicisi", subtitle: "Qaz təzyiqinin tələb olunan səviyyədə tənzimlənməsi üçün.", price: 2900, oldPrice: 3000, imgUrl: img, category: "/category/gas-regulators" },
+  { id: 25, title: "Məişət qaz tənzimləyicisi", subtitle: "Evlər üçün aşağı təzyiqli tənzimləyici.", price: 45, imgUrl: img, category: "/category/gas-regulators" },
+
+  // ───────── QAZ BAĞLAYICI KLAPANLAR ─────────
+  { id: 26, badge: "POPULYAR", title: "Elektromaqnit klapan DN25", subtitle: "Qaz axınının avtomatik idarə olunması və bağlanması üçün.", price: 489, oldPrice: 1000, imgUrl: img, category: "/category/gas-shut-off-valves/solenoid-valves" },
+  { id: 27, title: "Elektromaqnit klapan DN50", subtitle: "Sənaye xətləri üçün sürətli işləyən klapan.", price: 720, imgUrl: img, category: "/category/gas-shut-off-valves/solenoid-valves" },
+
+  { id: 28, badge: "YENİ", title: "Atıcı-bağlayıcı klapan", subtitle: "Təzyiq həddini aşanda qaz axınını avtomatik kəsir.", price: 560, imgUrl: img, category: "/category/gas-shut-off-valves/shut-off-valves" },
+  { id: 29, title: "Atıcı-bağlayıcı klapan DN80", subtitle: "Tənzimləyici məntəqələr üçün.", price: 890, imgUrl: img, category: "/category/gas-shut-off-valves/shut-off-valves" },
+
+  { id: 30, badge: "SERTİFİKATLI", title: "Qoruyucu klapan", subtitle: "Artıq təzyiqi atmosferə buraxan qoruyucu klapan.", price: 430, imgUrl: img, category: "/category/gas-shut-off-valves/safety-valves" },
+  { id: 31, title: "Yaylı qoruyucu klapan", subtitle: "Tənzimlənən açılma təzyiqi ilə.", price: 510, oldPrice: 600, imgUrl: img, category: "/category/gas-shut-off-valves/safety-valves" },
+
+  { id: 32, badge: "POPULYAR", title: "Normalda bağlı klapan DN20", subtitle: "Elektrik kəsiləndə qaz xəttini avtomatik bağlayır.", price: 310, imgUrl: img, category: "/category/gas-shut-off-valves/normally-closed-valves" },
+  { id: 33, title: "Normalda bağlı klapan DN40", subtitle: "Kommersiya və sənaye obyektləri üçün.", price: 470, imgUrl: img, category: "/category/gas-shut-off-valves/normally-closed-valves" },
+
+  // ───────── QAZ ALARM CİHAZLARI ─────────
+  { id: 34, badge: "YENİ", title: "CO detektoru", subtitle: "Karbon monoksid qazını aşkar edir və siqnal verir.", price: 60, oldPrice: 90, imgUrl: img, category: "/category/gas-alarm-devices/co-detectors" },
+  { id: 35, title: "CO detektoru (batareyalı)", subtitle: "Quraşdırması asan, şəbəkəyə qoşulmadan işləyir.", price: 48, imgUrl: img, category: "/category/gas-alarm-devices/co-detectors" },
+
+  { id: 36, badge: "POPULYAR", title: "CH₄ detektoru", subtitle: "Təbii qaz sızmasını erkən aşkar edir.", price: 75, imgUrl: img, category: "/category/gas-alarm-devices/ch4-detectors" },
+  { id: 37, title: "CH₄ detektoru + klapan çıxışı", subtitle: "Elektromaqnit klapanı birbaşa idarə edə bilir.", price: 110, imgUrl: img, category: "/category/gas-alarm-devices/ch4-detectors" },
+
+  { id: 38, badge: "YENİ", title: "CH₄ + CO detektoru", subtitle: "Eyni cihazda həm təbii qaz, həm CO nəzarəti.", price: 130, imgUrl: img, category: "/category/gas-alarm-devices/ch4-co-detectors" },
+  { id: 39, title: "CH₄ + CO detektoru (smart)", subtitle: "Mobil bildiriş funksiyası ilə.", price: 175, oldPrice: 200, imgUrl: img, category: "/category/gas-alarm-devices/ch4-co-detectors" },
+
+  // ───────── QAZ FİLTRLƏRİ ─────────
+  { id: 40, badge: "YENİ", title: "Qaz filtri", subtitle: "Xətti çirkdən qoruyur, avadanlığın ömrünü uzadır.", price: 450, imgUrl: img, category: "/category/gas-filters" },
+  { id: 41, badge: "POPULYAR", title: "Qaz filtri DN50", subtitle: "Qaz xəttini mexaniki çirklərdən və hissəciklərdən qorumaq üçün.", price: 489, oldPrice: 1000, imgUrl: img, category: "/category/gas-filters" },
+  { id: 42, title: "Məişət qaz filtri", subtitle: "Sayğac və qazanın qarşısında quraşdırılır.", price: 35, imgUrl: img, category: "/category/gas-filters" },
+
+  // ───────── DİGƏR ─────────
+  { id: 43, badge: "POPULYAR", title: "Su sayğacı DN15", subtitle: "Məişət suyu sərfiyyatının ölçülməsi üçün.", price: 28, imgUrl: img, category: "/category/water-meters" },
+  { id: 44, title: "Su sayğacı DN20", subtitle: "Çoxmənzilli və kommersiya obyektləri üçün.", price: 42, imgUrl: img, category: "/category/water-meters" },
+
+  { id: 45, badge: "YENİ", title: "Qaz tənzimləyici şkaf", subtitle: "Qaz təzyiqinin tənzimlənməsi üçün kompakt texniki həll.", price: 1950, imgUrl: img, category: "/category/gas-regulator-stations" },
+  { id: 46, title: "ŞQTM (iki xətli)", subtitle: "Ehtiyat xətti olan şkaf tipli tənzimləyici məntəqə.", price: 4800, imgUrl: img, category: "/category/gas-regulator-stations" },
+
+  { id: 47, badge: "YENİ", title: "Ozon generatoru 5 q/saat", subtitle: "Hava və su təmizlənməsi üçün ozon generatoru.", price: 320, imgUrl: img, category: "/category/ozone-generators" },
+  { id: 48, title: "Ozon generatoru 10 q/saat", subtitle: "Böyük həcmli məkanlar üçün.", price: 590, oldPrice: 650, imgUrl: img, category: "/category/ozone-generators" },
+
+  { id: 49, badge: "POPULYAR", title: "Manometr 0-6 bar", subtitle: "Qaz və su xətləri üçün təzyiq ölçən cihaz.", price: 18, imgUrl: img, category: "/category/pressure-gauges" },
+  { id: 50, title: "Manometr 0-16 bar (qliserinli)", subtitle: "Vibrasiyalı mühitlər üçün davamlı model.", price: 34, imgUrl: img, category: "/category/pressure-gauges" },
+
+  { id: 51, badge: "POPULYAR", title: "Kürəvi kran 1/2\"", subtitle: "Qaz və su xətləri üçün latun kürəvi kran.", price: 9, imgUrl: img, category: "/category/valves" },
+  { id: 52, title: "Kürəvi kran 1\"", subtitle: "Geniş diametrli xətlər üçün möhkəm kran.", price: 16, oldPrice: 19, imgUrl: img, category: "/category/valves" },
+
+  { id: 53, badge: "SATIŞDA VAR", title: "Qaz sayğacı ehtiyat hissələri", subtitle: "Qaz sayğaclarının təmiri və texniki xidməti üçün ehtiyat hissələri.", price: 220, imgUrl: img, category: "/category/spare-parts/gas-meter-spare-parts" },
+  { id: 54, title: "Sayğac membran dəsti", subtitle: "Mexaniki sayğaclar üçün membran və qaskel dəsti.", price: 85, oldPrice: 110, imgUrl: img, category: "/category/spare-parts/gas-meter-spare-parts" },
+];
 //? --------------------------------------ANA SEHIFE BITDI--------------------------------------------------------------------------
 
 //? --------------------------------------BRANCHES(FİLİALLAR) SEHIFE--------------------------------------------------------------------------

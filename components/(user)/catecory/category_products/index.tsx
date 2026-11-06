@@ -1,7 +1,7 @@
 import { ProductType } from "@/types/links";
 import ProductCardComponent from "../../shared/carousels/featured_carousel/feature_carousel_card_component";
 
-const CategoryProductsComponent = ({ products }: { products: ProductType[] }) => {
+const CategoryProductsComponent = ({pathname, products }: {pathname: string| undefined,  products: ProductType[] }) => {
   return (
     <div className="pt-4 max-[1000px]:pt-0">
       {/* Yuxarı panel: məhsul sayı + sıralama */}
@@ -23,7 +23,7 @@ const CategoryProductsComponent = ({ products }: { products: ProductType[] }) =>
       {/* Kartlar */}
       <div className="mt-6 grid grid-cols-3 gap-x-6 gap-y-10 max-[1100px]:grid-cols-2 max-[1000px]:mt-4 max-[1000px]:gap-x-3 max-[1000px]:gap-y-8">
         {products.map((item, i) => (
-          <ProductCardComponent key={i} item={item} />
+          <ProductCardComponent pathname={pathname} key={i} item={item} />
         ))}
       </div>
     </div>

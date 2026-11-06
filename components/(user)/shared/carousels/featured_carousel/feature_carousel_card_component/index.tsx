@@ -6,14 +6,27 @@ import Image from "next/image";
 import BtnBasketIconComponent from "../../../buttons/btn_basket";
 import { truncateLines } from "@/utils/truncate_lines";
 
-const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
-  // Endirimin olub-olmadığını yoxlayırıq.
+const FeaturedCardComponent = ({
+  pathname,
+  item,
+}: {
+  pathname?: string | undefined;
+  item: ProductType;
+}) => {
+  //TODO Endirimin olub-olmadığını yoxlayırıq.
   const hasDiscount =
     typeof item.oldPrice === "number" && item.oldPrice > item.price;
 
-  // Qənaət olunan məbləğ.
+  //TODO Qənaət olunan məbləğ.
   const savedAmount = hasDiscount ? item.oldPrice! - item.price : 0;
 
+  //TODO Məhsul detail səhifəsinin URL-i
+  let detailSlug;
+  if(pathname){
+     detailSlug = `${pathname}/${item.id}`;
+  }else{
+    detailSlug =  `category/${item.category}/${item.id}`
+  }
   return (
     <div className="relative flex h-full min-h-98 flex-col items-center bg-white px-0 py-4 duration-300 max-[800px]:min-h-0">
       <div className="relative py-6 max-[800px]:py-4">
@@ -38,7 +51,7 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
 
       {/* Alt başlıq: kartın tam eni, maksimum 2 sətir */}
       <p className="truncate-text mx-0 mb-0 min-h-[2.4em] w-full px-0 text-center text-sm leading-[1.2] text-(--secondary-color) line-clamp-2 max-[1000px]:text-xs">
-        {truncateLines(item.subtitle,2)}
+        {truncateLines(item.subtitle, 2)}
       </p>
 
       {/* Qiymət + düymə: həmişə kartın dibində */}
@@ -72,7 +85,7 @@ const FeaturedCardComponent = ({ item }: { item: ProductType }) => {
 
         {/* Almaq düyməsi */}
         <div className="mt-7 w-full text-center max-[800px]:mt-4">
-          <PrimaryButton href={item.slug}>Almaq</PrimaryButton>
+          <PrimaryButton href={`${item.category}/${item.id}`}>Almaq</PrimaryButton>
         </div>
       </div>
 

@@ -15,7 +15,7 @@ const ContentCarouselCardComponent = ({ item }: { item: ProductType }) => {
 
   return (
     <Link
-      href={item.slug}
+      href="salam necesen"
       className="group flex h-full flex-col rounded-3xl bg-white p-2 shadow-[0_2px_12px_rgba(0,0,0,0.05)] ring-1 ring-black/4 transition-shadow duration-300 hover:shadow-[0_8px_28px_rgba(0,0,0,0.08)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1d1d1f] motion-reduce:transition-none"
     >
       <div className="relative h-64 rounded-2xl bg-(--img-bg-color) max-[800px]:h-52">

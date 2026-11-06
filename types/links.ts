@@ -1,10 +1,11 @@
 import { StaticImageData } from "next/image";
 
 export type LinkType = {
-  href?: string;
+  slug?: string;
   title: string;
   children?: LinkType[]
 };
+
 
 // Main section SLIDERI 
 export type HeroSlide = {
@@ -41,7 +42,7 @@ export type ProductType = {
   price: number; // Cari satış qiyməti
   oldPrice?: number; // Endirimdən əvvəlki qiymət
   imgUrl: StaticImageData;
-  slug: string;
+  category: string;
 };
 
 // Kartın məlumatlarını və görünüş variantını müəyyən edir.

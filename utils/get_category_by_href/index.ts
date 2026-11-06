@@ -1,12 +1,8 @@
 import { links } from "@/components/(user)/navbar/links";
 
-//! Verilmiş href-ə uyğun kateqoriyanı tapır.
- 
-export const getCategoryByHref = (href: string) => {
-  const allLinks = links.flatMap((link) => [
-    link,
-    ...(link.children ?? []),
-  ]);
+const linkMap = new Map(
+  links.flatMap((link) => [link, ...(link.children ?? [])]).map((l) => [l.slug, l])
+);
 
-  return allLinks.find((link) => link.href === href);
-};
+//! Verilmiş href-ə uyğun kateqoriyanı tapır.
+export const getCategoryByHref = (slug: string) => linkMap.get(slug);

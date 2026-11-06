@@ -3,21 +3,32 @@
 import { useState } from "react";
 import { CiHeart } from "react-icons/ci";
 import { IoMdHeart } from "react-icons/io";
+import { showToast } from "../../toast";
 
 const LikeButtonComponent = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleLike = async () => {
-    if (isLoading) return;
-    setIsLoading(true);
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      setIsLiked((prev) => !prev);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+const handleLike = async () => {
+  if (isLoading) return;
+
+  setIsLoading(true);
+
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    const nextLiked = !isLiked;
+    setIsLiked(nextLiked);
+
+    showToast(
+      nextLiked
+        ? "Məhsul bəyənilənlər siyahısına əlavə edildi."
+        : "Məhsul bəyənilənlər siyahısından çıxarıldı."
+    );
+  } finally {
+    setIsLoading(false);
+  }
+};
   return (
     <button
       type="button"

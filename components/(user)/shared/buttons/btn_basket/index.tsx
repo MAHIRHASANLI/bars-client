@@ -5,12 +5,18 @@ import { ProductType } from "@/types/links";
 import { useState } from "react";
 import { BiSolidBasket } from "react-icons/bi";
 import { CiShoppingBasket } from "react-icons/ci";
+import { showToast } from "../../toast";
 
 const BtnBasketIconComponent = ({ product }: { product: ProductType }) => {
   const [isLoading, setIsLoading] = useState(false);
   //! MƏHSULUN SƏBƏTDƏ OLUB-OLMADIĞINI YOXLAMAQ
   const basketData = useBasketStore((store) => store.basketDatas);
-  const isActiveIcon = basketData.some((item) => item.id === product.id && item.title === product.title && product.slug === product.slug);
+  const isActiveIcon = basketData.some(
+    (item) =>
+      item.id === product.id &&
+      item.title === product.title &&
+      product.category === product.category,
+  );
 
   //! ZUSTAND: SƏBƏTƏ MƏHSUL ƏLAVƏ ETMƏK
   const addBasketItem = useBasketStore((store) => store.addBasketItem);
@@ -23,6 +29,7 @@ const BtnBasketIconComponent = ({ product }: { product: ProductType }) => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       addBasketItem(product);
+      showToast("Qaz təzyiq tənzimləyicisi səbətə əlavə edildi");
     } finally {
       setIsLoading(false);
     }

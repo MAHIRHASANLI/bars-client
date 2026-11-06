@@ -2,6 +2,7 @@ import FeaturedCardComponent from '@/components/(user)/shared/carousels/featured
 import FeaturedCarouselComponent from '@/components/(user)/shared/carousels/featured_carousel/feature_carousel_component'
 import SectionHeading from '@/components/(user)/shared/section_heading_component_h2'
 import { products } from '../../category/content_category_section'
+import { barsProductsDatas } from '@/api/linklerin_muveqqeti_yerlesmesi'
 
 const QuickPurchaseSection = () => {
   return (
@@ -9,7 +10,7 @@ const QuickPurchaseSection = () => {
         <SectionHeading title='Sürətli alış' className='center'/>
 
         <FeaturedCarouselComponent>
-         {products.map((item)=><FeaturedCardComponent key={item.id} item={item}/>)}
+         {barsProductsDatas.map((item)=><FeaturedCardComponent key={item.id} item={item}/>)}
         </FeaturedCarouselComponent>
     </section>
   )

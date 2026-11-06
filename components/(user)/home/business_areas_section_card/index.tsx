@@ -43,7 +43,7 @@ const BusinessAreaCard = ({
           {badge}
         </span>
 
-        <SubheadingComponent title={title} description={description} className="center"/>
+        <SubheadingComponent title={title} description={description} align="center"/>
 
         <div className="mt-6"><PrimaryButton href={href}>Daha Ətraflı</PrimaryButton></div>
       </div>

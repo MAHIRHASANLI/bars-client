@@ -9,7 +9,6 @@ const NewsSection = () => {
     <section className="py-8 pb-3 max-[1000px]:py-5">
       <SubheadingComponent
         title="Xəbərlər və faydalı məlumatlar"
-        description="BARS-ın yenilikləri, məhsullarımız və sənaye avadanlıqları haqqında faydalı məlumatlarla tanış olun"
       />
 
       <ScrollCarouselComponent

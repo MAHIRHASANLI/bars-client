@@ -5,6 +5,7 @@ import { getCategoryByHref } from "@/utils/get_category_by_href";
 import { notFound } from "next/navigation";
 import img from "@/images/tenzimleyicilerin-temiri-img.png";
 import { ProductType } from "@/types/links";
+import { productDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
 
 export const products: ProductType[] = [
   {
@@ -15,7 +16,7 @@ export const products: ProductType[] = [
     price: 6.5,
     oldPrice: 8.5,
     imgUrl: img,
-    slug: "montaj-yapisdiricisi",
+    category: "/category/adhesives/marble-adhesives",
   },
   {
     id: 1,
@@ -24,7 +25,7 @@ export const products: ProductType[] = [
     subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
     price: 8.5,
     imgUrl: img,
-    slug: "montaj-yapisdiricisi",
+    category: "/category/adhesives/marble-adhesives",
   },
   {
     id: 12,
@@ -34,7 +35,7 @@ export const products: ProductType[] = [
     price: 4.5,
     oldPrice: 8.5,
     imgUrl: img,
-    slug: "montaj-yapisdiricisi",
+    category: "/category/adhesives/marble-adhesives",
   },
   {
     id: 13323,
@@ -43,7 +44,7 @@ export const products: ProductType[] = [
     subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
     price: 8.5,
     imgUrl: img,
-    slug: "montaj-yapisdiricisi",
+    category: "/category/adhesives/marble-adhesives",
   },
   {
     id: 2,
@@ -52,7 +53,7 @@ export const products: ProductType[] = [
     subtitle: "Təmir və quraşdırma işləri üçün praktik həll.",
     price: 6.5,
     imgUrl: img,
-    slug: "silikon-yapisdirici",
+    category: "/category/adhesives/silicones",
   },
   {
     id: 3,
@@ -61,16 +62,22 @@ export const products: ProductType[] = [
     subtitle: "Müxtəlif məişət və təmir işlərində istifadə üçün.",
     price: 10,
     imgUrl: img,
-    slug: "universal-yapisdirici",
+    category: "/category/adhesives/universal-adhesives",
   },
 ];
+
 
 const ContentCategorySection = ({ pathname }: { pathname: string }) => {
   const category = getCategoryByHref(pathname);
 
-  if (!category) {
-    notFound();
-  }
+  if (!category) notFound();
+
+  // Həm bu kateqoriyanın, həm də alt kateqoriyaların məhsulları
+  const filteredProducts = productDatas.filter(
+    (p) => p.category === pathname || p.category.startsWith(`${pathname}/`)
+  );
+  // const products = await getProductsByCategory(pathname);
+
   return (
     <section className="py-8 max-[1000px]:pt-6">
       {/* SEHIFE BASLIQI H1 TEQI */}
@@ -80,7 +87,10 @@ const ContentCategorySection = ({ pathname }: { pathname: string }) => {
         {/* Sol tərəf: Filterlər */}
         <CategorySidebarComponent />
         {/* Sağ tərəf: Məhsullar */}
-        <CategoryProductsComponent products={products} />
+        <CategoryProductsComponent
+          pathname={category.slug}
+          products={filteredProducts}
+        />
       </div>
     </section>
   );

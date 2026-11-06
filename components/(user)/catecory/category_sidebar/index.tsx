@@ -13,8 +13,8 @@ const CategorySidebar = () => {
   // Cari kateqoriyanı tapırıq
   const currentCategory = links.find(
     (link) =>
-      link.href === pathname ||
-      link.children?.some((child) => child.href === pathname),
+      link.slug === pathname ||
+      link.children?.some((child) => child.slug === pathname),
   );
 
   // Cari kateqoriyanın alt kateqoriyaları

@@ -25,7 +25,7 @@ const BreadcrumbSection = () => {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="fluid relative z-10 mb-4 border-y border-(--line-color) p-2"
+      className="fluid relative z-10 mb-4 border-y border-(--line-color) p-1.5"
     >
       <div className="main-container">
         <ol className="flex items-center">
@@ -35,18 +35,18 @@ const BreadcrumbSection = () => {
             <FiChevronRight className="mx-1 size-4 text-(--logo-color)" />
           </li>
 
-          {breadcrumbItems.map(({ title, href = "" }, index) => {
+          {breadcrumbItems.map(({ title, slug = "" }, index) => {
             const isLast = index === breadcrumbItems.length - 1;
 
             return (
-              <li key={href} className="flex items-center">
+              <li key={slug} className="flex items-center">
                 {isLast ? (
                   <span className="mx-1 text-sm text-(--secondary-color)">
                     {title}
                   </span>
                 ) : (
                   <Link
-                    href={href}
+                    href={slug}
                     className="mx-1 text-sm font-semibold text-(--logo-color) hover:text-(--logo-color-hover)"
                   >
                     {title}

@@ -1,177 +1,177 @@
 import { LinkType } from "@/types/links";
+import Link from "next/link";
 export const links: LinkType[] = [
   {
     title: "Yapışdırıcı",
-    href: "/category/adhesives",
+    slug: "/category/adhesives",
     children: [
       {
         title: "Bütün yapışdırıcılar",
-        href: "/category/adhesives",
+        slug: "/category/adhesives",
       },
       {
         title: "Mərmər yapışdırıcıları",
-        href: "/category/adhesives/marble-adhesives",
+        slug: "/category/adhesives/marble-adhesives",
       },
       {
         title: "Silikonlar",
-        href: "/category/adhesives/silicones",
+        slug: "/category/adhesives/silicones",
       },
       {
         title: "Penalar",
-        href: "/category/adhesives/construction-foams",
+        slug: "/category/adhesives/construction-foams",
       },
       {
         title: "Universal yapışdırıcılar",
-        href: "/category/adhesives/universal-adhesives",
+        slug: "/category/adhesives/universal-adhesives",
       },
       {
         title: "Sənaye yapışdırıcıları",
-        href: "/category/adhesives/industrial-adhesives",
+        slug: "/category/adhesives/industrial-adhesives",
       },
     ],
   },
   {
-    href: "/category/meters",
+    slug: "/category/meters",
     title: "Qaz sayğacları",
     children: [
-      { title: "Bütün sayğaclar", href: "/category/meters" },
+      { title: "Bütün sayğaclar", slug: "/category/meters" },
       {
         title: "Turbin tipli qaz sayğacları",
-        href: "/category/meters/turbine-gas-meters",
+        slug: "/category/meters/turbine-gas-meters",
       },
       {
         title: "Rotor tipli qaz sayğacları",
-        href: "/category/meters/rotary-gas-meters",
+        slug: "/category/meters/rotary-gas-meters",
       },
       {
         title: "Ultrasəs tipli qaz sayğacları",
-        href: "/category/meters/ultrasonic-gas-meters",
+        slug: "/category/meters/ultrasonic-gas-meters",
       },
-      { title: "Korrektorlar", href: "/category/meters/correctors" },
+      { title: "Korrektorlar", slug: "/category/meters/correctors" },
       {
         title: "Mexaniki qaz sayğacları",
-        href: "/category/meters/mechanical-gas-meters",
+        slug: "/category/meters/mechanical-gas-meters",
       },
       {
         title: "Smart tipli qaz sayğacları",
-        href: "/category/meters/smart-gas-meters",
+        slug: "/category/meters/smart-gas-meters",
       },
     ],
   },
 
   {
-    href: "/category/gas-regulators",
+    slug: "/category/gas-regulators",
     title: "Qaz tənzimləyiciləri",
   },
   {
-    href: "/category/gas-shut-off-valves",
+    slug: "/category/gas-shut-off-valves",
     title: "Qaz bağlayıcı klapanlar",
     children: [
       {
         title: "Bütün qaz bağlayıcı klapanlar",
-        href: "/category/gas-shut-off-valves",
+        slug: "/category/gas-shut-off-valves",
       },
       {
         title: "Maqnit bağlayıcı klapanlar",
-        href: "/category/gas-shut-off-valves/solenoid-valves",
+        slug: "/category/gas-shut-off-valves/solenoid-valves",
       },
       {
         title: "Atıcı-bağlayıcı klapanlar",
-        href: "/category/gas-shut-off-valves/shut-off-valves",
+        slug: "/category/gas-shut-off-valves/shut-off-valves",
       },
       {
         title: "Qoruyucu klapanlar",
-        href: "/category/gas-shut-off-valves/safety-valves",
+        slug: "/category/gas-shut-off-valves/safety-valves",
       },
       {
         title: "Normalda bağlı klapanlar",
-        href: "/category/gas-shut-off-valves/normally-closed-valves",
+        slug: "/category/gas-shut-off-valves/normally-closed-valves",
       },
     ],
   },
   {
-    href: "/category/gas-alarm-devices",
+    slug: "/category/gas-alarm-devices",
     title: "Qaz alarm cihazları",
     children: [
       {
         title: "Bütün qaz alarm cihazları",
-        href: "/category/gas-alarm-devices",
+        slug: "/category/gas-alarm-devices",
       },
       {
         title: "CO Detektor",
-        href: "/category/gas-alarm-devices/co-detectors",
+        slug: "/category/gas-alarm-devices/co-detectors",
       },
       {
         title: "CH₄ Detektor",
-        href: "/category/gas-alarm-devices/ch4-detectors",
+        slug: "/category/gas-alarm-devices/ch4-detectors",
       },
       {
         title: "CH₄ + CO Detektor",
-        href: "/category/gas-alarm-devices/ch4-co-detectors",
+        slug: "/category/gas-alarm-devices/ch4-co-detectors",
       },
     ],
   },
   {
-    href: "/category/gas-filters",
+    slug: "/category/gas-filters",
     title: "Qaz filtrləri",
   },
   {
-    href: "/category/spare-parts",
+    slug: "/category/spare-parts",
     title: "Digər",
     children: [
       {
         title: "Bütün digər məhsullar",
-        href: "/category/spare-parts",
+        slug: "/category/spare-parts",
       },
       {
-        href: "/category/water-meters",
+        slug: "/category/water-meters",
         title: "Su sayğacları",
       },
       {
-        href: "/category/gas-regulator-stations",
+        slug: "/category/gas-regulator-stations",
         title: "Şkaf tipli qaz tənzimləyici məntəqə (ŞQTM)",
       },
       {
-        href: "/category/ozone-generators",
+        slug: "/category/ozone-generators",
         title: "Ozon generatorları",
       },
       {
-        href: "/category/pressure-gauges",
+        slug: "/category/pressure-gauges",
         title: "Manometrlər",
       },
       {
-        href: "/category/valves",
+        slug: "/category/valves",
         title: "Kranlar",
       },
       {
         title: "Qaz sayğacı ehtiyat hissələri",
-        href: "/category/spare-parts/gas-meter-spare-parts",
+        slug: "/category/spare-parts/gas-meter-spare-parts",
       },
     ],
   },
 
   {
-    href: "/ustalar-ucun",
+    slug: "/ustalar-ucun",
     title: "Ustalar üçün",
   },
   {
-    href: "/branches",
+    slug: "/branches",
     title: "Filiallar",
   },
   {
-    href: "/isupport",
+    slug: "/isupport",
     title: "Texniki servis",
   },
   {
-    href: "/brands",
+    slug: "/brands",
     title: "Brendlər",
   },
   {
-    href: "/contact",
+    slug: "/contact",
     title: "Əlaqə",
   },
 ];
-import Link from "next/link";
 
 export const LinksComponent = ({
   handleCloseMenu,
@@ -188,13 +188,13 @@ export const LinksComponent = ({
     "text-black text-[14px] hover:text-(--logo-color) relative  min-[1000px]:after:block  after:absolute after:content-['']  after:w-full  min-[1000px]:after:h-px  after:bottom-0  after:opacity-0  after:bg-(--logo-color) hover:after:opacity-100";
   return (
     <ul className="min-[1000px]:flex min-[1000px]:justify-between min-[1000px]:pt-px min-[1000px]:mb-6 min-[1000px]:gap-2">
-      {links?.map(({ href = "", title, children }) => {
+      {links?.map(({ slug = "", title, children }) => {
         const hasChildren = !!children?.length;
-        const isSeparated = href === "/ustalar-ucun";
+        const isSeparated = slug === "/ustalar-ucun";
 
         return (
           <li
-            key={href}
+            key={slug}
             className={`
               group relative
               max-[1000px]:border-px max-[1000px]:border-t  max-[1000px]:border-(--secondary-color)
@@ -206,7 +206,7 @@ export const LinksComponent = ({
               }
             `}
           >
-            <Link href={href} className={classLink} onClick={handleLinkClick}>
+            <Link href={slug} className={classLink} onClick={handleLinkClick}>
               {title}
             </Link>
 
@@ -224,11 +224,11 @@ export const LinksComponent = ({
                           max-[999px]:shadow-none
                         "
               >
-                {children!.map(({ href = "", title }, index) => (
+                {children!.map(({ slug = "", title }, index) => (
                   <li key={index}>
                     <Link
                       onClick={handleLinkClick}
-                      href={href}
+                      href={slug}
                       className={`pt-4 ${classLink} `}
                     >
                       {title}

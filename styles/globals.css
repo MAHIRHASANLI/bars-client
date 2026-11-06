@@ -4,6 +4,7 @@ body {
   overflow-x: clip;
 }
 /* //? GLOBAL CSS DƏYİŞƏNLƏRİ */
+ /*! TAILWIND */
 /* Layihə boyunca təkrar istifadə edilən rəng dəyişənləri */
 :root {
   --main-color: #f5f5f5;
@@ -18,18 +19,22 @@ body {
   --color-tone-green: #008009;
   --color-tone-orange: #b64400;
 }
+@theme {
+  --color-primary: #1B8143;
+  --color-secondary: #E3B327;
+  --color-dark: #1F2937;
+  --color-light: #F9FAFB;
+}
 /* //? GLOBAL CSS DƏYİŞƏNLƏRİ BİTDİ */
 
 /* //? MƏTNİN QISALDILMASI - Mətni müəyyən edilmiş sətir sayı ilə məhdudlaşdırır */
 .truncate-text {
-  display: -webkit-box; /* Çoxsətirli mətn konteyneri yaradır */
-  -webkit-box-orient: vertical; /* Mətnin şaquli istiqamətdə yerləşdirilməsini təmin edir */
-  -webkit-line-clamp: 2; 
-  /* Mətni maksimum 2 sətirlə məhdudlaşdırır */
-  overflow: hidden; /* Limitdən artıq olan məzmunu gizlədir */
-  text-overflow: ellipsis; /* Kəsilmiş mətnin sonunda üç nöqtə (...) göstərir */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
-
 /* //? XÜSUSİ SCROLLBAR */
 
 /* //? CUSTOM SCROLLBAR */
@@ -237,7 +242,7 @@ section.section {
 @media (max-width: 1000px) {
   /* Əsas konteynerin orta sütununun enini 95%-ə çatdırır */
   .main-container {
-    grid-template-columns: 1fr 95% 1fr;
+    grid-template-columns: 1fr 90% 1fr;
   }
 
   /* Section bölmələrinin daxili boşluqlarını azaldır */

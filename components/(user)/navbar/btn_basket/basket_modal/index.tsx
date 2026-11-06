@@ -2,7 +2,6 @@
 
 import { createPortal } from "react-dom";
 import Image, { type StaticImageData } from "next/image";
-import Link from "next/link";
 import { formatPrice } from "@/utils/format_price_component";
 import { CartSuggestionType, useBasketStore } from "@/stores/basket_store";
 import img from "@/images/saygac-temiri-img.png";
@@ -12,6 +11,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
 import SecondaryButton from "@/components/(user)/shared/buttons/secondary_btn";
+import QuantitySelectorComponent from "@/components/(user)/shared/quantity_selector";
 
 //!Məhsul kiçik təsviri SEKIL VE BASKETDE SAYI
 const ProductThumb = ({
@@ -45,7 +45,7 @@ const suggestedItems: CartSuggestionType[] = [
     price: 85,
     oldPrice: 110,
     imgUrl: img,
-    slug: "qaz-tenzimleyicisi",
+    category: "qaz-tenzimleyicisi",
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Qaz xəttində mexaniki hissəciklərin təmizlənməsi üçün.",
     price: 145,
     imgUrl: img,
-    slug: "qaz-filtri-dn50",
+    category: "qaz-filtri-dn50",
   },
   {
     id: 3,
@@ -64,7 +64,7 @@ const suggestedItems: CartSuggestionType[] = [
     price: 120,
     oldPrice: 150,
     imgUrl: img,
-    slug: "elektromaqnit-klapan",
+    category: "elektromaqnit-klapan",
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Qaz sızmasının aşkarlanması üçün təhlükəsizlik cihazı.",
     price: 55,
     imgUrl: img,
-    slug: "qaz-detektoru",
+    category: "qaz-detektoru",
   },
   {
     id: 5,
@@ -82,7 +82,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Su sərfiyyatının dəqiq ölçülməsi üçün.",
     price: 45,
     imgUrl: img,
-    slug: "su-saygaci",
+    category: "su-saygaci",
   },
   {
     id: 6,
@@ -92,7 +92,7 @@ const suggestedItems: CartSuggestionType[] = [
     price: 650,
     oldPrice: 720,
     imgUrl: img,
-    slug: "qaz-korrektoru",
+    category: "qaz-korrektoru",
   },
   {
     id: 7,
@@ -101,7 +101,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Qaz sərfiyyatının ölçülməsi üçün sənaye tipli sayğac.",
     price: 280,
     imgUrl: img,
-    slug: "qaz-saygaci",
+    category: "qaz-saygaci",
   },
   {
     id: 8,
@@ -110,7 +110,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Boru xətlərində birləşmələrin təmin edilməsi üçün.",
     price: 35,
     imgUrl: img,
-    slug: "flans-dn80",
+    category: "flans-dn80",
   },
   {
     id: 9,
@@ -120,7 +120,7 @@ const suggestedItems: CartSuggestionType[] = [
     price: 95,
     oldPrice: 115,
     imgUrl: img,
-    slug: "qaz-klapani",
+    category: "qaz-klapani",
   },
   {
     id: 10,
@@ -129,7 +129,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Qaz sistemlərində təzyiqin ölçülməsi və nəzarəti üçün.",
     price: 175,
     imgUrl: img,
-    slug: "qaz-tezyiq-sensoru",
+    category: "qaz-tezyiq-sensoru",
   },
 ];
 
@@ -151,20 +151,6 @@ const BasketModalComponent = ({
     (s) => !basketDatas.some((c) => c.id === s.id),
   );
 
-  //!Zustand BASKETE KART ELAVE ETMEK Təklif olunan məhsulu səbətə əlavə etmək
-  const addBasketItem = useBasketStore((state) => state.addBasketItem);
-  const addBasketData = (newCard: CartSuggestionType) => addBasketItem(newCard);
-  //!Zustand BASKETE KART QUANTITY(SAYINI) ARTIRMAQ
-  function handleİncrementBasketItem(item: CartSuggestionType) {
-    addBasketData(item);
-  }
-  //!Zustand BASKETE KART QUANTITY(SAYINI) AZALTMAQ
-  const decreaseBasketItem = useBasketStore(
-    (state) => state.decreaseBasketItem,
-  );
-  function handleDecrementBasketItem(itemId: number) {
-    decreaseBasketItem(itemId);
-  }
   //!Zustand BASKETDEN KART SILMEK
   const removeBasketItem = useBasketStore((store) => store.removeBasketItem);
   function handleRemoveBasketItem(itemId: number) {
@@ -175,7 +161,9 @@ const BasketModalComponent = ({
     (total, item) => total + item.price * item.quantity,
     0,
   );
-
+  //!Zustand BASKETE KART ELAVE ETMEK Təklif olunan məhsulu səbətə əlavə etmək
+  const addBasketItem = useBasketStore((state) => state.addBasketItem);
+  const addBasketData = (newCard: CartSuggestionType) => addBasketItem(newCard);
   // const clearBasketData = useBasketStore((state) => state.clearBasket);
   // const handleClearBtn = () => {
   //   clearBasketData();
@@ -235,31 +223,7 @@ const BasketModalComponent = ({
                   </div>
                   {/* ▼▼▼ YENİ BLOK 1: SAY + ÜRƏK + ZİBİL ▼▼▼ */}
                   <div className="inline-flex flex-col items-center">
-                    <div className="flex h-10 w-35 items-center justify-between rounded-[10px] border border-neutral-900 bg-white px-4 max-[500px]:h-8 max-[500px]:w-25 max-[500px]:px-2">
-                      {" "}
-                      {/* FUNKSİONALLIQ: say azaltma ("-") düyməsinin onClick-ini bura yazın */}
-                      <button
-                        type="button"
-                        aria-label="Azalt"
-                        className="cursor-pointer text-[22px] font-semibold leading-none text-neutral-400 max-[500px]:text-lg"
-                        onClick={() => handleDecrementBasketItem(item.id)}
-                      >
-                        −
-                      </button>
-                      {/* FUNKSİONALLIQ: cari say dəyərini (1, 2, 3...) bura dinamik yazın */}
-                      <span className="text-md font-bold text-neutral-900 max-[500px]:text-sm">
-                        {item.quantity}
-                      </span>
-                      {/* FUNKSİONALLIQ: say artırma ("+") düyməsinin onClick-ini bura yazın */}
-                      <button
-                        type="button"
-                        aria-label="Artır"
-                        className="cursor-pointer text-[22px] font-semibold leading-none text-black max-[500px]:text-lg"
-                        onClick={() => handleİncrementBasketItem(item)}
-                      >
-                        +
-                      </button>
-                    </div>
+                    <QuantitySelectorComponent item={item} />
 
                     <div className="mt-2 flex items-center justify-center gap-10 max-[500px]:mt-1 max-[500px]:gap-5">
                       {/* FUNKSİONALLIQ: favoritlərə əlavə etmə (ürək) funksiyasını bura yazın */}

@@ -4,10 +4,9 @@ import NewsPartnershipsItem from "@/components/(user)/home/news_partnerships_sec
 import imgUrl from "@/images/neo00408_1.webp";
 
 const NewsPartnershipsSection = () => {
-  const imgUrls = [imgUrl,imgUrl,imgUrl];
+  const imgUrls = [imgUrl, imgUrl, imgUrl];
   return (
     <section className="py-8">
-      <div className="grid grid-cols-1 min-[801px]:grid-cols-2 bg-(--main-color) rounded-2xl overflow-hidden"></div>
       <NewsPartnershipsItem>
         <ImageSliderComponent imgUrls={imgUrls} />
         <ContentComponent
@@ -18,13 +17,24 @@ const NewsPartnershipsSection = () => {
       </NewsPartnershipsItem>
 
       <br />
-      <NewsPartnershipsItem>
+      {/* Kontent birinci olduğu üçün reverseOnMobile veririk */}
+      <NewsPartnershipsItem reverseOnMobile>
         <ContentComponent
           title="Əməkdaşlıq"
           href="/contact"
           description="BARS ilə əməkdaşlıq edin və qarşılıqlı faydalı biznes əlaqələri qurun"
         />
-         <ImageSliderComponent imgUrls={imgUrls} />
+        <ImageSliderComponent imgUrls={imgUrls} />
+      </NewsPartnershipsItem>
+
+      <br />
+      <NewsPartnershipsItem>
+        <ImageSliderComponent imgUrls={imgUrls} />
+        <ContentComponent
+          title="Yerli istehsalımız"
+          href="/contact"
+          description="Energy Servis-də istehsal olunan yerli qaz avadanlıqları ilə tanış olun"
+        />
       </NewsPartnershipsItem>
     </section>
   );

@@ -11,7 +11,7 @@ const MobileNavbarContent = ({
 }) => {
   return (
     <div
-      className="fixed inset-0 z-9999 opacity-100 transition-opacity duration-300 starting:opacity-0"
+      className="fixed h-full inset-0 z-9999 opacity-100 transition-opacity duration-300 starting:opacity-0"
       onClick={handleCloseMenu}
     >
       <div

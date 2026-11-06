@@ -12,7 +12,7 @@ export type CartItemType = {
   price: number; // Cari satış qiyməti
   oldPrice?: number; // Endirimdən əvvəlki qiymət
   imgUrl: string | StaticImageData;
-  slug: string;
+  category: string;
   quantity: number;
 };
 

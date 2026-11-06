@@ -11,7 +11,6 @@ const PartnershipsSection = () => {
     <section className="py-8 pb-3 max-[1000px]:py-5">
       <SubheadingComponent
         title="Güvəndiyimiz tərəfdaşlar"
-        description=" Keyfiyyətli məhsullar və etibarlı əməkdaşlıq üçün seçdiyimiz tərəfdaşlarla tanış olun"
       />
       <ScrollCarouselComponent
         preset="wide"

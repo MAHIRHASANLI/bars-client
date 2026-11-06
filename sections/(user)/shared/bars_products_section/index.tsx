@@ -1,6 +1,6 @@
 import FeaturedCarouselComponent from "@/components/(user)/shared/carousels/featured_carousel/feature_carousel_component";
 import SubheadingComponent from "@/components/(user)/shared/section_heading_component_h2";
-import ProductCardComponent from "@/components/(user)/shared/carousels/featured_carousel/feature_carousel_card_component";
+import FeaturedCardComponent from "@/components/(user)/shared/carousels/featured_carousel/feature_carousel_card_component";
 import { barsProductsDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
 const BarsProductsSection = () => {
 
@@ -10,7 +10,7 @@ const BarsProductsSection = () => {
 
       <FeaturedCarouselComponent>
         {barsProductsDatas?.map((item) => (
-          <ProductCardComponent key={item.id} item={item} />
+          <FeaturedCardComponent key={item.id} item={item} />
         ))}
       </FeaturedCarouselComponent>
     </section>

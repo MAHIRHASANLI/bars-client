@@ -81,10 +81,10 @@ function handleCloseFilter() {
 
           {isCategoryOpen && (
             <ul className="mt-3 flex flex-col gap-3 pl-7 max-[1000px]:pl-4">
-              {categoryItems.map(({ title, href = "" }) => (
-                <li key={href}>
+              {categoryItems.map(({ title, slug = "" }) => (
+                <li key={slug}>
                   <Link
-                    href={href}
+                    href={slug}
                     onClick={() => setIsFilterOpen(false)}
                     className="text-base text-black hover:text-(--logo-color)"
                   >
