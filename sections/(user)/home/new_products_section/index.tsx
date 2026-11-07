@@ -3,9 +3,9 @@ import GeneralCarouselComponent from "@/components/(user)/shared/carousels/conte
 import ContentCarouselCardComponent from "@/components/(user)/shared/carousels/content_carousel/content_carousel_card_component";
 import { newProductsCectionDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
 
-
 //! Yeni məhsullar bölməsini göstərir.
 const NewProductsSection = () => {
+  //TODO const products = await getNewProducts(); // fetch → C# API
   return (
     <section className="py-8 pb-3 max-[1000px]:py-5">
       {/* Bölmənin başlığını göstərir. */}

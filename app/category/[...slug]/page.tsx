@@ -29,7 +29,7 @@ export default async function CategoryPage({ params }: Props) {
       {category ? (
         <ContentCategorySection pathname={pathname} />
       ) : (
-        <ProductDetailSection productId={productId} />
+        <ProductDetailSection productId={productId} categoryPathname={category}/>
       )}
     </CategoriesContainer>
   );

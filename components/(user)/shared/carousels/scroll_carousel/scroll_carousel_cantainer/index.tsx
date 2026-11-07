@@ -18,12 +18,13 @@ const presets = {
     "min-[1280px]:[--n:4] min-[1280px]:[--gap:25px]",
   ].join(" "),
   extraWide: [
-    "[--n:1.8] [--gap:10px]",
-    "min-[640px]:[--gap:20px]",
-    "min-[800px]:[--n:2]",
-    "min-[1024px]:[--n:3] min-[1024px]:[--gap:30px]",
-    "min-[1280px]:[--n:4] min-[1280px]:[--gap:25px]",
-  ].join(" "),
+  "[--n:3] [--gap:10px]",
+  "min-[480px]:[--n:2.5] min-[480px]:[--gap:15px]",
+  "min-[640px]:[--n:2.5] min-[640px]:[--gap:20px]",
+  "min-[800px]:[--n:3]",
+  "min-[1024px]:[--n:4] min-[1024px]:[--gap:25px]",
+  "min-[1280px]:[--n:7] min-[1280px]:[--gap:20px]",
+].join(" "),
   single: "[--n:1] [--gap:20px]",
 } as const;
 

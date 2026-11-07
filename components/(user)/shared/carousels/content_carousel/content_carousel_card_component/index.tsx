@@ -36,7 +36,7 @@ const ContentCarouselCardComponent = ({ item }: { item: ProductType }) => {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 rounded-b-2xl bg-linear-to-t from-(--img-bg-color) via-(--img-bg-color)/40 to-transparent transition-opacity duration-500 ease-out group-hover:opacity-0 motion-reduce:transition-none" />
 
           <Image
-            src={item.imgUrl}
+            src={item.imgUrls[0]}
             alt={item.title}
             fill
             sizes="(max-width: 800px) 80vw, 33vw"

@@ -14,7 +14,7 @@ const ScrollCarouselItemComponent = ({ item, badge = item.badge }: Props) => {
   return (
     <Link
       href={href}
-      className=" transition-ease duration-300 group flex flex-row items-end justify-start gap-2 rounded-lg py-4 px-2 pr-6 text-left hover:bg-[rgba(0,0,0,0.04)] max-[800px]:w-44"
+      className=" transition-ease duration-300 group flex flex-row items-end justify-start gap-2 rounded-lg py-2 px-2 pr-6 text-left hover:bg-[rgba(0,0,0,0.04)] max-[800px]:w-44"
     >
       <div className="relative h-18 w-24 shrink-0 max-[800px]:h-14 max-[800px]:w-18">
         <Image

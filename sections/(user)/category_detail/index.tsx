@@ -8,30 +8,31 @@ import LikeButtonComponent from "@/components/(user)/shared/buttons/btn_like";
 import { IoStorefrontOutline } from "react-icons/io5";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { MdOutlineSecurity } from "react-icons/md";
+import ShareComponent from "@/components/(user)/detail_category/shared_component";
 
 interface Props {
   productId: string;
-  // categoryPathname: string;
+  categoryPathname?: string;
 }
 
-const ProductDetailSection = ({ productId }: Props) => {
+const ProductDetailSection = ({ productId, categoryPathname }: Props) => {
   const product = productDatas.find((item) => item.id.toString() === productId);
 
   // Məhsul tapılmadısa 404
   if (!product) notFound();
 
-  // Hazırda hər məhsulda 1 şəkil var, ona görə təkrarlayıram.
-  // Backend-dən çoxlu şəkil gələndə product.images ilə əvəz et.
-  const images = [product.imgUrl, product.imgUrl, product.imgUrl];
-
   const hasDiscount =
     typeof product.oldPrice === "number" && product.oldPrice > product.price;
+
+  // Paylaşma üçün tam URL
+  const productUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${categoryPathname}/${product.id}`;
+
   return (
-    <section className="mx-auto max-w-7xl px-4 py-8 pb-40">
+    <section className="mx-auto max-w-7xl px-4 py-10">
       <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr]">
         {/* Sol: şəkillər yuxarıdan aşağı */}
         <div className="flex flex-col gap-4">
-          {images.map((src, i) => (
+          {product.imgUrls.map((src, i) => (
             <div
               key={i}
               className="flex items-center justify-center rounded-2xl bg-gray-50 p-6"
@@ -47,7 +48,7 @@ const ProductDetailSection = ({ productId }: Props) => {
         </div>
 
         {/* Sağ: məlumat */}
-        <div className="flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
+        <div className="flex flex-col gap-6 lg:sticky lg:top-4 lg:self-start">
           <div className="flex flex-col gap-3">
             {product.badge && (
               <span className="w-fit rounded-full bg-blue-600 px-3 py-1 text-xs font-semibold uppercase text-white">
@@ -59,7 +60,7 @@ const ProductDetailSection = ({ productId }: Props) => {
             </h1>
             <p className="line-clamp-2 text-base text-gray-600">
               {product.subtitle}
-            </p>{" "}
+            </p>
             <p className="text-sm text-gray-500">Kod: {product.id}</p>
           </div>
 
@@ -80,20 +81,10 @@ const ProductDetailSection = ({ productId }: Props) => {
           </div>
 
           {/* Miqdar */}
-          <div className="">
+          <div>
             <span className="block mb-2 font-semibold">Miqdarı</span>
             <QuantitySelectorComponent item={product} />
           </div>
-          {/* <div className="flex flex-co  l gap-2">
-            <p className="font-semibold">Miqdarı</p>
-            <div className="flex h-14 w-36 items-center justify-between rounded-lg border border-gray-900 px-4">
-              <button type="button" className="text-gray-400">
-                -
-              </button>
-              <span className="font-semibold">1</span>
-              <button type="button">+</button>
-            </div>
-          </div> */}
 
           {/* Çatdırılma */}
           <div className="flex flex-col gap-3">
@@ -119,6 +110,9 @@ const ProductDetailSection = ({ productId }: Props) => {
             <MdOutlineSecurity className="text-(--secondary-color) size-5" />{" "}
             Rəsmi zəmanət — 12 ayadək
           </p>
+
+          {/* Paylaşmaq + sosial şəbəkələr */}
+          <ShareComponent url={productUrl} title={product.title} />
         </div>
       </div>
 

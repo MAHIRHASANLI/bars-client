@@ -15,7 +15,7 @@ export const products: ProductType[] = [
     subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
     price: 6.5,
     oldPrice: 8.5,
-    imgUrl: img,
+    imgUrls: [img],
     category: "/category/adhesives/marble-adhesives",
   },
   {
@@ -24,7 +24,7 @@ export const products: ProductType[] = [
     title: "Montaj yapışdırıcısı",
     subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
     price: 8.5,
-    imgUrl: img,
+    imgUrls: [img],
     category: "/category/adhesives/marble-adhesives",
   },
   {
@@ -34,7 +34,7 @@ export const products: ProductType[] = [
     subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
     price: 4.5,
     oldPrice: 8.5,
-    imgUrl: img,
+    imgUrls: [img],
     category: "/category/adhesives/marble-adhesives",
   },
   {
@@ -43,7 +43,7 @@ export const products: ProductType[] = [
     title: "Montaj yapışdırıcısı",
     subtitle: "Müxtəlif səthlərin möhkəm yapışdırılması üçün.",
     price: 8.5,
-    imgUrl: img,
+    imgUrls: [img],
     category: "/category/adhesives/marble-adhesives",
   },
   {
@@ -52,7 +52,7 @@ export const products: ProductType[] = [
     title: "Silikon yapışdırıcı",
     subtitle: "Təmir və quraşdırma işləri üçün praktik həll.",
     price: 6.5,
-    imgUrl: img,
+    imgUrls: [img],
     category: "/category/adhesives/silicones",
   },
   {
@@ -61,7 +61,7 @@ export const products: ProductType[] = [
     title: "Universal yapışdırıcı",
     subtitle: "Müxtəlif məişət və təmir işlərində istifadə üçün.",
     price: 10,
-    imgUrl: img,
+    imgUrls: [img],
     category: "/category/adhesives/universal-adhesives",
   },
 ];

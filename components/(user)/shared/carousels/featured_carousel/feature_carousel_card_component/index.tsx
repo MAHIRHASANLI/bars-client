@@ -21,17 +21,12 @@ const FeaturedCardComponent = ({
   const savedAmount = hasDiscount ? item.oldPrice! - item.price : 0;
 
   //TODO Məhsul detail səhifəsinin URL-i
-  let detailSlug;
-  if(pathname){
-     detailSlug = `${pathname}/${item.id}`;
-  }else{
-    detailSlug =  `category/${item.category}/${item.id}`
-  }
+ 
   return (
     <div className="relative flex h-full min-h-98 flex-col items-center bg-white px-0 py-4 duration-300 max-[800px]:min-h-0">
       <div className="relative py-6 max-[800px]:py-4">
         <Image
-          src={item.imgUrl}
+          src={item.imgUrls[0]}
           alt={item.title}
           className="mx-auto h-60 w-64 object-contain transition-transform duration-300 hover:scale-104 max-[800px]:h-40 max-[800px]:w-44"
         />
@@ -85,7 +80,7 @@ const FeaturedCardComponent = ({
 
         {/* Almaq düyməsi */}
         <div className="mt-7 w-full text-center max-[800px]:mt-4">
-          <PrimaryButton href={`${item.category}/${item.id}`}>Almaq</PrimaryButton>
+          <PrimaryButton href={`${item.category}/${item.id}`}>Baxmaq</PrimaryButton>
         </div>
       </div>
 
