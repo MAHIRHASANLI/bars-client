@@ -1,5 +1,5 @@
-import PrimaryButton from "@/components/(user)/shared/buttons/primary_button";
-import PageHeading from "@/components/(user)/shared/page_heading_component_h1";
+import PrimaryButton from "@/components/shared/buttons/primary_button";
+import PageHeading from "@/components/shared/page_heading_component_h1";
 import React from "react";
 
 const NotFound = () => {

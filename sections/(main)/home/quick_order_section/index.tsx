@@ -1,0 +1,23 @@
+import FeaturedCarouselComponent from "@/components/shared/carousels/featured_carousel/feature_carousel_component";
+import SubheadingComponent from "@/components/shared/section_heading_component_h2";
+import FeaturedCardComponent from "@/components/shared/carousels/featured_carousel/feature_carousel_card_component";
+import { quickOrderSectionDatas } from "@/api/linklerin_muveqqeti_yerlesmesi";
+
+//!12 Sürətli sifariş bölməsi "Sifarişinizi tez bir zamanda rəsmiləşdirin*/
+
+const QuickOrderSection = () => {
+  return (
+    <section className="py-8">
+      <SubheadingComponent
+        title="Sifarişinizi tez bir zamanda rəsmiləşdirin"
+      />
+      <FeaturedCarouselComponent>
+        {quickOrderSectionDatas?.map((item) => (
+          <FeaturedCardComponent key={item.id} item={item} />
+        ))}
+      </FeaturedCarouselComponent>
+    </section>
+  );
+};
+
+export default QuickOrderSection;

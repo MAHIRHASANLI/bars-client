@@ -1,4 +1,4 @@
-import { links } from "@/components/(user)/navbar/links";
+import { links } from "@/components/(main)/navbar/links";
 
 const linkMap = new Map(
   links.flatMap((link) => [link, ...(link.children ?? [])]).map((l) => [l.slug, l])

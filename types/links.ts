@@ -57,6 +57,16 @@ export type BusinessAreaCardProps = {
 };
 
 //! Xəbərlər və bloq yazıları üçün məlumat strukturunu müəyyən edir.
+export type NewsItem = {
+  id: number | string;
+  title: string;
+  category: string;
+  image: string | StaticImageData;
+  date: string;
+  text: string[]; // abzaslar massivi
+  readTime?: number;
+};
+
 export type NewsPostType = {
   id: number;
   title: string;

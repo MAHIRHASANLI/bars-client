@@ -1,6 +1,6 @@
-import { BusinessAreaCardProps, NewsPostType, PartnerType, ProductCategoryType, ProductType, StoreType } from "@/types/links";
+import { BusinessAreaCardProps, NewsItem, NewsPostType, PartnerType, ProductCategoryType, ProductType, StoreType } from "@/types/links";
 import img from "@/images/saygac-temiri-img.png";
-import { ServiceType } from "@/sections/(user)/home/services_and_more_section";
+import { ServiceType } from "@/sections/(main)/home/services_and_more_section";
 
 //? --------------------------------------ANA SEHIFE--------------------------------------------------------------------------
 //! ANA SEHIFEDE-2-cu section | butun mehsullar ve category sehifesinde ilk section datalari
@@ -804,3 +804,59 @@ mapUrl: "https://maps.app.goo.gl/78eKRiRHRgGpo1mh8?g_st=ac",
   },
 ];
 //? --------------------------------------BRANCHES(FİLİALLAR) SEHIFE BITDI--------------------------------------------------------------------------
+//? --------------------------------------BLOG blog SEHIFESI--------------------------------------------------------------------------
+export type BlogSectionData = {
+  id: string;
+  sectionTitle: string;
+  news: NewsItem[];
+};
+
+const lorem = [
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam voluptatibus, quod, quia, voluptate quae voluptates quibusdam accusantium nemo, atque inventore dolorum.",
+  "Voluptatem, quos! Quisquam, voluptas quia magni nobis laboriosam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, ex aliquid.",
+  "Dolorum, quae. Eveniet, ut. Quasi eligendi minus dolor aperiam, voluptatibus ad ratione, sapiente dignissimos magnam.",
+];
+import imgNews from "@/images/newsImg.jpg"
+export const blogSections: BlogSectionData[] = [
+  {
+    id: "news",
+    sectionTitle: "Xəbərlər",
+    news: [
+      { id: 1, title: "Lorem 1", category: "Xəbərlər", image: imgNews , date: "2026-11-12", text: lorem },
+      { id: 2, title: "Lorem 2", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
+      { id: 3, title: "Lorem 3", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
+      { id: 4, title: "Lorem 4", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
+      { id: 5, title: "Lorem 5", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
+      { id: 7, title: "Lorem 6", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
+      // ... qalanları eyni qaydada
+    ],
+  },
+  {
+    id: "articles",
+    sectionTitle: "Faydalı məlumat",
+    news: [
+      { id: 6, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
+      { id: 17, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
+      { id: 8, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
+      { id: 9, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
+      { id: 10, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
+      // ...
+    ],
+  },
+];
+
+// Bütün xəbərlər bir siyahıda
+const allNews = blogSections.flatMap((s) => s.news);
+
+export const getNewsById = (id: string) =>
+  allNews.find((n) => String(n.id) === id);
+
+export const getOtherNews = (id: string | number, limit = 6) =>
+  allNews.filter((n) => n.id !== id).slice(0, limit);
+
+export const getReadTime = (paragraphs: string[], readTime?: number) => {
+  if (readTime) return readTime;
+  const words = paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil(words / 200));
+};  
+//? --------------------------------------BLOG blog SEHIFESI  bitdi--------------------------------------------------------------------------
