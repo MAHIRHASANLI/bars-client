@@ -6,13 +6,20 @@ import { usePathname } from "next/navigation";
 const PAGES = [
   { slug: "", title: "Bloqlar", description: "Bütün məqalələr və xəbərlər bir yerdə" },
   { slug: "articles", title: "Məqalələr", description: "" },
-  { slug: "news", title: "Xəbərlər",description: ""  },
+  { slug: "news", title: "Xəbərlər", description: "" },
 ];
 
 const BreadcrumbComponent = () => {
-  const pathname = usePathname(); // məs: /blog/category/news
-  const slug = pathname.split("/")[3] ?? ""; // ["", "blog", "category", "news"]
+  const pathname = usePathname();
+  const parts = pathname.split("/").filter(Boolean); // /blog/category/news → ["blog","category","news"]
 
+  // Siyahı səhifələri: /blog  və  /blog/category/[slug]
+  const isBlogHome = parts.length === 1;
+  const isCategoryList = parts.length === 3 && parts[1] === "category";
+
+  if (!isBlogHome && !isCategoryList) return null; // detal səhifəsində göstərmə
+
+  const slug = isCategoryList ? parts[2] : "";
   const page = PAGES.find((p) => p.slug === slug);
   if (!page) return null;
 
@@ -39,9 +46,11 @@ const BreadcrumbComponent = () => {
           {page.title}
         </h1>
 
-        <p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
-          {page.description}
-        </p>
+        {page.description && (
+          <p className="mt-4 max-w-2xl text-base text-gray-600 sm:text-lg">
+            {page.description}
+          </p>
+        )}
       </div>
     </section>
   );

@@ -12,6 +12,7 @@ import { IoMdClose } from "react-icons/io";
 import PrimaryButton from "@/components/shared/buttons/primary_button";
 import SecondaryButton from "@/components/shared/buttons/secondary_btn";
 import QuantitySelectorComponent from "@/components/shared/quantity_selector";
+import { ProductType } from "@/types/links";
 
 //!Məhsul kiçik təsviri SEKIL VE BASKETDE SAYI
 const ProductThumb = ({
@@ -36,7 +37,7 @@ const ProductThumb = ({
 );
 
 // Siz də bəyənə bilərsiniz bolmesi
-const suggestedItems: CartSuggestionType[] = [
+const suggestedItems: ProductType[] = [
   {
     id: 1,
     badge: "ENDİRİMLİ",
@@ -44,7 +45,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Qaz təzyiqinin sabit saxlanılması üçün.",
     price: 85,
     oldPrice: 110,
-    imgUrl: img,
+    imgUrls: [img],
     category: "qaz-tenzimleyicisi",
   },
   {
@@ -53,7 +54,7 @@ const suggestedItems: CartSuggestionType[] = [
     title: "Qaz filtri DN50",
     subtitle: "Qaz xəttində mexaniki hissəciklərin təmizlənməsi üçün.",
     price: 145,
-    imgUrl: img,
+    imgUrls: [img],
     category: "qaz-filtri-dn50",
   },
   {
@@ -63,7 +64,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Qaz axınının avtomatik idarə olunması üçün.",
     price: 120,
     oldPrice: 150,
-    imgUrl: img,
+    imgUrls: [img],
     category: "elektromaqnit-klapan",
   },
   {
@@ -72,7 +73,7 @@ const suggestedItems: CartSuggestionType[] = [
     title: "Qaz detektoru",
     subtitle: "Qaz sızmasının aşkarlanması üçün təhlükəsizlik cihazı.",
     price: 55,
-    imgUrl: img,
+    imgUrls: [img],
     category: "qaz-detektoru",
   },
   {
@@ -81,7 +82,7 @@ const suggestedItems: CartSuggestionType[] = [
     title: "Su sayğacı",
     subtitle: "Su sərfiyyatının dəqiq ölçülməsi üçün.",
     price: 45,
-    imgUrl: img,
+    imgUrls: [img],
     category: "su-saygaci",
   },
   {
@@ -91,7 +92,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Qaz həcminin temperatur və təzyiqə görə korreksiyası.",
     price: 650,
     oldPrice: 720,
-    imgUrl: img,
+    imgUrls: [img],
     category: "qaz-korrektoru",
   },
   {
@@ -100,7 +101,7 @@ const suggestedItems: CartSuggestionType[] = [
     title: "Qaz sayğacı",
     subtitle: "Qaz sərfiyyatının ölçülməsi üçün sənaye tipli sayğac.",
     price: 280,
-    imgUrl: img,
+    imgUrls: [img],
     category: "qaz-saygaci",
   },
   {
@@ -109,7 +110,7 @@ const suggestedItems: CartSuggestionType[] = [
     title: "Flanş DN80",
     subtitle: "Boru xətlərində birləşmələrin təmin edilməsi üçün.",
     price: 35,
-    imgUrl: img,
+    imgUrls: [img],
     category: "flans-dn80",
   },
   {
@@ -119,7 +120,7 @@ const suggestedItems: CartSuggestionType[] = [
     subtitle: "Qaz xəttində axının idarə olunması üçün.",
     price: 95,
     oldPrice: 115,
-    imgUrl: img,
+    imgUrls: [img],
     category: "qaz-klapani",
   },
   {
@@ -128,7 +129,7 @@ const suggestedItems: CartSuggestionType[] = [
     title: "Qaz təzyiq sensoru",
     subtitle: "Qaz sistemlərində təzyiqin ölçülməsi və nəzarəti üçün.",
     price: 175,
-    imgUrl: img,
+    imgUrls: [img],
     category: "qaz-tezyiq-sensoru",
   },
 ];
@@ -209,7 +210,7 @@ const BasketModalComponent = ({
                   className="flex items-center gap-4 border-b border-(--line-color) py-4"
                 >
                   <ProductThumb
-                    src={item.imgUrl}
+                    src={item.imgUrls[0]}
                     alt={item.title}
                     badge={item.quantity}
                   />
@@ -257,7 +258,7 @@ const BasketModalComponent = ({
                     key={s.id}
                     className="flex items-center gap-4 border-b border-(--line-color) py-4"
                   >
-                    <ProductThumb src={s.imgUrl} alt={s.title} />
+                    <ProductThumb src={s.imgUrls[0]} alt={s.title} />
                     <div className="min-w-0 flex-1">
                       <p className="line-clamp-2 text-base font-medium text-[#1d1d1f] max-[500px]:text-sm">
                         {s.title}

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import NavbarSection from "@/sections/(blog)/navbar";
+import BreadcrumbComponent from "@/components/(blog)/breadcrumb";
+import FooterSection from "@/sections/(blog)/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -25,7 +27,9 @@ export default function BlogLayout({ children }: Props) {
   return (
     <>
       <NavbarSection />
+       <BreadcrumbComponent />
        <main className="blog-container"> {children}</main>
+       <FooterSection/>
     </>
   );
 }

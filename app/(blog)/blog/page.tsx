@@ -1,8 +1,7 @@
-import BlogContainer from '@/containers/(blog)/blog'
-import React from 'react'
+import BlogPageContainer from '@/containers/(blog)/blog'
 
 const BlogPage = () => {
-  return <BlogContainer/>
+  return <BlogPageContainer/>
 }
 
 export default BlogPage

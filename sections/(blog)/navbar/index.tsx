@@ -12,8 +12,7 @@ const NAV_LINKS = [
 const NavbarSection = () => {
   return (
     <header
-      className="relative z-50 bg-white box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]"
+      className="relative z-50 bg-white shadow-[0_2px_3px_0px_rgba(99,99,99,0.1)]"
     >
       <nav
         aria-label="Bloq naviqasiyası"
@@ -26,7 +25,7 @@ shadow-[0_2px_8px_0px_rgba(99,99,99,0.2)]"
             <li key={label}>
               <Link
                 href={href}
-                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-2 focus-visible:outline-blue-600"
+                className="rounded-md px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-2 hover:underline focus-visible:outline-blue-600"
               >
                 {label}
               </Link>

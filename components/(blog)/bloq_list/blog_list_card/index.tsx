@@ -1,34 +1,41 @@
 import Image from "next/image";
+import Link from "next/link";
 import { NewsItem } from "@/types/links";
 import { formatDateDots } from "@/utils/format_date";
-import Link from "next/link";
 
 const BlogListCardComponent = ({ item }: { item: NewsItem }) => {
   return (
     <Link
       href={`/blog/${item.id}`}
-      className="group grid grid-cols-1 gap-4 sm:grid-cols-[1fr_1.7fr]"
+      className="group grid grid-cols-1 gap-4 sm:grid-cols-[220px_minmax(0,1fr)] sm:gap-6 min-[1001px]:grid-cols-[260px_minmax(0,1fr)] xl:grid-cols-[300px_minmax(0,1fr)]"
     >
-      <div className="relative aspect-video overflow-hidden rounded-xl sm:aspect-auto sm:min-h-64">
+      {/* ŞƏKİL: sabit ölçü */}
+      <div className="relative h-44 w-full overflow-hidden rounded-xl sm:h-40 min-[1001px]:h-44 xl:h-48">
         <Image
           src={item.image}
           alt={item.title}
           fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover"
+          sizes="(max-width: 640px) 100vw, (max-width: 1000px) 220px, (max-width: 1280px) 260px, 300px"
+          className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
         />
       </div>
 
-      <div className="flex flex-col justify-between rounded-xl border border-gray-200 p-5">
-        <div>
-          <p className="text-sm font-semibold text-(--color-tone-orange)">
-            {item.category}
-          </p>
-          <h3 className="mt-4 text-xl font-bold text-black sm:text-3xl hover:underline">
-            {item.title}
-          </h3>
-        </div>
-        <time className="text-gray-500">{formatDateDots(item.date)}</time>
+      {/* MƏTN */}
+      <div className="flex min-w-0 flex-col gap-3 rounded-xl border border-gray-200 p-4 sm:p-5 xl:p-6">
+        <p className="text-xs font-semibold text-(--color-tone-orange) sm:text-sm">
+          {item.category}
+        </p>
+
+        <h3 className="line-clamp-3 wrap-break-word text-lg font-bold text-black group-hover:underline sm:text-xl xl:text-2xl">
+          {item.title}
+        </h3>
+
+        <time
+          dateTime={item.date}
+          className="mt-auto text-sm text-gray-500 sm:text-base"
+        >
+          {formatDateDots(item.date)}
+        </time>
       </div>
     </Link>
   );

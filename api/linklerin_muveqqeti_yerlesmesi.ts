@@ -822,25 +822,100 @@ export const blogSections: BlogSectionData[] = [
     id: "news",
     sectionTitle: "Xəbərlər",
     news: [
-      { id: 1, title: "Lorem 1", category: "Xəbərlər", image: imgNews , date: "2026-11-12", text: lorem },
-      { id: 2, title: "Lorem 2", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
-      { id: 3, title: "Lorem 3", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
-      { id: 4, title: "Lorem 4", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
-      { id: 5, title: "Lorem 5", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
-      { id: 7, title: "Lorem 6", category: "Xəbərlər", image: imgNews, date: "2026-11-12", text: lorem },
-      // ... qalanları eyni qaydada
+      {
+        id: 1,
+        title: "ENERJİ-N MMC sənaye avadanlıqları sahəsində fəaliyyətini genişləndirir",
+        category: "Xəbərlər",
+        image: imgNews,
+        date: "2026-11-12",
+        text: lorem,
+      },
+      {
+        id: 2,
+        title: "Qaz sayğaclarının texniki baxışının əhəmiyyəti",
+        category: "Xəbərlər",
+        image: imgNews,
+        date: "2026-11-10",
+        text: lorem,
+      },
+      {
+        id: 3,
+        title: "Sənaye müəssisələri üçün yeni avadanlıq həlləri",
+        category: "Xəbərlər",
+        image: imgNews,
+        date: "2026-11-08",
+        text: lorem,
+      },
+      {
+        id: 4,
+        title: "Qaz tənzimləyiciləri və onların sistemlərdə rolu",
+        category: "Xəbərlər",
+        image: imgNews,
+        date: "2026-11-05",
+        text: lorem,
+      },
+      {
+        id: 5,
+        title: "Ölçmə və nəzarət avadanlıqlarında keyfiyyət standartları",
+        category: "Xəbərlər",
+        image: imgNews,
+        date: "2026-11-03",
+        text: lorem,
+      },
+      {
+        id: 7,
+        title: "ENERJİ-N MMC müştərilərinə texniki servis xidmətləri təqdim edir",
+        category: "Xəbərlər",
+        image: imgNews,
+        date: "2026-11-01",
+        text: lorem,
+      },
     ],
   },
   {
     id: "articles",
     sectionTitle: "Faydalı məlumat",
     news: [
-      { id: 6, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
-      { id: 17, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
-      { id: 8, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
-      { id: 9, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
-      { id: 10, title: "Lorem ipsum dolor sit amet consectetur.", category: "Faydalı məlumat", image: img, date: "2026-11-12", text: lorem },
-      // ...
+      {
+        id: 6,
+        title: "Qaz filtrlərinin təmizlənməsi və texniki qulluq qaydaları",
+        category: "Faydalı məlumat",
+        image: img,
+        date: "2026-10-28",
+        text: lorem,
+      },
+      {
+        id: 17,
+        title: "Qaz detektorları nə üçün istifadə olunur?",
+        category: "Faydalı məlumat",
+        image: img,
+        date: "2026-10-25",
+        text: lorem,
+      },
+      {
+        id: 8,
+        title: "Qaz sayğaclarının əsas növləri və fərqləri",
+        category: "Faydalı məlumat",
+        image: img,
+        date: "2026-10-22",
+        text: lorem,
+      },
+      {
+        id: 9,
+        title: "Qaz tənzimləyicisi seçərkən nələrə diqqət edilməlidir?",
+        category: "Faydalı məlumat",
+        image: img,
+        date: "2026-10-19",
+        text: lorem,
+      },
+      {
+        id: 10,
+        title: "Elektromaqnit klapanların iş prinsipi və tətbiq sahələri",
+        category: "Faydalı məlumat",
+        image: img,
+        date: "2026-10-15",
+        text: lorem,
+      },
     ],
   },
 ];
@@ -854,9 +929,5 @@ export const getNewsById = (id: string) =>
 export const getOtherNews = (id: string | number, limit = 6) =>
   allNews.filter((n) => n.id !== id).slice(0, limit);
 
-export const getReadTime = (paragraphs: string[], readTime?: number) => {
-  if (readTime) return readTime;
-  const words = paragraphs.join(" ").split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.ceil(words / 200));
-};  
+
 //? --------------------------------------BLOG blog SEHIFESI  bitdi--------------------------------------------------------------------------

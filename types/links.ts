@@ -64,7 +64,6 @@ export type NewsItem = {
   image: string | StaticImageData;
   date: string;
   text: string[]; // abzaslar massivi
-  readTime?: number;
 };
 
 export type NewsPostType = {

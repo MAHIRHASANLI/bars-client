@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NewsPostType } from "@/types/links";
+import { formatDate } from "@/utils/format_date";
 
 type Props = {
   item: NewsPostType;
@@ -69,7 +70,7 @@ const CarouselItemComponent = ({ item }: Props) => {
                 aria-hidden="true"
                 className="h-0.5 w-4 shrink-0 rounded-full bg-(--color-tone-orange)"
               />
-              {item.date}
+              {formatDate(item.date)}
             </time>
           )}
 
